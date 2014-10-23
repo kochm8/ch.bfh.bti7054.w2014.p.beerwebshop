@@ -1,67 +1,113 @@
 body {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 11pt;
-    color: black;
-}
-
-div {
-    border: 1px solid;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: black;
 }
 
 p {
-    padding: 5px;
+	padding: 10px;
+}
+
+form {
+	width: 500px;
+	margin: 20px auto;
+}
+
+input {
+	padding: 8px 15px;
+	background: rgba(50, 50, 50, 0.2);
+	border: 0px solid #dbdbdb;
+}
+
+input[type=submit] {
+	position: relative;
+	padding: 6px 15px;
+	left: -8px;
+	border: 2px solid #207cca;
+	background-color: #207cca;
+	color: #fafafa;
 }
 
 #wrapper {
-    width: 100%;
-    min-width: 1000px;
-    max-width: 2000px;
-    margin: 0;
+	margin: 0 auto;
+	width: 1200px;
 }
 
 #header {
-    float: left;
-    height: 40px;
-    width: 100%;
-    background: #FF6633;
+	float: left;
+	height: 130px;
+	width: 1200px;
+	//background: #FF6633;
+	border: 1px solid;
 }
 
-#navigation {
-    float: left;
-    height: 40px;
-    width: 100%;
-    background: #FFCC33;
+#logo {
+	float: left;
+	width: 200px; 
+	//background: #ff80c0;
 }
 
-#contentliquid {
-    float: left;
-    width: 100%;
+#search {
+	float: left;
+	width: 310px;
+	margin-left: 200px;
+	margin-top: 60px; 
+	//background: #ff80c0;
+}
+
+#search_input {
+	width: 200px;
+}
+
+#search_btn {
+	width: 80px;
+}
+
+.login {
+	float: right;
+	width: 200px;
+	background-color: #F7F7F7;
+	//margin: 0 auto 10px;
+	//border-radius: 2px;
+	//box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+}
+
+.login input[type=text], input[type=password] {
+	height: 24px;
+	font-size: 11px;
+	width: 100%;
+	margin-bottom: 5px;
+	//-webkit-appearance: none;
+	//background: #fff;
+	//border: 1px solid #d9d9d9;
+	//border-top: 1px solid #c0c0c0;
+	padding: 0 8px;
+	//box-sizing: border-box;
+	//-moz-box-sizing: border-box;
 }
 
 #content {
-    background: #FFFFFF;
-    margin-left: 203px;
-    margin-right: 203px;
+	float: left;
+	width: 800px;
+	backgroud: #d9d9d9;
 }
 
 #leftcolumn {
-    background: #33CCFF;
-    width: 200px;
-    float: left;
-    margin-left:-100%;
+	background: #33CCFF;
+	width: 200px;
+	float: left;
 }
 
 #rightcolumn {
-    background: #CC33FF;
-    width: 200px;
-    float: right;
-    margin-left: -204px;
+	background: #CC33FF;
+	width: 200px;
+	float: right;
 }
 
 #footer {
-    height: 40px;
-    width: 100%;
-    background: #33FF66;
-    clear: both;
+	height: 40px;
+	width: 1200px;
+	background: #33FF66;
+	clear: both;
 }
-
