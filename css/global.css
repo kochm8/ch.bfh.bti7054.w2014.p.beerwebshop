@@ -15,8 +15,8 @@ form {
 
 input {
 	padding: 8px 15px;
-	background: rgba(50, 50, 50, 0.2);
-	border: 0px solid #dbdbdb;
+	//background: rgba(50, 50, 50, 0.2);
+	//border: 0px solid #dbdbdb;
 }
 
 input[type=submit] {
@@ -108,6 +108,6 @@ input[type=submit] {
 #footer {
 	height: 40px;
 	width: 1200px;
-	background: #33FF66;
+	//background: #33FF66;
 	clear: both;
 }
