@@ -36,12 +36,20 @@
 		</div>
 
 		<div id="leftcolumn">
-			<p>Product</p>
-			<p>Product</p>
-			<p>Product</p>
-			<p>Product</p>
-			<p>Product</p>
-			<p>Product</p>
+			<?php //include("Product.php"); 
+			
+				$products = array(
+						array("Name" => "Beer1", "Price" => "1.00", "Quantity" => "5dl"),
+						array("Name" => "Beer2", "Price" => "1.00", "Quantity" => "5dl"),
+						array("Name" => "Beer3", "Price" => "1.00", "Quantity" => "5dl"),
+						array("Name" => "Beer4", "Price" => "1.00", "Quantity" => "5dl")
+				);
+				
+				foreach ($products as $value) {
+					echo $value["Name"]."<br />";
+				}
+							
+			?>
 		</div>
 
 		<div id="content">
@@ -52,7 +60,7 @@
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 				Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed
 				nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
-				ipsum. Praesent mauris. Fusce nec tell/p>
+				ipsum. Praesent mauris. Fusce nec tell</p>
 		</div>
 
 		<div id="footer">

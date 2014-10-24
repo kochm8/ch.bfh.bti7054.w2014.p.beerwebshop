@@ -94,13 +94,13 @@ input[type=submit] {
 }
 
 #leftcolumn {
-	background: #33CCFF;
+	//background: #33CCFF;
 	width: 200px;
 	float: left;
 }
 
 #rightcolumn {
-	background: #CC33FF;
+	//background: #CC33FF;
 	width: 200px;
 	float: right;
 }
