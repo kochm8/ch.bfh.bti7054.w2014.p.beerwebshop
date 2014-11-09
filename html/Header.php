@@ -12,7 +12,6 @@
 		</form>
 	</div>
 
-
 	<div class="login">
 		<form>
 			<input type="text" placeholder="Username" /> 

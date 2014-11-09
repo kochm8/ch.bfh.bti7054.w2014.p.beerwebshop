@@ -10,11 +10,11 @@ p {
 
 form {
 	width: 500px;
-	margin: 20px auto;
+	margin: 0px auto;
 }
 
 input {
-	padding: 8px 15px;
+	padding: 8px 10px;
 	//background: rgba(50, 50, 50, 0.2);
 	//border: 0px solid #dbdbdb;
 }
@@ -39,6 +39,14 @@ input[type=submit] {
 	width: 1200px;
 	//background: #FF6633;
 	border: 1px solid;
+}
+
+#menu {
+	float: left; 
+	height: 50px;
+	width: 1200px;
+	//border: 1px solid;
+	text-align:right;
 }
 
 #logo {
