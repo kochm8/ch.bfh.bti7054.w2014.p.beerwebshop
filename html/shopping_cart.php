@@ -6,7 +6,6 @@
 </head>
 <body>
 	<div id="wrapper">
-
 	<?php include("Header.php"); ?>
 	</div>
 </body>

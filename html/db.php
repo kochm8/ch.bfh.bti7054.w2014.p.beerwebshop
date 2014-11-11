@@ -1,5 +1,30 @@
 <?php
 
+
+class DBHandler extends mysqli {
+	
+	function __construct() {
+		global $db_username;
+		global $db_host;
+		global $db_password;
+		global $db_name;
+	
+		parent::__construct($db_host, $db_username, $db_password);
+		parent::select_db($db_name);
+	}
+	
+	public function getProductById($id){
+		return $this->query("SELECT * FROM products WHERE product_id = '$id'"); 
+	}
+	
+	public  function  getAllProducts(){
+		return $this->query("SELECT * FROM products");
+	}
+	
+}
+
+
+/*
 function execute_query($query){
 
 	global $db_username;
@@ -22,6 +47,5 @@ function execute_query($query){
 	mysql_close($dbhandle);
 
 	return $result;
-}
-
+}*/
 ?>

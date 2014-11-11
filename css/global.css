@@ -1,3 +1,5 @@
+@charset "ISO-8859-1";
+
 body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 11pt;
@@ -118,4 +120,9 @@ input[type=submit] {
 	width: 1200px;
 	//background: #33FF66;
 	clear: both;
+}
+
+.cnt_img{
+	height: auto;
+	width: 150px;
 }
