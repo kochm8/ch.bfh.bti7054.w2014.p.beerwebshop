@@ -1,10 +1,10 @@
 <?php
 session_start ();
-include_once ("config.php");
-include_once ("db.php");
 
-$DBHanlder = new DBHandler ();
-$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+include_once ("init_page.php");
+
+setLanguage("de");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +20,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 	<?php include("Header.php"); ?>
 	
 	<div id="menu">
-			<a id="tdb1" href="shopping_cart.php" role="button" aria-disabled="false">Warenkorb</a>
+			<a id="tdb1" href="shopping_cart.php" role="button" aria-disabled="false"><?php echo $lang['SHOPPING_CART']?></a>
 	</div>
 
 		<div id="leftcolumn">
@@ -42,16 +42,12 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 
 		<div id="rightcolumn">
 		
-		<div class="shopping-cart">
-			Warenkorb
-				
+		<div class="shopping-cart">			
 				<?php
+							
+				echo '<h2>'.$lang['SHOPPING_CART'].'</h2>';
 				
 				$url = $_SERVER ['PHP_SELF'];
-				
-				$code = "Id";
-				$quantity = "Menge";
-				$price = "Preis";
 				
 				if (isset ( $_SESSION ["sidebar_cart"] )) {
 					
@@ -65,19 +61,21 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 							echo '<li class="cart-itm">';
 							echo '<span class="remove-itm"><a href="cart_update.php?id=' . $cart->product_id .'&type=remove'. '&return_url=' . $url . '">&times;</a></span>';
 							echo '<h3>' . $cart->product_name . '</h3>';
-							echo '<div class="p-code">'.$code.': ' . $cart->product_id . '</div>';
-							echo '<div class="p-qty">'.$quantity.': '.$value['quan'] . '</div>';
-							echo '<div class="p-price">'.$price.': CHF ' . $cart->price . '</div>';
+							echo '<div class="p-code">'.'Id'.': ' . $cart->product_id . '</div>';
+							echo '<div class="p-qty">'.$lang['QUANTITY'].': '.$value['quan'] . '</div>';
+							echo '<div class="p-price">'.$lang['PRICE'].': CHF ' . $cart->price . '</div>';
 							echo '</li>';
 							
 							$totalPrice = $totalPrice + ($cart->price * $value['quan']);
 						}
 					}
 					echo '</ol>';
-					echo '<span class="check-out-txt"><strong>Total: CHF ' . $totalPrice . '</strong> <a href="view_cart.php">Check-out!</a></span>';
-					echo '<span class="empty-cart"><a href="cart_update.php?type=clear&return_url=' . $current_url . '">Empty Cart</a></span>';
+					echo '<strong>Total: CHF ' . $totalPrice . '</strong><br /><br />';
+					echo '<a href="view_cart.php">'.$lang['CHECKOUT'].'</a>';
+					echo '<br />';	
+					echo '<a href="cart_update.php?type=clear&return_url=' . $current_url . '">'.$lang['CLEARCART'].'</a>';
 				} else {
-					echo '<br /> Your Cart is empty';
+					echo '<br />' . $lang['EMPTYCART'];
 				}
 				?>
 
@@ -86,7 +84,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 		</div>
 
 		<div id="footer">
-			<p>Footer</p>
+			<p>dfouvhduinbn</p>
 		</div>
 
 	</div>

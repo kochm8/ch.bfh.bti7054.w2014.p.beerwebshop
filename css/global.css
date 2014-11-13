@@ -10,6 +10,11 @@ p {
 	padding: 10px;
 }
 
+a:link { 
+	text-decoration: none;
+	text-underline: none;
+} 
+
 form {
 	width: 500px;
 	margin: 0px auto;

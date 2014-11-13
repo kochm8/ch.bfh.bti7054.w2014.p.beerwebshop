@@ -6,10 +6,6 @@ $return_url = base64_decode ( $_GET ["return_url"] );
 
 if (isset ( $_GET ["type"] ) && $_GET ["type"] == 'add') {
 	
-	/*$new_product = array (
-			array('id'=>'', 'qty'=>'')
-	);*/
-	
 	$product_added = array(array('id'=>$product_id, 'quan'=>'1'));
 	
 	if (isset ( $_SESSION ["sidebar_cart"] ))
@@ -55,7 +51,7 @@ if (isset ( $_GET ["type"] ) && $_GET ["type"] == 'remove' ) {
 
 if (isset ( $_GET ["type"] ) && $_GET ["type"] == 'clear' ) {
 
-	session_destroy();
+	unset($_SESSION["sidebar_cart"]);
 }
 
 header ( 'Location:' . $return_url );

@@ -1,10 +1,9 @@
 <div id="content">
 	
 	<?php
-	
 	//$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 	
-	echo "<p>Produkt</p>";
+	echo "<p>". $lang['PRODUCT']."</p>";
 	
 	if (isset ( $_GET ["id"] )) {
 
@@ -27,7 +26,7 @@
 			
 			echo "<tr>";
 			echo "<td>";
-			echo "Name: ";
+			echo $lang['NAME'].":";
 			echo "</td>";
 			echo "<td>";
 			echo $products->product_name;
@@ -45,7 +44,7 @@
 			
 			echo "<tr>";
 			echo "<td>";
-			echo "Preis CHF: ";
+			echo $lang['PRICE']." CHF: ";
 			echo "</td>";
 			echo "<td>";
 			echo $products->price;
@@ -57,7 +56,7 @@
 	echo "</table>";
 		
 		echo '<form method="get" action="cart_update.php">';
-		echo '<button class="add_to_cart">Add To Cart</button>';
+		echo '<button class="add_to_cart">'.$lang['ADDTOCART'].'</button>';
 		echo '<input type="hidden" name="id" value="'.$_GET ['id'].'" />';
 		echo '<input type="hidden" name="type" value="add" />';
 		echo '<input type="hidden" name="return_url" value="'.$current_url.'" />';
