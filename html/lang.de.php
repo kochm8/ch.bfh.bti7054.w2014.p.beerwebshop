@@ -8,12 +8,13 @@ $lang['LOGIN'] = 'Einloggen';
 $lang['ADDTOCART'] = 'Dem Warenkorb hinzufügen';
 $lang['USER'] = 'Benutzername';
 $lang['PASSWORD'] = 'Passwort';
+$lang['LANGUAGE'] = 'Sprache';
 		
 $lang['QUANTITY'] = 'Menge';
 $lang['PRICE'] = 'Preis';
 $lang['CLEARCART'] = 'Warenkorb leeren';
 $lang['CHECKOUT'] = 'zur Kasse';
-$lang['EMPTYCART'] = '..ist leer';
+$lang['EMPTYCART'] = 'Warenkorb ist leer';
 
 $lang['NAME'] = 'Name';
 

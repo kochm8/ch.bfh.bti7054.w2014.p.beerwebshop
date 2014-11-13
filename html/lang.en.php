@@ -8,6 +8,7 @@ $lang['LOGIN'] = 'Sign in';
 $lang['ADDTOCART'] = 'Add to cart';
 $lang['USER'] = 'Username';
 $lang['PASSWORD'] = 'Password';
+$lang['LANGUAGE'] = 'Language';
 
 $lang['QUANTITY'] = 'Quantity';
 $lang['PRICE'] = 'Price';

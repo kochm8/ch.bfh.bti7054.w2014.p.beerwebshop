@@ -42,13 +42,13 @@
 }
 
 .shopping-cart{
-	float:left;
+	float: right;
 	background: #F0F0F0;
 	padding: 10px;	
 	border: 1px solid #DDD;
 	border-radius: 5px;
 	font-size: 12px;
-	width: 180px;
+	width: 200px;
 
 }
 .shopping-cart h2 {

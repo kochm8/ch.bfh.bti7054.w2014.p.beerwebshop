@@ -45,7 +45,7 @@ input[type=submit] {
 	height: 130px;
 	width: 1200px;
 	//background: #FF6633;
-	border: 1px solid;
+	//border: 1px solid;
 }
 
 #menu {
@@ -86,6 +86,11 @@ input[type=submit] {
 	//border-radius: 2px;
 	//box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 	overflow: hidden;
+	
+	padding: 10px;	
+	border: 1px solid #DDD;
+	border-radius: 5px;
+	font-size: 12px;
 }
 
 .login input[type=text], input[type=password] {
@@ -104,7 +109,7 @@ input[type=submit] {
 
 #content {
 	float: left;
-	width: 800px;
+	width: 700px;
 	backgroud: #d9d9d9;
 }
 
