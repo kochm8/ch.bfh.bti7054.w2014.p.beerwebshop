@@ -22,7 +22,11 @@
 	</div>
 	
 	
-	<?php getLanguageLinks() ?>
+	<?php 
+	
+
+	
+	$language->getLanguageLinks() ?>
 
 
 </div>
