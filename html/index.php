@@ -1,10 +1,8 @@
 <?php
 session_start();   // create or recover session,
-//session_unset();   // ... delete all session variables,
-//ssession_destroy();
 include_once ("init_page.php");
 
-?>
+?>	
 
 <!DOCTYPE html>
 <html>

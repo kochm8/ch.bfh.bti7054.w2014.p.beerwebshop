@@ -21,7 +21,7 @@ class Language {
 	}
 	
 	function setLangCookie($lang) {
-		setcookie ( "Language", $lang, time () + 24 * 60 * 60 );
+		setcookie ( "Language", $lang, time() + 86400, '/' ); // 86400 = 1 day
 	}
 	
 	function setPageLanguage($defaultLang) {
@@ -61,6 +61,7 @@ class Language {
 			$file = 'lang.en.php';
 		}
 		
+		$this->setLangCookie($currLang);
 		include ($file);
 	}
 }
