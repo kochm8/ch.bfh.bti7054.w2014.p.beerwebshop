@@ -8,10 +8,11 @@ include_once ("init_page.php");
 <html>
 
 <head>
-<title>BeerWebshop</title>
-<link rel="stylesheet" type="text/css" href="../css/global.css" />
-<link rel="stylesheet" type="text/css" href="../css/cart.css" />
+	<title>BeerWebshop</title>
+	<link rel="stylesheet" type="text/css" href="../css/global.css" />
+	<link rel="stylesheet" type="text/css" href="../css/cart.css" />
 </head>
+
 <body>
 	<div id="wrapper">
 
@@ -82,7 +83,7 @@ include_once ("init_page.php");
 		</div>
 
 		<div id="footer">
-			<p>dfouvhduinbn</p>
+			<p>&copy;blablabla</p>
 		</div>
 
 	</div>
