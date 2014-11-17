@@ -1,5 +1,7 @@
 <div id="header">
 
+<link rel="shortcut icon" href="../img/favicon.ico">
+
 	<div id="logo">
 		<img src="../img/logo.png">
 	</div>
