@@ -21,7 +21,7 @@ class Language {
 	}
 	
 	function setLangCookie($lang) {
-		setcookie ( "Language", $lang, time() + 86400, '/' ); // 86400 = 1 day
+		setcookie ( "Language", $lang, time() + 86400, '/' ); // 86400 = 1 day, / -> für alle domain zulassen
 	}
 	
 	function setPageLanguage($defaultLang) {
@@ -58,6 +58,8 @@ class Language {
 		if ($currLang == 'de') {
 			$file = 'lang.de.php';
 		} else if ($currLang == 'en') {
+			$file = 'lang.en.php';
+		} else{
 			$file = 'lang.en.php';
 		}
 		
