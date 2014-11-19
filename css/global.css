@@ -16,7 +16,6 @@ a:link {
 } 
 
 form {
-	width: 500px;
 	margin: 0px auto;
 }
 
@@ -29,10 +28,14 @@ input {
 input[type=submit] {
 	position: relative;
 	padding: 6px 15px;
-	left: -8px;
+	//left: -8px;
 	border: 2px solid #207cca;
 	background-color: #207cca;
 	color: #fafafa;
+}
+
+#search_btn{
+	left: -8px;
 }
 
 #wrapper {
@@ -74,7 +77,11 @@ input[type=submit] {
 	width: 200px;
 }
 
-#search_btn {
+.login_input{
+	width: 180px;
+}
+
+#submit {
 	width: 80px;
 }
 
@@ -96,7 +103,7 @@ input[type=submit] {
 .login input[type=text], input[type=password] {
 	height: 24px;
 	font-size: 11px;
-	width: 100%;
+	//width: 100%;
 	margin-bottom: 5px;
 	//-webkit-appearance: none;
 	//background: #fff;

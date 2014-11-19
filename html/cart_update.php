@@ -46,6 +46,22 @@ if (isset ( $_GET ["type"] ) && $_GET ["type"] == 'add') {
 
 if (isset ( $_GET ["type"] ) && $_GET ["type"] == 'remove' ) {
 	
+	if (isset ( $_SESSION ["sidebar_cart"] )){
+		
+		foreach ( $_SESSION ["sidebar_cart"] as $key => $value ) {
+			
+			if ($value['id'] == $product_id){
+				echo "no";
+			}else{
+			
+			$products[] = array('id'=>$value['id'], 'quan'=>$value['quan']);
+			}
+		}
+		
+		$_SESSION ["sidebar_cart"] = $products;
+		
+	}
+	
 
 }
 

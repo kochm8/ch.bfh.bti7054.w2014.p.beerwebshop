@@ -58,7 +58,7 @@ include_once ("init_page.php");
 						while ( $cart = $res->fetch_object () ) {
 							
 							echo '<li class="cart-itm">';
-							echo '<span class="remove-itm"><a href="cart_update.php?id=' . $cart->product_id .'&type=remove'. '&return_url=' . $url . '">&times;</a></span>';
+							echo '<span class="remove-itm"><a href="cart_update.php?id=' . $cart->product_id .'&type=remove'. '&return_url=' . $current_url . '">&times;</a></span>';
 							echo '<h3>' . $cart->product_name . '</h3>';
 							echo '<div class="p-code">'.'Id'.': ' . $cart->product_id . '</div>';
 							echo '<div class="p-qty">'.$lang['QUANTITY'].': '.$value['quan'] . '</div>';
