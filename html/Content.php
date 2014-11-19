@@ -3,9 +3,10 @@
 	<?php
 	//$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 	
-	echo "<p>". $lang['PRODUCT']."</p>";
 	
 	if (isset ( $_GET ["id"] )) {
+		
+		echo "<p>". $lang['PRODUCT']."</p>";
 
 		$product_id = $_GET ["id"];
 			
@@ -35,7 +36,7 @@
 			
 			echo "<tr>";
 			echo "<td>";
-			echo '<img class="cnt_img" src="../img/beer/'.$products->product_img_name.'" alt="B1" ">';
+			echo '<img class="cnt_img" src="../img/beer/'.$products->product_img_name.'" alt="'.$products->product_img_name.'" ">';
 			echo "</td>";
 			echo "<td>";
 			echo $products->product_desc;
@@ -63,6 +64,8 @@
 		echo '</form>';
 		
 		
+	}else{
+		echo "<h1>Welcome</h1>";
 	}
 	
 	?>
