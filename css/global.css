@@ -45,7 +45,7 @@ input[type=submit] {
 
 #header {
 	float: left;
-	height: 130px;
+	height: 180px;
 	width: 1200px;
 	//background: #FF6633;
 	//border: 1px solid;
@@ -67,10 +67,11 @@ input[type=submit] {
 
 #search {
 	float: left;
-	width: 310px;
-	margin-left: 200px;
+	width: 750px;
+	//margin-left: 200px;
 	margin-top: 60px; 
 	//background: #ff80c0;
+	text-align: center;
 }
 
 #search_input {
@@ -98,6 +99,14 @@ input[type=submit] {
 	border: 1px solid #DDD;
 	border-radius: 5px;
 	font-size: 12px;
+}
+
+.login h2 {
+	background: #E2E2E2;
+	padding: 4px;
+	font-size: 14px;
+	margin: -10px -10px 5px;
+	color: #707070;
 }
 
 .login input[type=text], input[type=password] {

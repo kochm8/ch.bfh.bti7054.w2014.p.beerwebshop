@@ -1,6 +1,6 @@
 <div id="header">
 
-	<link rel="shortcut icon" href="../img/favicon.ico">
+
 
 	<div id="logo">
 		<img src="../img/logo.png">
@@ -15,6 +15,7 @@
 	</div>
 
 	<div class="login">
+	<h2>Login</h2><br />
 		<form>
 			<input class="login_input" type="text" placeholder="<?php echo $lang['USER']?>" /> 
 			<input class="login_input" type="password" placeholder="<?php echo $lang['PASSWORD']?>" />

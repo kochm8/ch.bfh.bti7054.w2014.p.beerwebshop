@@ -110,4 +110,6 @@
 	font-size: 12px;
 	font-weight: bold;
 }
-.view-cart .product-info{width:60%;}
+.view-cart .product-info{
+	width:60%;
+}
