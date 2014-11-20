@@ -1,8 +1,6 @@
 <div id="content">
 	
 	<?php
-	//$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-	
 	
 	if (isset ( $_GET ["id"] )) {
 		
@@ -10,7 +8,8 @@
 
 		$product_id = $_GET ["id"];
 			
-		$res = $DBHanlder->getProductById($product_id);
+		$_db = DBHandler::getInstance ();
+		$res = $_db->getProductById($product_id);
 		
 		echo "<table>";
 

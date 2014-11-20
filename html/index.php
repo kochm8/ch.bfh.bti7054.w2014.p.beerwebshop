@@ -1,6 +1,6 @@
 <?php
-session_start();   // create or recover session,
-include_once ("init_page.php");
+
+include("init_page.php");
 
 ?>	
 
@@ -20,29 +20,18 @@ include_once ("init_page.php");
 	<?php include("Header.php"); ?>
 	
 	<div id="menu">
-			<a id="tdb1" href="shopping_cart.php" role="button" aria-disabled="false"><?php echo $lang['SHOPPING_CART']?></a>
+		<a id="tdb1" href="shopping_cart.php" role="button" aria-disabled="false"><?php echo $lang['SHOPPING_CART']?></a>
 	</div>
 
 		<div id="leftcolumn">
-		<?php
-		
-		$res = $DBHanlder->getAllProducts ();
-		while ( $products = $res->fetch_object () ) {
-			$url = $_SERVER ['PHP_SELF'];
-			$url = $url . "?id=" . $products->product_id;
-			echo "<a href=\"$url\">" . $products->product_name . "</a>";
-			echo "<br />";
-		}
-		
-		?>
-
-	</div>
+			<?php Product::getProductLinks();?>
+		</div>
 
 		<?php include("Content.php");  ?>
 
 		<div id="rightcolumn">
 		
-		<div class="shopping-cart">			
+			<div class="shopping-cart">			
 				<?php
 							
 				echo '<h2>'.$lang['SHOPPING_CART'].'</h2>';
@@ -52,10 +41,11 @@ include_once ("init_page.php");
 				if (isset ( $_SESSION ["sidebar_cart"] )) {
 					
 					$totalPrice = 0;
+					$_db = DBHandler::getInstance ();
 					echo '<ol>';
 					foreach ( $_SESSION ["sidebar_cart"] as $key => $value ) {
 												
-						$res = $DBHanlder->getProductById ( $value['id'] );
+						$res = $_db->getProductById ( $value['id'] );
 						while ( $cart = $res->fetch_object () ) {
 							
 							echo '<li class="cart-itm">';

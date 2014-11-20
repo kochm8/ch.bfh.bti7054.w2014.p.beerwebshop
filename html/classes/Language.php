@@ -1,6 +1,7 @@
 <?php
 class Language {
 	
+	
 	public function __construct($defaultLang){
 		
 		if( $this->getLangCookie() == NULL ){
@@ -14,12 +15,22 @@ class Language {
 		
 	}
 	
+	
+	
+/*
+ * Get the browser cookie
+ */
 	function getLangCookie() {
 		if (isset($_COOKIE["Language"])){
 			return $_COOKIE["Language"];
 		}
 	}
 	
+	
+	
+/*
+ * Set the browser cookie with livetime 1 day
+ */
 	function setLangCookie($lang) {
 		setcookie ( "Language", $lang, time() + 86400, '/' ); // 86400 = 1 day, / -> für alle domain zulassen
 	}
@@ -30,6 +41,11 @@ class Language {
 		$this->importLangFile ();
 	}
 	
+	
+	
+/*
+ * print the langugae links
+ */
 	function getLanguageLinks() {
 		$url = $_SERVER ['PHP_SELF'];
 		
@@ -46,6 +62,11 @@ class Language {
 		$this->importLangFile ();
 	}
 	
+	
+	
+/*
+ * import the language file
+ */
 	function importLangFile() {
 		if (isset ( $_GET ['lan'] )) {
 			$currLang = $_GET ['lan'];
@@ -56,11 +77,11 @@ class Language {
 		$currLang = $_SESSION ['lang'];
 		
 		if ($currLang == 'de') {
-			$file = 'lang.de.php';
+			$file = '/language/lang.de.php';
 		} else if ($currLang == 'en') {
-			$file = 'lang.en.php';
+			$file = '/language/lang.en.php';
 		} else{
-			$file = 'lang.en.php';
+			$file = '/language/lang.en.php';
 		}
 		
 		$this->setLangCookie($currLang);

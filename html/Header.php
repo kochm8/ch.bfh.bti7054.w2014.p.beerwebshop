@@ -1,6 +1,6 @@
 <div id="header">
 
-
+<?php $user = new User(); ?>
 
 	<div id="logo">
 		<img src="../img/logo.png">
@@ -15,13 +15,26 @@
 	</div>
 
 	<div class="login">
-	<h2>Login</h2><br />
-		<form>
-			<input class="login_input" type="text" placeholder="<?php echo $lang['USER']?>" /> 
-			<input class="login_input" type="password" placeholder="<?php echo $lang['PASSWORD']?>" />
+	
+<!-- User is logged in -->
+		<?php if($user->isLoggedIn()) { ?>
+		<h2>Account</h2><br />
+		Welcome <?php echo $user->data()['firstname']; ?> <br />
+		Account: <?php echo $user->data()['username'];?> <br />  <br />
+		<a href="logout.php">Log out</a>
+		<?php }?>
+
+<!-- User isn't logged in -->
+		<?php if(!$user->isLoggedIn()) { ?>
+		<h2>Login</h2><br />
+		<form action="login.php" method="post" >
+			<input class="login_input" type="text" name="username" placeholder="<?php echo $lang['USER']?>" /> 
+			<input class="login_input" type="password" name="password" placeholder="<?php echo $lang['PASSWORD']?>" />
 			<input class="submit" type="submit" value="<?php echo $lang['LOGIN']?>" />
 		</form>
-		<!-- <a href="#">Register</a> • <a href="#">Forgot Password</a> -->
+		<a href="register.php">Register</a>
+		<?php }?>
+		
 	</div>
 	
 	<?php $language->getLanguageLinks() ?>
