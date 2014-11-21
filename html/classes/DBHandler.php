@@ -24,10 +24,25 @@ class DBHandler extends mysqli {
 	
 	
 	/*
+	 * get products by category id
+	 */
+	public function getProductsByCategoryId($id){
+		return $this->query("SELECT * FROM products WHERE category_id = '$id'");
+	}
+	
+	
+	/*
 	 * get all products
 	 */
 	public  function  getAllProducts(){
 		return $this->query("SELECT * FROM products");
+	}
+	
+	/*
+	 * get all categories
+	 */
+	public  function  getAllCategories(){
+		return $this->query("SELECT * FROM category");
 	}
 
 	

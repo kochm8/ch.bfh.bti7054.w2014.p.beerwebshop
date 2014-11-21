@@ -8,7 +8,7 @@ include("init_page.php");
 <html>
 
 <head>
-	<title>BeerWebshop</title>
+	<title>BeerHeaven</title>
 	<link rel="stylesheet" type="text/css" href="../css/global.css" />
 	<link rel="stylesheet" type="text/css" href="../css/cart.css" />
 	<link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,8 +20,8 @@ include("init_page.php");
 		<?php include("Header.php"); ?>
 
 		<div id="leftcolumn">
-			<h2>Products</h2>
-			<?php Product::getProductLinks();?>
+			<h2>Categories</h2>
+			<?php Category::getCategoryLinks();?>
 		</div>
 
 		<?php include("Content.php");  ?>

@@ -6,10 +6,10 @@
 		
 		echo "<p>". $lang['PRODUCT']."</p>";
 
-		$product_id = $_GET ["id"];
+		$category_id = $_GET ["id"];
 			
 		$_db = DBHandler::getInstance ();
-		$res = $_db->getProductById($product_id);
+		$res = $_db->getProductsByCategoryId($category_id);
 		
 		echo "<table>";
 
