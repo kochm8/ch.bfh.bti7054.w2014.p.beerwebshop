@@ -64,7 +64,7 @@
 		
 		
 	}else{
-		echo "<h1>Welcomeeeeeeeeeeeeeeeeeeeee</h1>";
+		echo "<h1>Welcome</h1>";
 	}
 	
 	?>
