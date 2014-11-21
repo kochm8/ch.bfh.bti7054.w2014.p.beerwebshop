@@ -24,7 +24,7 @@ class DBHandler extends mysqli {
 	
 	
 	/*
-	 * get products by category id
+	 * get products by category idyolo
 	 */
 	public function getProductsByCategoryId($id){
 		return $this->query("SELECT * FROM products WHERE category_id = '$id'");

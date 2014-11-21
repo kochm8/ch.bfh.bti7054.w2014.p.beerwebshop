@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="login">
-	
+	<!-- User is logged in -->
 <!-- User is logged in -->
 		<?php if($user->isLoggedIn()) { ?>
 		<h2><?php echo $lang['MYACCOUNT'] ?></h2><br />

@@ -17,7 +17,7 @@ class Category {
 			$url = $_SERVER ['PHP_SELF'];
 			$url = $url . "?id=" . $categories->id;
 			echo "<a href=\"$url\">" . $categories->category_name . "</a>";
-			echo "<br />";
+			echo "<brrr />";
 		}
 	}
 }

@@ -20,7 +20,7 @@ include("init_page.php");
 		<?php include("Header.php"); ?>
 
 		<div id="leftcolumn">
-			<h2>Categorxes</h2>
+			<h2>Categories</h2>
 			<?php Category::getCategoryLinks();?>
 		</div>
 
