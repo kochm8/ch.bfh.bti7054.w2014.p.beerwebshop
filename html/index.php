@@ -17,13 +17,10 @@ include("init_page.php");
 <body>
 	<div id="wrapper">
 
-	<?php include("Header.php"); ?>
-	
-	<div id="menu">
-		<a id="tdb1" href="shopping_cart.php" role="button" aria-disabled="false"><?php echo $lang['SHOPPING_CART']?></a>
-	</div>
+		<?php include("Header.php"); ?>
 
 		<div id="leftcolumn">
+			<h2>Products</h2>
 			<?php Product::getProductLinks();?>
 		</div>
 
@@ -74,7 +71,7 @@ include("init_page.php");
 		</div>
 
 		<div id="footer">
-			<p>&copy;blablabla</p>
+			<p>&copy;KoekProductions</p>
 		</div>
 
 	</div>
