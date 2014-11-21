@@ -12,7 +12,6 @@ class Language {
 		}
 
 		$this->setPageLanguage($language);
-		
 	}
 	
 	

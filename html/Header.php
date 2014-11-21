@@ -18,10 +18,10 @@
 	
 <!-- User is logged in -->
 		<?php if($user->isLoggedIn()) { ?>
-		<h2>Account</h2><br />
+		<h2><?php echo $lang['MYACCOUNT'] ?></h2><br />
 		Welcome <?php echo $user->data()['firstname']; ?> <br />
 		Account: <?php echo $user->data()['username'];?> <br />  <br />
-		<a href="logout.php">Log out</a>
+		<a href="logout.php"><?php echo $lang['LOGOUT'] ?></a>
 		<?php }?>
 
 <!-- User isn't logged in -->
@@ -32,7 +32,7 @@
 			<input class="login_input" type="password" name="password" placeholder="<?php echo $lang['PASSWORD']?>" />
 			<input class="submit" type="submit" value="<?php echo $lang['LOGIN']?>" />
 		</form>
-		<a href="register.php">Register</a>
+		<a href="register.php"><?php echo $lang['REGISTER'] ?></a>
 		<?php }?>
 		
 	</div>

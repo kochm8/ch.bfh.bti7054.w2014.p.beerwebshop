@@ -14,12 +14,14 @@ class DBHandler extends mysqli {
 		parent::select_db($db_name);
 	}
 	
+	
 	/*
 	 * get product by ID
 	 */
 	public function getProductById($id){
 		return $this->query("SELECT * FROM products WHERE product_id = '$id'"); 
 	}
+	
 	
 	/*
 	 * get all products
@@ -29,25 +31,36 @@ class DBHandler extends mysqli {
 	}
 
 	
+	/*
+	 * create login
+	 */
 	public  function createUser($username, $password, $firstname, $lastname, $salt ){
 		return $this->query("insert into users (username, password, firstname, lastname, salt) values('$username', '$password', '$firstname', '$lastname', '$salt');");
 	}
 	
+	
+	/*
+	 *  get user by username
+	 */
 	public function getUserByUsername($username){
 		$result = $this->query("SELECT * FROM users where username = '$username';");
-		//echo "SELECT * FROM users where username = '$username';";
 		return $this->fetchSingleRow($result);
 	}
 	
+	
+	/*
+	 * get single row
+	 */
 	public function fetchSingleRow($result){
 		
 		$row = mysqli_fetch_assoc($result);
 		return $row;
-		
 	}
 	
 	
-
+	/*
+	 * get instance
+	 */
 	public static function getInstance() {
 		if(!isset(self::$_instance)) {
 			self::$_instance = new DBHandler();

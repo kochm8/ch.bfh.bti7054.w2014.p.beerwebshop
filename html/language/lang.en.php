@@ -17,6 +17,9 @@ $lang['CHECKOUT'] = 'Check out';
 $lang['EMPTYCART'] = 'Your cart is empty';
 
 $lang['NAME'] = 'Name';
+$lang['REGISTER'] = 'register';
+$lang['MYACCOUNT'] = 'My account';
+$lang['LOGOUT'] = 'Log out';
 
 $GLOBALS["lang"] = $lang;
 ?>
