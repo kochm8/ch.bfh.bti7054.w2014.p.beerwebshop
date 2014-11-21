@@ -34,7 +34,11 @@ class Language {
 	function setLangCookie($lang) {
 		setcookie ( "Language", $lang, time() + 86400, '/' ); // 86400 = 1 day, / -> für alle domain zulassen
 	}
+
 	
+/*
+ * set the session
+ */
 	function setPageLanguage($defaultLang) {
 		$_SESSION ['lang'] = $defaultLang;
 		

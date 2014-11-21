@@ -3,8 +3,7 @@
 session_start();
 include_once ("database/config.php");
 
-
-include_once ("classes/DBHandler.php");
+include_once("classes/DBHandler.php");
 include_once("classes/Language.php");
 include_once("classes/Product.php");
 include_once("classes/User.php");

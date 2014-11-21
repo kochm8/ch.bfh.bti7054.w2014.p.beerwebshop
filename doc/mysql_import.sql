@@ -26,6 +26,3 @@ CREATE TABLE users(
 	salt varchar(32) NOT NULL,
 	PRIMARY KEY (id)
 );
-
-insert into users (username, password, firstname, lastname) values('test1', 'test1', 'fgh', 'fgh');
-insert into users (username, password, firstname, lastname) values('test2', 'test2', 'asd', 'asd');
