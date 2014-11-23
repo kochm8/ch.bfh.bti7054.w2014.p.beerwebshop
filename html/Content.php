@@ -6,21 +6,21 @@
 		
 		echo "<p>". $lang['PRODUCT']."</p>";
 
-		$category_id = $_GET ["id"];
+		$category_ID = $_GET ["id"];
 			
 		$_db = DBHandler::getInstance ();
-		$res = $_db->getProductsByCategoryId($category_id);
-		
-		echo "<table>";
+		$res = $_db->getProductsByCategoryId($category_ID);
 
-		while ( $products = $res->fetch_object () ) {
+		while ( $beer = $res->fetch_object () ) {
 
+			echo "<table>";
+			
 			echo "<tr>";
 			echo "<td>";
 			echo "Id: ";
 			echo "</td>";
 			echo "<td>";
-			echo $products->product_id;
+			echo $beer->beer_ID;
 			echo "</td>";
 			echo "</tr>";
 			
@@ -29,16 +29,16 @@
 			echo $lang['NAME'].":";
 			echo "</td>";
 			echo "<td>";
-			echo $products->product_name;
+			echo $beer->beer_name;
 			echo "</td>";
 			echo "</tr>";
 			
 			echo "<tr>";
 			echo "<td>";
-			echo '<img class="cnt_img" src="../img/beer/'.$products->product_img_name.'" alt="'.$products->product_img_name.'" ">';
+			echo '<img class="cnt_img" src="../img/beer/'.$beer->beer_image.'" alt="'.$beer->beer_image.'" ">';
 			echo "</td>";
 			echo "<td>";
-			echo $products->product_desc;
+			echo $beer->beer_desc;
 			echo "</td>";
 			echo "</tr>";
 			
@@ -47,13 +47,15 @@
 			echo $lang['PRICE']." CHF: ";
 			echo "</td>";
 			echo "<td>";
-			echo $products->price;
+			echo $beer->beer_price;
 			echo "</td>";
 			echo "</tr>";
 			
+			echo "</table>";
+			
+			echo "<hr>";
+			
 		}
-
-	echo "</table>";
 		
 		echo '<form method="get" action="cart_update.php">';
 		echo '<button class="add_to_cart">'.$lang['ADDTOCART'].'</button>';
@@ -64,7 +66,9 @@
 		
 		
 	}else{
+		
 		echo "<h1>Welcome</h1>";
+		
 	}
 	
 	?>

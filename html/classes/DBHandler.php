@@ -19,7 +19,7 @@ class DBHandler extends mysqli {
 	 * get product by ID
 	 */
 	public function getProductById($id){
-		return $this->query("SELECT * FROM products WHERE product_id = '$id'"); 
+		return $this->query("SELECT * FROM beer WHERE beer_ID = '$id'"); 
 	}
 	
 	
@@ -27,7 +27,7 @@ class DBHandler extends mysqli {
 	 * get products by category id
 	 */
 	public function getProductsByCategoryId($id){
-		return $this->query("SELECT * FROM products WHERE category_id = '$id'");
+		return $this->query("SELECT * FROM beer WHERE FK_categoryID = '$id'");
 	}
 	
 	
@@ -35,7 +35,7 @@ class DBHandler extends mysqli {
 	 * get all products
 	 */
 	public  function  getAllProducts(){
-		return $this->query("SELECT * FROM products");
+		return $this->query("SELECT * FROM beer");
 	}
 	
 	/*
@@ -50,7 +50,7 @@ class DBHandler extends mysqli {
 	 * create login
 	 */
 	public  function createUser($username, $password, $firstname, $lastname, $salt ){
-		return $this->query("insert into users (username, password, firstname, lastname, salt) values('$username', '$password', '$firstname', '$lastname', '$salt');");
+		return $this->query("insert into user (username, password, firstname, lastname, salt) values('$username', '$password', '$firstname', '$lastname', '$salt');");
 	}
 	
 	
@@ -58,7 +58,7 @@ class DBHandler extends mysqli {
 	 *  get user by username
 	 */
 	public function getUserByUsername($username){
-		$result = $this->query("SELECT * FROM users where username = '$username';");
+		$result = $this->query("SELECT * FROM user where username = '$username';");
 		return $this->fetchSingleRow($result);
 	}
 	
