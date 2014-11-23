@@ -2,9 +2,10 @@
 $lang = array ();
 
 $lang['SHOPPING_CART'] = 'Shopping Cart';
-$lang['PRODUCT'] = 'Product';
+$lang['BEER'] = 'Beer';
+$lang['NEWBEERS'] = 'New Beers';
 $lang['COUNTRY'] = 'Country';
-$lang['SIZE'] = 'Size';
+$lang['CONTENT'] = 'Content';
 $lang['SEARCH'] = 'Search';
 $lang['LOGIN'] = 'Sign in';
 $lang['ADDTOCART'] = 'Add to cart';

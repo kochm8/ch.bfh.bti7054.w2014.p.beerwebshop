@@ -2,9 +2,10 @@
 
 $lang = array();
 $lang['SHOPPING_CART'] = 'Warenkorb';
-$lang['PRODUCT'] = 'Produkt';
+$lang['BEER'] = 'Bier';
+$lang['NEWBEERS'] = 'Neue Biere';
 $lang['COUNTRY'] = 'Land';
-$lang['SIZE'] = 'Grösse';
+$lang['CONTENT'] = 'Inhalt';
 $lang['SEARCH'] = 'Suchen';
 $lang['LOGIN'] = 'Einloggen';
 $lang['ADDTOCART'] = 'Dem Warenkorb hinzufügen';

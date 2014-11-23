@@ -149,6 +149,6 @@ input[type=submit] {
 }
 
 .cnt_img{
-	height: auto;
-	width: 150px;
+	height: 50px;
+	width: 50px;
 }

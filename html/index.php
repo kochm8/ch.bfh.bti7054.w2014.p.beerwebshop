@@ -21,7 +21,12 @@ include("init_page.php");
 
 		<div id="leftcolumn">
 			<h2>Categories</h2>
-			<?php Category::getCategoryLinks();?>
+			<?php
+				$url = $_SERVER ['PHP_SELF'];
+				echo "<a href=\"$url\">" . $lang['NEWBEERS'] . "</a>";
+				echo "<br />";
+				Category::getCategoryLinks();
+			?>
 		</div>
 
 		<?php include("Content.php");  ?>
@@ -31,7 +36,7 @@ include("init_page.php");
 			<div class="shopping-cart">			
 				<?php
 							
-				echo '<h2>'.$lang['SHOPPING_CART'].'</h2>';
+				echo '<h2>' . $lang['SHOPPING_CART'] . '</h2>';
 				
 				$url = $_SERVER ['PHP_SELF'];
 				
@@ -49,8 +54,8 @@ include("init_page.php");
 							echo '<span class="remove-itm"><a href="cart_update.php?id=' . $cart->beer_ID .'&type=remove'. '&return_url=' . $current_url . '">&times;</a></span>';
 							echo '<h3>' . $cart->beer_name . '</h3>';
 							echo '<div class="p-code">'.'Id'.': ' . $cart->beer_ID . '</div>';
-							echo '<div class="p-qty">'.$lang['QUANTITY'].': '.$value['quan'] . '</div>';
-							echo '<div class="p-price">'.$lang['PRICE'].': CHF ' . $cart->beer_price . '</div>';
+							echo '<div class="p-qty">' . $lang['QUANTITY'].': ' . $value['quan'] . '</div>';
+							echo '<div class="p-price">' . $lang['PRICE'].': CHF ' . $cart->beer_price . '</div>';
 							echo '</li>';
 							
 							$totalPrice = $totalPrice + ($cart->beer_price * $value['quan']);

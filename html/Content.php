@@ -4,7 +4,7 @@
 	
 	if (isset ( $_GET ["id"] )) {
 		
-		echo "<p>". $lang['PRODUCT']."</p>";
+		echo "<h1>" . $lang['BEER'] . "</h1>";
 
 		$category_ID = $_GET ["id"];
 			
@@ -17,7 +17,7 @@
 			
 			echo "<tr>";
 			echo "<td>";
-			echo $lang['NAME'].":";
+			echo $lang['NAME']. ":";
 			echo "</td>";
 			echo "<td>";
 			echo $beer->beer_name;
@@ -26,7 +26,7 @@
 			
 			echo "<tr>";
 			echo "<td>";
-			echo $lang['COUNTRY'].":";
+			echo $lang['COUNTRY'] . ":";
 			echo "</td>";
 			echo "<td>";
 			echo $beer->beer_country;
@@ -35,16 +35,16 @@
 			
 			echo "<tr>";
 			echo "<td>";
-			echo $lang['SIZE'].":";
+			echo $lang['CONTENT'] . ":";
 			echo "</td>";
 			echo "<td>";
-			echo $beer->beer_size."cl";
+			echo $beer->beer_size."cl | " . $beer->beer_alcohol . "%";
 			echo "</td>";
 			echo "</tr>";
 
 			echo "<tr>";
 			echo "<td>";
-			echo $lang['PRICE']." CHF: ";
+			echo $lang['PRICE'] . " CHF: ";
 			echo "</td>";
 			echo "<td>";
 			echo $beer->beer_price;
@@ -52,8 +52,8 @@
 			echo "</tr>";
 			
 			echo "<tr>";
-			echo "<td>";
-			echo '<img class="cnt_img" src="../img/beer/'.$beer->beer_image.'" alt="'.$beer->beer_image.'" ">';
+			echo "<td align='center' width='150'>";
+			echo '<img src="../img/beer/' . $beer->beer_image . '" alt="' . $beer->beer_name . '" height="150">';
 			echo "</td>";
 			echo "<td>";
 			echo $beer->beer_desc;
@@ -62,21 +62,20 @@
 			
 			echo "</table>";
 			
+			echo '<form method="get" action="cart_update.php">';
+			echo '<button class="add_to_cart">' . $lang['ADDTOCART'] . '</button>';
+			echo '<input type="hidden" name="id" value="' . $beer->beer_ID . '" />';
+			echo '<input type="hidden" name="type" value="add" />';
+			echo '<input type="hidden" name="return_url" value="' . $current_url . '" />';
+			echo '</form>';
+			
 			echo "<hr>";
 			
-		}
-		
-		echo '<form method="get" action="cart_update.php">';
-		echo '<button class="add_to_cart">'.$lang['ADDTOCART'].'</button>';
-		echo '<input type="hidden" name="id" value="'.$_GET ['id'].'" />';
-		echo '<input type="hidden" name="type" value="add" />';
-		echo '<input type="hidden" name="return_url" value="'.$current_url.'" />';
-		echo '</form>';
-		
+		}	
 		
 	}else{
 		
-		echo "<h1>Welcome</h1>";
+		echo "<h1>" . $lang['NEWBEERS'] . "</h1>";
 		
 	}
 	
