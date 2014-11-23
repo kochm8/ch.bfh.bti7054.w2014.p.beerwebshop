@@ -17,15 +17,6 @@
 			
 			echo "<tr>";
 			echo "<td>";
-			echo "Id: ";
-			echo "</td>";
-			echo "<td>";
-			echo $beer->beer_ID;
-			echo "</td>";
-			echo "</tr>";
-			
-			echo "<tr>";
-			echo "<td>";
 			echo $lang['NAME'].":";
 			echo "</td>";
 			echo "<td>";
@@ -35,19 +26,37 @@
 			
 			echo "<tr>";
 			echo "<td>";
-			echo '<img class="cnt_img" src="../img/beer/'.$beer->beer_image.'" alt="'.$beer->beer_image.'" ">';
+			echo $lang['COUNTRY'].":";
 			echo "</td>";
 			echo "<td>";
-			echo $beer->beer_desc;
+			echo $beer->beer_country;
 			echo "</td>";
 			echo "</tr>";
 			
+			echo "<tr>";
+			echo "<td>";
+			echo $lang['SIZE'].":";
+			echo "</td>";
+			echo "<td>";
+			echo $beer->beer_size."cl";
+			echo "</td>";
+			echo "</tr>";
+
 			echo "<tr>";
 			echo "<td>";
 			echo $lang['PRICE']." CHF: ";
 			echo "</td>";
 			echo "<td>";
 			echo $beer->beer_price;
+			echo "</td>";
+			echo "</tr>";
+			
+			echo "<tr>";
+			echo "<td>";
+			echo '<img class="cnt_img" src="../img/beer/'.$beer->beer_image.'" alt="'.$beer->beer_image.'" ">';
+			echo "</td>";
+			echo "<td>";
+			echo $beer->beer_desc;
 			echo "</td>";
 			echo "</tr>";
 			

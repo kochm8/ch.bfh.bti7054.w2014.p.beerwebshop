@@ -3,6 +3,8 @@ $lang = array ();
 
 $lang['SHOPPING_CART'] = 'Shopping Cart';
 $lang['PRODUCT'] = 'Product';
+$lang['COUNTRY'] = 'Country';
+$lang['SIZE'] = 'Size';
 $lang['SEARCH'] = 'Search';
 $lang['LOGIN'] = 'Sign in';
 $lang['ADDTOCART'] = 'Add to cart';
