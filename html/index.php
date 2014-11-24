@@ -53,7 +53,6 @@ include("init_page.php");
 							echo '<li class="cart-itm">';
 							echo '<span class="remove-itm"><a href="cart_update.php?id=' . $cart->beer_ID .'&type=remove'. '&return_url=' . $current_url . '">&times;</a></span>';
 							echo '<h3>' . $cart->beer_name . '</h3>';
-							echo '<div class="p-code">'.'Id'.': ' . $cart->beer_ID . '</div>';
 							echo '<div class="p-qty">' . $lang['QUANTITY'].': ' . $value['quan'] . '</div>';
 							echo '<div class="p-price">' . $lang['PRICE'].': CHF ' . $cart->beer_price . '</div>';
 							echo '</li>';

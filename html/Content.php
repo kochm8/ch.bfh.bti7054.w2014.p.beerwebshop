@@ -2,11 +2,11 @@
 	
 	<?php
 	
-	if (isset ( $_GET ["id"] )) {
+	if (isset ( $_GET ["categoryid"] )) {
 		
 		echo "<h1>" . $lang['BEER'] . "</h1>";
 
-		$category_ID = $_GET ["id"];
+		$category_ID = $_GET ["categoryid"];
 			
 		$_db = DBHandler::getInstance ();
 		$res = $_db->getProductsByCategoryId($category_ID);
@@ -72,6 +72,10 @@
 			echo "<hr>";
 			
 		}	
+		
+	} elseif (isset ( $_GET ["todo"] )) {
+		
+		include("register.php");
 		
 	}else{
 		

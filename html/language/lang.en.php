@@ -20,7 +20,7 @@ $lang['CHECKOUT'] = 'Check out';
 $lang['EMPTYCART'] = 'Your cart is empty';
 
 $lang['NAME'] = 'Name';
-$lang['REGISTER'] = 'register';
+$lang['REGISTER'] = 'Register';
 $lang['MYACCOUNT'] = 'My account';
 $lang['LOGOUT'] = 'Log out';
 

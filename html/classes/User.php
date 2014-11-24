@@ -37,11 +37,16 @@ class User {
 	}
 
 
-	public function login($username = null, $password = null) {
+	public function login($username, $password) {
 		
 		$data = $this->_db->getUserByUsername($username);
 
-		if ($data['password'] === Hash::make($password, $data['salt'])){
+		print $data['username'] . "<br>";
+		print $data['password'] . "<br>";
+		print $username . "<br>";
+		print Hash::make($password, $data['salt']);
+		
+		if ($data['password'] == Hash::make($password, $data['salt'])){
 			Session::put($this->_sessionName, $data['username']);
 			return true;
 		}else{

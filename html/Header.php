@@ -32,8 +32,11 @@
 			<input class="login_input" type="password" name="password" placeholder="<?php echo $lang['PASSWORD']?>" />
 			<input class="submit" type="submit" value="<?php echo $lang['LOGIN']?>" />
 		</form>
-		<a href="register.php"><?php echo $lang['REGISTER'] ?></a>
-		<?php }?>
+		<?php
+		$url = $_SERVER ['PHP_SELF'];
+		$url = $url . "?todo=register";
+		echo "<a href='" . $url . "'>" . $lang['REGISTER'] . "</a>" ?>
+		<?php } ?>
 		
 	</div>
 	
