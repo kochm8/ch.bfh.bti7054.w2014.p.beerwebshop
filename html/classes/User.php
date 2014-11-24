@@ -44,9 +44,9 @@ class User {
 		print $data['username'] . "<br>";
 		print $data['password'] . "<br>";
 		print $username . "<br>";
-		print Hash::make($password, $data['salt']);
+		print substr(Hash::make($password, $data['salt']), 0, 50);
 		
-		if ($data['password'] == Hash::make($password, $data['salt'])){
+		if ($data['password'] == substr(Hash::make($password, $data['salt']), 0, 50)){
 			Session::put($this->_sessionName, $data['username']);
 			return true;
 		}else{

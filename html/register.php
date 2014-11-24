@@ -5,7 +5,6 @@ include("init_page.php");
 if (Input::get('username') != '') {
 	$user = new User();
 	$salt = Hash::salt(32);
-	echo $salt;
 	$user->create(Input::get('username'), Hash::make(Input::get('password'), $salt), Input::get('firstname'), Input::get('lastname'), $salt);
 	
 	$url = $_SERVER ['PHP_SELF'];

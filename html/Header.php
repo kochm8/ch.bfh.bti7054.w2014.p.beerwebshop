@@ -1,6 +1,6 @@
 <div id="header">
 
-<?php $user = new User(); ?>
+   <?php $user = new User(); ?>
 
 	<div id="logo">
 		<img src="../img/logo.png">

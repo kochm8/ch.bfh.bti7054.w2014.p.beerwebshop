@@ -18,6 +18,7 @@ if((Input::get('username') != '') && (Input::get('password') != '')){
 	}
 }
 
-// $url = $_SERVER ['PHP_SELF'];
-// header ( 'Location:' . $url );
+
+// $ret_url = "http://localhost/webshop/ch.bfh.bti7054.w2014.p.beerwebshop/html/index.php";
+// header ( 'Location:' . $ret_url );
 ?>
