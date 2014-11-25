@@ -19,8 +19,9 @@
 <!-- User is logged in -->
 		<?php if($user->isLoggedIn()) { ?>
 		<h2><?php echo $lang['MYACCOUNT'] ?></h2><br />
-		Welcome <?php echo $user->data()['firstname']; ?> <br />
-		Account: <?php echo $user->data()['username'];?> <br />  <br />
+		<b>Account: <?php echo $user->data()['username'];?></b><br /><br />
+		<?php echo $user->data()['firstname']."&nbsp;".$user->data()['lastname']; ?> <br />
+		<br />  <br />
 		<a href="logout.php"><?php echo $lang['LOGOUT'] ?></a>
 		<?php }?>
 
@@ -30,6 +31,7 @@
 		<form action="login.php" method="post" >
 			<input class="login_input" type="text" name="username" placeholder="<?php echo $lang['USER']?>" /> 
 			<input class="login_input" type="password" name="password" placeholder="<?php echo $lang['PASSWORD']?>" />
+			<input type="hidden" name="return_url" value="<?php echo $current_url ?>" />
 			<input class="submit" type="submit" value="<?php echo $lang['LOGIN']?>" />
 		</form>
 		<?php

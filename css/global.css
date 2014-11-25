@@ -82,6 +82,10 @@ input[type=submit] {
 	width: 180px;
 }
 
+.register_input{
+	width: 180px;
+}
+
 #submit {
 	width: 80px;
 }

@@ -59,7 +59,7 @@ class Language {
 		}
 		
 		echo '<a href="' . $url . 'de">DE</a>';
-		echo '&nbsp;';
+		echo '&nbsp;|&nbsp;';
 		echo '<a href="' . $url . 'en">EN</a>';
 		
 		$this->importLangFile ();

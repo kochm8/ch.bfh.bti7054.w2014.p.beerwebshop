@@ -23,6 +23,9 @@ $lang['NAME'] = 'Name';
 $lang['REGISTER'] = 'Register';
 $lang['MYACCOUNT'] = 'My account';
 $lang['LOGOUT'] = 'Log out';
+$lang['FIRSTNAME'] = 'First name';
+$lang['LASTNAME'] = 'Last name';
+$lang['USERNAME'] = 'User';
 
 $GLOBALS["lang"] = $lang;
 ?>

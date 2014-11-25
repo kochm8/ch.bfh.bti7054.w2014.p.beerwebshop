@@ -1,7 +1,5 @@
 <?php
-
-include("init_page.php");
-
+include_once("init_page.php");
 ?>	
 
 <!DOCTYPE html>
@@ -75,7 +73,6 @@ include("init_page.php");
 		</div>
 
 		<div id="footer">
-			<p>&copy;KoekProductions</p>
 		</div>
 
 	</div>

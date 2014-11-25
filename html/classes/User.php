@@ -40,11 +40,6 @@ class User {
 	public function login($username, $password) {
 		
 		$data = $this->_db->getUserByUsername($username);
-
-		print $data['username'] . "<br>";
-		print $data['password'] . "<br>";
-		print $username . "<br>";
-		print substr(Hash::make($password, $data['salt']), 0, 50);
 		
 		if ($data['password'] == substr(Hash::make($password, $data['salt']), 0, 50)){
 			Session::put($this->_sessionName, $data['username']);

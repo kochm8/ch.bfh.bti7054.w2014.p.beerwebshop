@@ -63,7 +63,8 @@
 			echo "</table>";
 			
 			echo '<form method="get" action="cart_update.php">';
-			echo '<button class="add_to_cart">' . $lang['ADDTOCART'] . '</button>';
+			//echo '<button class="add_to_cart">' . $lang['ADDTOCART'] . '</button>';
+			echo '<input class="submit" type="submit" value="' . $lang['ADDTOCART'] . '" />';
 			echo '<input type="hidden" name="id" value="' . $beer->beer_ID . '" />';
 			echo '<input type="hidden" name="type" value="add" />';
 			echo '<input type="hidden" name="return_url" value="' . $current_url . '" />';
