@@ -3,7 +3,7 @@
    <?php $user = new User(); ?>
 
 	<div id="logo">
-		<img src="../img/logo.png">
+		<img src="../img/logo.png" width="250px">
 	</div>
 
 
