@@ -1,4 +1,6 @@
 <?php
+$value = 'irgendetwas von irgendwo';
+setcookie("TestCookie", $value);
 include_once("init_page.php");
 ?>	
 

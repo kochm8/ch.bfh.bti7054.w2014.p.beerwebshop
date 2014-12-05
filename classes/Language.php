@@ -80,11 +80,11 @@ class Language {
 		$currLang = $_SESSION ['lang'];
 		
 		if ($currLang == 'de') {
-			$file = '/language/lang.de.php';
+			$file = 'language/lang.de.php';
 		} else if ($currLang == 'en') {
-			$file = '/language/lang.en.php';
+			$file = 'language/lang.en.php';
 		} else{
-			$file = '/language/lang.en.php';
+			$file = 'language/lang.en.php';
 		}
 		
 		$this->setLangCookie($currLang);

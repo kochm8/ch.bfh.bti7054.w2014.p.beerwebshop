@@ -1,6 +1,7 @@
 <?php
 
 	session_start();
+	
 	if($_SERVER['HTTP_HOST'] == 'localhost'){
 		include_once ("database/config.php");
 	}else{

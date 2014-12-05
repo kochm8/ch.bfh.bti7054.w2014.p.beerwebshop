@@ -9,9 +9,14 @@ class DBHandler extends mysqli {
 		global $db_host;
 		global $db_password;
 		global $db_name;
+		global $db_port;
 	
-		parent::__construct($db_host, $db_username, $db_password);
-		parent::select_db($db_name);
+		if($db_port == ''){
+			parent::__construct($db_host, $db_username, $db_password, $db_name);
+		}{
+			parent::__construct($db_host, $db_username, $db_password, $db_name , $db_port);
+		}
+		//parent::select_db($db_name);
 	}
 	
 	
