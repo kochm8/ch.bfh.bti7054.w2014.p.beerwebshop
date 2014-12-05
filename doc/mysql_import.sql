@@ -1,8 +1,17 @@
+DROP DATABASE IF exists 1769632_bh;
+DROP DATABASE IF exists webshop;
+
+create database if not exists w1769632_bh;
+
+use w1769632_bh;
+
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS beer;
 DROP TABLE IF EXISTS category;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS user;
+
+
 
 CREATE TABLE IF NOT EXISTS user(
 	user_ID int(10) NOT NULL AUTO_INCREMENT,
