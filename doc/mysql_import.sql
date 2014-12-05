@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS webshop;
+
+USE webshop;
+
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS beer;
 DROP TABLE IF EXISTS category;

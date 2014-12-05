@@ -1,13 +1,18 @@
 <?php
 
 	session_start();
-	include_once ("database/config.php");
+	if($_SERVER['HTTP_HOST'] == 'localhost'){
+		include_once ("database/config.php");
+	}else{
+		include_once ("database/biz.nf.config.php");
+	}
+
 	
+	/*
 	if (session_status() == PHP_SESSION_NONE){
 		include_once ("database/config.php");
 	}
 	
-	/*
 	include_once("classes/DBHandler.php");
 	include_once("classes/Language.php");
 	include_once("classes/Product.php");
