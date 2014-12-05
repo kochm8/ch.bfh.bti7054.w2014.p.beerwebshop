@@ -7,9 +7,9 @@ include_once("init_page.php");
 
 <head>
 	<title>BeerHeaven</title>
-	<link rel="stylesheet" type="text/css" href="../css/global.css" />
-	<link rel="stylesheet" type="text/css" href="../css/cart.css" />
-	<link rel="shortcut icon" href="../img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/global.css" />
+	<link rel="stylesheet" type="text/css" href="css/cart.css" />
+	<link rel="shortcut icon" href="img/favicon.ico">
 </head>
 
 <body>

@@ -53,7 +53,7 @@
 			
 			echo "<tr>";
 			echo "<td align='center' width='150'>";
-			echo '<img src="../img/beer/' . $beer->beer_image . '" alt="' . $beer->beer_name . '" height="150">';
+			echo '<img src="img/beer/' . $beer->beer_image . '" alt="' . $beer->beer_name . '" height="150">';
 			echo "</td>";
 			echo "<td>";
 			echo $beer->beer_desc;
