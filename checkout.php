@@ -9,46 +9,45 @@ if (Input::get('username') != '') {
 	$user->login(Input::get('username'), Input::get('password'));
 	header ( 'Location:' . $_SERVER ['PHP_SELF'] );
 }
+
+
+
+echo ' <form name="checkout" method="post">';
+
+echo ' 	<table>';
+	
+echo ' 	  <tr id="shippingmethod">';
+echo ' 	  	<td>' . $lang['SHIPPINGMETHOD'] . '</td>';
+echo ' 		<td>';
+echo ' 			<input type="radio" name="shippingmethod" value="collection" checked>' . $lang['COLLECTION'] . '</br>';
+echo ' 			<input type="radio" name="shippingmethod" value="shipping">' . $lang['SHIPPING'];
+echo ' 		</td>';
+echo '   </tr>';
+	  
+echo ' 	  <tr id="paymentmethod">';
+echo ' 	  	<td>' . $lang['PAYMENTMETHOD'] . '</td>';
+echo ' 		<td>';
+echo ' 			<input type="radio" name="paymentmethod" value="advancepayment" checked>' . $lang['ADVANCEPAYMENT'] . '</br>';
+echo ' 			<input type="radio" name="paymentmethod" value="bill">' . $lang['BILL'] . '</br>';
+echo ' 			<input type="radio" name="paymentmethod" value="paypal">PayPal' . '</br>';
+echo ' 			<input type="radio" name="paymentmethod" value="postfinance">PostFinance' . '</br>';
+echo ' 			<input type="radio" name="paymentmethod" value="creditcard">' . $lang['CREDITCARD'];
+echo ' 		</td>';
+echo ' 	  </tr>';
+
+echo ' 	  <tr id="giftbox">';
+echo ' 	  	<td>' . $lang['GIFTBOX'] . '</td>';
+echo ' 		<td>';
+echo ' 			<input type="checkbox" name="giftbox" value="giftbox" checked>';
+echo ' 		</td>';
+echo ' 	  </tr>';
+
+echo ' 	</table>';
+	
+echo '	<input type="submit" value="' . $lang['SAVE'] . '">';
+echo '</form>';
+
+
 ?>
-
-
-
-<form name="checkout" method="post">
-
-	<table>
-	  <tr id="firstname">
-	  	<td><?php echo $lang['SHIPPINGMETHOD'] ?> </td>
-		<td>
-			<input type="radio" name="shippingmethod" value="abholung" checked>Abholung
-			<input type="radio" name="shippingmethod" value="versand">Versand
-		</td>
-	  </tr>
-
-	</table>
-	
-	<input type="submit" value="<?php echo $lang['REGISTER'] ?>"  onclick="return validate()">
-</form>
-
-
-	
-<script type='text/javascript'> 
-
-var js = document.createElement("script");
-js.type = "text/javascript";
-js.src = "js/Validator.js";
-document.body.appendChild(js);
-
-function validate(){
-
-	var validator = new Validator("register"); 
-	validator.validate("firstname"); 
-	validator.validate("lastname"); 
-	validator.validate("username"); 
-	validator.validate("password"); 
-	return validator.getResult();
-}
-
-
-</script> 
 	
 	

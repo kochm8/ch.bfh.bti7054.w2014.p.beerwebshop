@@ -1,10 +1,10 @@
 <?php
-
 $lang = array();
 
 // Misc
 $lang['SEARCH'] = 'Suchen';
 $lang['LANGUAGE'] = 'Sprache';
+$lang['SAVE'] = 'Speichern';
 
 // Beer info
 $lang['BEER'] = 'Bier';
@@ -34,7 +34,13 @@ $lang['CLEARCART'] = 'Warenkorb leeren';
 $lang['CHECKOUT'] = 'zur Kasse';
 $lang['EMPTYCART'] = 'Warenkorb ist leer';
 $lang['SHIPPINGMETHOD'] = 'Versandart';
-
+$lang['PAYMENTMETHOD'] = 'Zahlungsart';
+$lang['COLLECTION'] = 'Abholung';
+$lang['SHIPPING'] = 'Versand';
+$lang['ADVANCEPAYMENT'] = 'Vorauszahlung';
+$lang['BILL'] = 'Rechnung';
+$lang['CREDITCARD'] = 'Kreditkarte';
+$lang['GIFTBOX'] = 'Geschenk';
 
 $GLOBALS["lang"] = $lang;
 ?>
