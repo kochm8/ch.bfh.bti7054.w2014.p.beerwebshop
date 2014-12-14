@@ -12,7 +12,6 @@ $lang['NEWBEERS'] = 'Neue Biere';
 $lang['COUNTRY'] = 'Land';
 $lang['CONTENT'] = 'Inhalt';
 
-
 //Register / Login / Logout
 $lang['LOGIN'] = 'Einloggen';
 $lang['USER'] = 'Benutzername';
