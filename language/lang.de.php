@@ -4,7 +4,8 @@ $lang = array();
 // Misc
 $lang['SEARCH'] = 'Suchen';
 $lang['LANGUAGE'] = 'Sprache';
-$lang['SAVE'] = 'Speichern';
+$lang['NEXT'] = 'Weiter';
+$lang['BACK'] = 'Zurück';
 
 // Beer info
 $lang['BEER'] = 'Bier';
