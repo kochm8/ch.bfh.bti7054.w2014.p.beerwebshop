@@ -76,7 +76,15 @@
 		
 	} elseif (isset ( $_GET ["todo"] )) {
 		
-		include("register.php");
+		if($_GET ["todo"] == "register"){
+			
+			include("register.php");
+			
+		} else {
+			
+			include("checkout.php");
+			
+		}
 		
 	}else{
 		

@@ -61,8 +61,8 @@ include_once("init_page.php");
 						}
 					}
 					echo '</ol>';
-					echo '<strong>Total: CHF ' . $totalPrice . '</strong><br /><br />';
-					echo '<a href="view_cart.php">'.$lang['CHECKOUT'].'</a>';
+					echo '<strong>Total: CHF ' . str_pad(str_pad($totalPrice, 3, "."), 5, "0") . '</strong><br /><br />';
+					echo '<a href="' . $_SERVER['PHP_SELF'] . '?todo=checkout' . '">'.$lang['CHECKOUT'].'</a>';
 					echo '<br />';	
 					echo '<a href="cart_update.php?type=clear&return_url=' . $current_url . '">'.$lang['CLEARCART'].'</a>';
 				} else {
