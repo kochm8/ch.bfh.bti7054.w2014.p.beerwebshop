@@ -16,15 +16,25 @@ $lang['CONTENT'] = 'Content';
 
 //Register / Login / Logout
 $lang['LOGIN'] = 'Sign in';
-$lang['USER'] = 'Username';
+$lang['USERNAME'] = 'Username';
 $lang['PASSWORD'] = 'Password';
 $lang['NAME'] = 'Name';
 $lang['REGISTER'] = 'Register';
 $lang['MYACCOUNT'] = 'My account';
 $lang['LOGOUT'] = 'Log out';
+$lang['SALUTATION'] = 'Salutation';
+$lang['MRS'] = 'Mrs';
+$lang['MR'] = 'Mr';
 $lang['FIRSTNAME'] = 'First name';
 $lang['LASTNAME'] = 'Last name';
-$lang['USERNAME'] = 'User';
+$lang['BIRTHDATE'] = 'Birth date';
+$lang['EMAIL'] = 'E-mail';
+$lang['EMAILCONFIRM'] = 'E-mail confirmation';
+$lang['TEL'] = 'Phone';
+$lang['MOBILE'] = 'Mobile';
+$lang['DE'] = 'German';
+$lang['EN'] = 'English';
+$lang['PASSWORDCONFIRM'] = 'Passwort confirmation';
 
 // Shopping cart / Check out
 $lang['ADDTOCART'] = 'Add to cart';

@@ -29,7 +29,7 @@
 		<?php if(!$user->isLoggedIn()) { ?>
 		<h2>Login</h2><br />
 		<form action="login.php" method="post" >
-			<input class="login_input" type="text" name="username" placeholder="<?php echo $lang['USER']?>" /> 
+			<input class="login_input" type="text" name="username" placeholder="<?php echo $lang['USERNAME']?>" /> 
 			<input class="login_input" type="password" name="password" placeholder="<?php echo $lang['PASSWORD']?>" />
 			<input type="hidden" name="return_url" value="<?php echo $current_url ?>" />
 			<input class="submit" type="submit" value="<?php echo $lang['LOGIN']?>" />

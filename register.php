@@ -14,25 +14,76 @@ if (Input::get('username') != '') {
 
 
 <form name="register" method="post">
+
 	<table>
+	  <tr id="salutation">
+	    <td><?php echo $lang['SALUTATION'] . ':' ?> </td>
+	    <td>
+		    <select name="salutation" id="salutation" class="register_input">
+			  <option value="mrs"><?php echo $lang['MRS'] ?></option>
+			  <option value="mr"><?php echo $lang['MR'] ?></option>
+			</select>
+	    </td> 
+	  </tr>
+	  
 	  <tr id="firstname">
-	    <td><?php echo $lang['FIRSTNAME'] ?> </td>
+	    <td><?php echo $lang['FIRSTNAME'] . ':' ?> </td>
 	    <td><input type="text" name="firstname" value="" id="firstname" class="register_input" /></td> 
 	  </tr>
-
+	  
 	  <tr id="lastname">
-	    <td><?php echo $lang['LASTNAME'] ?> </td>
+	    <td><?php echo $lang['LASTNAME'] . ':' ?> </td>
 	    <td><input type="text" name="lastname" value="" id="lastname" class="register_input" /></td> 
+	  </tr>
+	
+	  <tr id="birthdate">
+	    <td><?php echo $lang['BIRTHDATE'] . ':' ?> </td>
+	    <td><input type="text" name="birthdate" value="" id="firstname" class="register_input" /></td> 
+	  </tr>
+
+	  <tr id="email">
+	    <td><?php echo $lang['EMAIL'] . ':' ?> </td>
+	    <td><input type="text" name="email" value="" id="email" class="register_input" /></td> 
+	  </tr>
+	  
+	  <tr id="emailconfirm">
+	    <td><?php echo $lang['EMAILCONFIRM'] . ':' ?> </td>
+	    <td><input type="text" name="emailconfirm" value="" id="emailconfirm"class="register_input" /></td>
+	  </tr>
+	  
+	  <tr id="tel">
+	    <td><?php echo $lang['TEL'] . ':' ?> </td>
+	    <td><input type="text" name="tel" value="" id="tel" class="register_input" /></td>
+	  </tr>
+	  
+	  <tr id="mobile">
+	    <td><?php echo $lang['MOBILE'] . ':' ?> </td>
+	    <td><input type="text" name="mobile" value="" id="mobile" class="register_input" /></td>
+	  </tr>
+	  
+	  <tr id="language">
+	    <td><?php echo $lang['LANGUAGE'] . ':' ?> </td>
+	    <td>
+		    <select name="language" id="language" class="register_input">
+			  <option value="de"><?php echo $lang['DE'] ?></option>
+			  <option value="en"><?php echo $lang['EN'] ?></option>
+			</select>
+	    </td> 
 	  </tr>
 	  
 	  <tr id="username">
-	    <td><?php echo $lang['USERNAME'] ?> </td>
-	    <td><input type="text" name="username" id="username" value="" class="register_input" /></td>
+	    <td><?php echo $lang['USERNAME'] . ':' ?> </td>
+	    <td><input type="text" name="username" value="" id="username" class="register_input" /></td>
 	  </tr>
 	  
 	  <tr id="password">
-	    <td><?php echo $lang['PASSWORD'] ?> </td>
-	    <td><input type="password" name="password" id="password" class="register_input" /></td>
+	    <td><?php echo $lang['PASSWORD'] . ':' ?> </td>
+	    <td><input type="password" name="password" value="" id="password" class="register_input" /></td>
+	  </tr>
+	  
+	  <tr id="passwordconfirm">
+	    <td><?php echo $lang['PASSWORDCONFIRM'] . ':' ?> </td>
+	    <td><input type="password" name="passwordconfirm" value="" id="passwordconfirm" class="register_input" /></td>
 	  </tr>
 	</table>
 	
@@ -53,8 +104,14 @@ function validate(){
 	var validator = new Validator("register"); 
 	validator.validate("firstname"); 
 	validator.validate("lastname"); 
-	validator.validate("username"); 
+	validator.validate("birthdate"); 
+	validator.validate("email"); 
+	validator.validate("emailconfirm"); 
+	validator.validate("tel"); 
+	validator.validate("mobile"); 
+	validator.validate("username");
 	validator.validate("password"); 
+	validator.validate("passwordconfirm"); 
 	return validator.getResult();
 }
 
