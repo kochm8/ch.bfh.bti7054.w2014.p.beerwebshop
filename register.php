@@ -108,6 +108,7 @@ function validate(){
 	validator.isEqual("email", "emailconfirm"); 
 	validator.validate("username");
 	validator.validate("password"); 
+	validator.validatePhone("tel");
 	validator.isEqual("password", "passwordconfirm"); 
 	return validator.getResult();
 }

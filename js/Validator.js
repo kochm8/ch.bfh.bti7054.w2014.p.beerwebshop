@@ -38,7 +38,7 @@ function Validator(frm) {
 			this.result = false;
 		}
 	};
-	
+
 	this.isEqual = function(field1, field2) { 
 
 		deleteElementIfExists(field2);
@@ -54,8 +54,33 @@ function Validator(frm) {
 			this.result = false;
 		}
 	};
+
+
+	this.validatePhone = function(field){
+
+		deleteElementIfExists(field);
+
+		var str = this.form[field].value.replace(/\s+/g, ''); //remove spaces
+		var regex = /^\d{10}$/;  
+		if(!str.match(regex) && this.form[field].value != "") {
+
+			createElement(field, "Not a valid Phone Number");
+			this.result = false;
+		}
+
+	}
+
+	function createElement(field, text){
+		
+		var para = document.createElement("div");
+		para.id = "validator_"+field;
+		var node = document.createTextNode(text);
+		para.appendChild(node);
+		var element = document.getElementById(field);
+		element.appendChild(para);
+	}
 	
-	
+
 	function deleteElementIfExists(field){
 		var element = document.getElementById("validator_"+field);
 		if(element != null){
