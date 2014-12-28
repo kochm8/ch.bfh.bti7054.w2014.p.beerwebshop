@@ -29,9 +29,17 @@ class User {
 	}
 
 	
+<<<<<<< HEAD
 	public function create($salutation, $firstname, $lastname, $birthdate, $email, $tel, $mobile, $language, $username, $password, $salt) {
+=======
+	public function create($username, $password, $firstname, $lastname, $salt, $title, $email, $birthday, $telephone, $mobile) {
+>>>>>>> branch 'master' of https://github.com/kochm8/ch.bfh.bti7054.w2014.p.beerwebshop
 		
+<<<<<<< HEAD
 		if(!$this->_db->createUser($salutation, $firstname, $lastname, $birthdate, $email, $tel, $mobile, $language, $username, $password, $salt)){
+=======
+		if(!$this->_db->createUser($username, $password, $firstname, $lastname, $salt, $title, $email, $birthday, $telephone, $mobile)){
+>>>>>>> branch 'master' of https://github.com/kochm8/ch.bfh.bti7054.w2014.p.beerwebshop
 			throw new Exception('Sorry, there was a problem creating your account;');
 		}
 	}

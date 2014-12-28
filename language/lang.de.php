@@ -35,6 +35,7 @@ $lang['MOBILE'] = 'Handy';
 $lang['DE'] = 'Deutsch';
 $lang['EN'] = 'Englisch';
 $lang['PASSWORDCONFIRM'] = 'Passwort Bestätigung';
+$lang['WELCOME'] = 'Willkommen';
 
 // Shopping cart / Check out
 $lang['ADDTOCART'] = 'in den Warenkorb';

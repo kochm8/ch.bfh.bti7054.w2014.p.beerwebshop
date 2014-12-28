@@ -17,13 +17,13 @@
 	<div class="login">
 	
 <!-- User is logged in -->
-		<?php if($user->isLoggedIn()) { ?>
-		<h2><?php echo $lang['MYACCOUNT'] ?></h2><br />
-		<b>Account: <?php echo $user->data()['username'];?></b><br /><br />
-		<?php echo $user->data()['firstname']."&nbsp;".$user->data()['lastname']; ?> <br />
-		<br />  <br />
-		<a href="logout.php"><?php echo $lang['LOGOUT'] ?></a>
-		<?php }?>
+		<?php if($user->isLoggedIn()) {
+		echo "<h2>". $lang['MYACCOUNT'] ."</h2><br />";
+		echo $lang['WELCOME'] ."&nbsp;". $user->data()['firstname'] . "<br />";
+		//echo "Account: ". $user->data()['username'] ."<br />";
+		echo "<br />";
+		echo '<a href="logout.php">'. $lang['LOGOUT'] ."</a>";
+		}?>
 
 <!-- User isn't logged in -->
 		<?php if(!$user->isLoggedIn()) { ?>
