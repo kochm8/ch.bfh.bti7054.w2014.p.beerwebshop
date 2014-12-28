@@ -8,6 +8,10 @@ if (Input::get('username') != '') {
 	$user->create(Input::get('salutation'),
 					Input::get('firstname'),
 					Input::get('lastname'),
+					Input::get('street'),
+					Input::get('streetnr'),
+					Input::get('city'),
+					Input::get('citynr'),
 					Input::get('birthdate'),
 					Input::get('email'),
 					Input::get('tel'),
@@ -44,6 +48,16 @@ if (Input::get('username') != '') {
 	  <tr id="lastname">
 	    <td><?php echo $lang['LASTNAME'] . ':' ?> </td>
 	    <td><input type="text" name="lastname" value="" id="lastname" class="register_input" /></td> 
+	  </tr>
+	  
+	  <tr id="street">
+	    <td><?php echo $lang['STREETNR'] . ':' ?> </td>
+	    <td><input type="text" name="street" value="" id="street" class="register_input" /><input type="text" name="streetnr" value="" id="streetnr" class="register_input" /></td> 
+	  </tr>
+	  
+	  <tr id="city">
+	    <td><?php echo $lang['POSTALCITY'] . ':' ?> </td>
+	    <td><input type="text" name="city" value="" id="city" class="register_input" /><input type="text" name="citynr" value="" id="citynr" class="register_input" /></td> 
 	  </tr>
 	
 	  <tr id="birthdate">

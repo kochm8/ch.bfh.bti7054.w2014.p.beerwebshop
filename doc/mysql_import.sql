@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS user(
 	salutation VARCHAR(5) NOT NULL,
 	firstname VARCHAR(50) NOT NULL,
 	lastname VARCHAR(50) NOT NULL,
+	street_name VARCHAR(50),
 	street_number INT(5),
 	city_name VARCHAR(50),
 	city_number INT(10),
