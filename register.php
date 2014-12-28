@@ -38,7 +38,7 @@ if (Input::get('username') != '') {
 	
 	  <tr id="birthdate">
 	    <td><?php echo $lang['BIRTHDATE'] . ':' ?> </td>
-	    <td><input type="text" name="birthdate" value="" id="firstname" class="register_input" /></td> 
+	    <td><input type="text" name="birthdate" value="" id="birthdate" class="register_input" /></td> 
 	  </tr>
 
 	  <tr id="email">
@@ -104,14 +104,11 @@ function validate(){
 	var validator = new Validator("register"); 
 	validator.validate("firstname"); 
 	validator.validate("lastname"); 
-	validator.validate("birthdate"); 
-	validator.validate("email"); 
-	validator.validate("emailconfirm"); 
-	validator.validate("tel"); 
-	validator.validate("mobile"); 
+	validator.validateEmail("email"); 
+	validator.isEqual("email", "emailconfirm"); 
 	validator.validate("username");
 	validator.validate("password"); 
-	validator.validate("passwordconfirm"); 
+	validator.isEqual("password", "passwordconfirm"); 
 	return validator.getResult();
 }
 
