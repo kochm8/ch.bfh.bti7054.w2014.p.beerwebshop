@@ -31,7 +31,7 @@ if (Input::get('username') != '') {
 
 	<table>
 	  <tr id="salutation">
-	    <td><?php echo $lang['SALUTATION'] . ':' ?> </td>
+	    <td><?php echo $lang['SALUTATION'] . '*:' ?> </td>
 	    <td>
 		    <select name="salutation" id="salutation" class="register_input">
 			  <option value="mrs"><?php echo $lang['MRS'] ?></option>
@@ -41,22 +41,22 @@ if (Input::get('username') != '') {
 	  </tr>
 	  
 	  <tr id="firstname">
-	    <td><?php echo $lang['FIRSTNAME'] . ':' ?> </td>
+	    <td><?php echo $lang['FIRSTNAME'] . '*:' ?> </td>
 	    <td><input type="text" name="firstname" value="" id="firstname" class="register_input" /></td> 
 	  </tr>
 	  
 	  <tr id="lastname">
-	    <td><?php echo $lang['LASTNAME'] . ':' ?> </td>
+	    <td><?php echo $lang['LASTNAME'] . '*:' ?> </td>
 	    <td><input type="text" name="lastname" value="" id="lastname" class="register_input" /></td> 
 	  </tr>
 	  
 	  <tr id="street">
-	    <td><?php echo $lang['STREETNR'] . ':' ?> </td>
+	    <td><?php echo $lang['STREETNR'] . '*:' ?> </td>
 	    <td><input type="text" name="street" value="" id="street" class="register_input" /><input type="text" name="streetnr" value="" id="streetnr" class="register_input" /></td> 
 	  </tr>
 	  
 	  <tr id="city">
-	    <td><?php echo $lang['POSTALCITY'] . ':' ?> </td>
+	    <td><?php echo $lang['POSTALCITY'] . '*:' ?> </td>
 	    <td><input type="text" name="city" value="" id="city" class="register_input" /><input type="text" name="citynr" value="" id="citynr" class="register_input" /></td> 
 	  </tr>
 	
@@ -66,12 +66,12 @@ if (Input::get('username') != '') {
 	  </tr>
 
 	  <tr id="email">
-	    <td><?php echo $lang['EMAIL'] . ':' ?> </td>
+	    <td><?php echo $lang['EMAIL'] . '*:' ?> </td>
 	    <td><input type="text" name="email" value="" id="email" class="register_input" /></td> 
 	  </tr>
 	  
 	  <tr id="emailconfirm">
-	    <td><?php echo $lang['EMAILCONFIRM'] . ':' ?> </td>
+	    <td><?php echo $lang['EMAILCONFIRM'] . '*:' ?> </td>
 	    <td><input type="text" name="emailconfirm" value="" id="emailconfirm"class="register_input" /></td>
 	  </tr>
 	  
@@ -86,7 +86,7 @@ if (Input::get('username') != '') {
 	  </tr>
 	  
 	  <tr id="language">
-	    <td><?php echo $lang['LANGUAGE'] . ':' ?> </td>
+	    <td><?php echo $lang['LANGUAGE'] . '*:' ?> </td>
 	    <td>
 		    <select name="language" id="language" class="register_input">
 			  <option value="de"><?php echo $lang['DE'] ?></option>
@@ -96,17 +96,17 @@ if (Input::get('username') != '') {
 	  </tr>
 	  
 	  <tr id="username">
-	    <td><?php echo $lang['USERNAME'] . ':' ?> </td>
+	    <td><?php echo $lang['USERNAME'] . '*:' ?> </td>
 	    <td><input type="text" name="username" value="" id="username" class="register_input" /></td>
 	  </tr>
 	  
 	  <tr id="password">
-	    <td><?php echo $lang['PASSWORD'] . ':' ?> </td>
+	    <td><?php echo $lang['PASSWORD'] . '*:' ?> </td>
 	    <td><input type="password" name="password" value="" id="password" class="register_input" /></td>
 	  </tr>
 	  
 	  <tr id="passwordconfirm">
-	    <td><?php echo $lang['PASSWORDCONFIRM'] . ':' ?> </td>
+	    <td><?php echo $lang['PASSWORDCONFIRM'] . '*:' ?> </td>
 	    <td><input type="password" name="passwordconfirm" value="" id="passwordconfirm" class="register_input" /></td>
 	  </tr>
 	</table>
@@ -128,12 +128,21 @@ function validate(){
 	var validator = new Validator("register"); 
 	validator.validate("firstname"); 
 	validator.validate("lastname"); 
-	validator.validateEmail("email"); 
-	validator.isEqual("email", "emailconfirm"); 
+	validator.validate("street"); 
+	validator.validate("streetnr"); 
+	validator.validate("city"); 
+	validator.validate("citynr"); 
+	validator.validate("email"); 
+	validator.validate("emailconfirm"); 	
 	validator.validate("username");
 	validator.validate("password"); 
+	validator.validate("passwordconfirm"); 
+	
 	validator.validatePhone("tel");
-	validator.isEqual("password", "passwordconfirm"); 
+	validator.validateEmail("email"); 
+	validator.isEqual("email", "emailconfirm"); 
+	validator.isEqual("password", "passwordconfirm");
+	
 	return validator.getResult();
 }
 
