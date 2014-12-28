@@ -24,10 +24,11 @@ function Validator(frm) {
 
 		deleteElementIfExists(field);
 
-		var atpos = this.form[field].value.indexOf("@");
-		var dotpos = this.form[field].value.lastIndexOf(".");
+		var str = this.form[field].value;
+		var atpos = str.indexOf("@");
+		var dotpos = str.lastIndexOf(".");
 
-		if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=this.form[field].value.length) {			     
+		if ((atpos< 1 || dotpos<atpos+2 || dotpos+2>=str.length) && str != "") {			     
 			createElement(field, "Not a valid e-mail address");
 			this.result = false;
 		}
