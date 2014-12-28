@@ -13,15 +13,21 @@ DROP TABLE IF EXISTS user;
 CREATE TABLE IF NOT EXISTS user(
 	user_ID int(10) NOT NULL AUTO_INCREMENT,
 	username VARCHAR(50) NOT NULL,
+	title VARCHAR(10),
 	firstname VARCHAR(50),
 	lastname VARCHAR(50),
 	password VARCHAR(50) NOT NULL,
 	salt VARCHAR(64) NOT NULL,
+	email VARCHAR(255),
+	birthday VARCHAR(10),
+	telephone VARCHAR(10),
+	mobile VARCHAR(10),
 	street_name VARCHAR(50),
 	street_number INT(5),
 	city_name VARCHAR(50),
 	city_number INT(10),
-	PRIMARY KEY (user_ID)
+	PRIMARY KEY (user_ID),
+	UNIQUE(username)
 );
 
 

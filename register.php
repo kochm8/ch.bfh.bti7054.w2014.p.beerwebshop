@@ -5,7 +5,7 @@
 if (Input::get('username') != '') {
 	$user = new User();
 	$salt = Hash::salt(32);
-	$user->create(Input::get('username'), Hash::make(Input::get('password'), $salt), Input::get('firstname'), Input::get('lastname'), $salt);
+	$user->create(Input::get('username'), Hash::make(Input::get('password'), $salt), Input::get('firstname'), Input::get('lastname'), $salt, Input::get('salutation'), Input::get('email'), Input::get('birthdate'),Input::get('tel'),Input::get('mobile'));
 	$user->login(Input::get('username'), Input::get('password'));
 	header ( 'Location:' . $_SERVER ['PHP_SELF'] );
 }
@@ -109,6 +109,7 @@ function validate(){
 	validator.validate("username");
 	validator.validate("password"); 
 	validator.validatePhone("tel");
+	validator.validatePhone("mobile");
 	validator.isEqual("password", "passwordconfirm"); 
 	return validator.getResult();
 }

@@ -14,7 +14,6 @@ $lang['COUNTRY'] = 'Country';
 $lang['CONTENT'] = 'Content';
 $lang['CATEGORIES'] = 'Categories';
 
-
 //Register / Login / Logout
 $lang['LOGIN'] = 'Sign in';
 $lang['USERNAME'] = 'Username';
@@ -36,6 +35,7 @@ $lang['MOBILE'] = 'Mobile';
 $lang['DE'] = 'German';
 $lang['EN'] = 'English';
 $lang['PASSWORDCONFIRM'] = 'Passwort confirmation';
+$lang['WELCOME'] = 'Welcome';
 
 // Shopping cart / Check out
 $lang['ADDTOCART'] = 'Add to cart';

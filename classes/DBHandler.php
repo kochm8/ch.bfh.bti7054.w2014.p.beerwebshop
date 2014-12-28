@@ -54,8 +54,9 @@ class DBHandler extends mysqli {
 	/*
 	 * create login
 	 */
-	public  function createUser($username, $password, $firstname, $lastname, $salt ){
-		return $this->query("insert into user (username, password, firstname, lastname, salt) values('$username', '$password', '$firstname', '$lastname', '$salt');");
+	public  function createUser($username, $password, $firstname, $lastname, $salt, $title , $email, $birthday, $telephone, $mobile){
+		echo "insert into user (username, password, firstname, lastname, salt, title, email, birthday, telephone, mobile) values('$username', '$password', '$firstname', '$lastname', '$salt', '$title', '$email', '$birthday', '$telephone', '$mobile');";
+		return $this->query("insert into user (username, password, firstname, lastname, salt, title, email, birthday, telephone, mobile) values('$username', '$password', '$firstname', '$lastname', '$salt', '$title', '$email', '$birthday', '$telephone', '$mobile');");
 	}
 	
 	
