@@ -18,7 +18,7 @@ class DBHandler extends mysqli {
 		}
 		//parent::select_db($db_name);
 	}
-	
+
 	
 	/*
 	 * get product by ID
@@ -54,8 +54,11 @@ class DBHandler extends mysqli {
 	/*
 	 * create login
 	 */
-	public  function createUser($username, $password, $firstname, $lastname, $salt ){
-		return $this->query("insert into user (username, password, firstname, lastname, salt) values('$username', '$password', '$firstname', '$lastname', '$salt');");
+	public  function createUser($salutation, $firstname, $lastname, $birthdate, $email, $tel, $mobile, $language, $username, $password, $salt){
+		
+		return $this->query("insert into user (salutation, firstname, lastname, birthdate, email, tel, mobile, language, username, password, salt)
+										values('$salutation', '$firstname', '$lastname', '$birthdate', '$email', '$tel', '$mobile', '$language', '$username', '$password', '$salt');");
+		
 	}
 	
 	

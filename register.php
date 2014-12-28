@@ -5,7 +5,17 @@
 if (Input::get('username') != '') {
 	$user = new User();
 	$salt = Hash::salt(32);
-	$user->create(Input::get('username'), Hash::make(Input::get('password'), $salt), Input::get('firstname'), Input::get('lastname'), $salt);
+	$user->create(Input::get('salutation'),
+					Input::get('firstname'),
+					Input::get('lastname'),
+					Input::get('birthdate'),
+					Input::get('email'),
+					Input::get('tel'),
+					Input::get('mobile'),
+					Input::get('language'),
+					Input::get('username'),
+					Hash::make(Input::get('password'), $salt),
+					$salt);
 	$user->login(Input::get('username'), Input::get('password'));
 	header ( 'Location:' . $_SERVER ['PHP_SELF'] );
 }

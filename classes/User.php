@@ -29,9 +29,9 @@ class User {
 	}
 
 	
-	public function create($username, $password, $firstname, $lastname, $salt) {
+	public function create($salutation, $firstname, $lastname, $birthdate, $email, $tel, $mobile, $language, $username, $password, $salt) {
 		
-		if(!$this->_db->createUser($username, $password, $firstname, $lastname, $salt)){
+		if(!$this->_db->createUser($salutation, $firstname, $lastname, $birthdate, $email, $tel, $mobile, $language, $username, $password, $salt)){
 			throw new Exception('Sorry, there was a problem creating your account;');
 		}
 	}
