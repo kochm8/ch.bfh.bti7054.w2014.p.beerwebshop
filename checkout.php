@@ -1,13 +1,8 @@
 <?php
 
-//include_once("init_page.php");
- 	
-if (Input::get('username') != '') {
-	$user = new User();
-	$salt = Hash::salt(32);
-	$user->create(Input::get('username'), Hash::make(Input::get('password'), $salt), Input::get('firstname'), Input::get('lastname'), $salt);
-	$user->login(Input::get('username'), Input::get('password'));
-	header ( 'Location:' . $_SERVER ['PHP_SELF'] );
+if(!$user->isLoggedIn()) {
+	echo "User not logged in!";
+	$_GET ["step"] = "";
 }
 
 if (isset ( $_GET ["step"] )) {

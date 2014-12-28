@@ -20,8 +20,9 @@ include_once("init_page.php");
 		<?php include("Header.php"); ?>
 
 		<div id="leftcolumn">
-			<h2>Categories</h2>
 			<?php
+				echo "<h2>".$lang['CATEGORIES']."</h2>";
+			
 				$url = $_SERVER ['PHP_SELF'];
 				echo "<a href=\"$url\">" . $lang['NEWBEERS'] . "</a>";
 				echo "<br />";
