@@ -12,6 +12,10 @@ include_once("init_page.php");
 	<link rel="stylesheet" type="text/css" href="css/global.css" />
 	<link rel="stylesheet" type="text/css" href="css/cart.css" />
 	<link rel="shortcut icon" href="img/favicon.ico">
+	
+	<script type="text/javascript">
+	var hint;
+	</script>
 </head>
 
 <body>

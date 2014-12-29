@@ -3,9 +3,12 @@
    <?php $user = new User(); ?>
    
 	<script type="text/javascript">
+
 		function getHint(value) {
+			
 			var doc = document.getElementById("content");			
 			var xmlhttp;
+			
 			if (window.XMLHttpRequest) 
 				xmlhttp = new XMLHttpRequest();
 			else if (window.ActiveXObject) 
@@ -33,7 +36,7 @@
 	<div id="search">
 		<form>
 			<input id="search_input" type="text" placeholder="<?php echo $lang['SEARCH']?>..." onkeyup="getHint(this.value);"> 
-			<input class="submit" id="search_btn" type="submit" value="<?php echo $lang['SEARCH']?>">
+			<!--<input class="submit" id="search_btn" type="submit" value="<?php echo $lang['SEARCH']?>">  -->
 		</form>
 	</div>
 
