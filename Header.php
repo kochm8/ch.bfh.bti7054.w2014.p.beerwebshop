@@ -1,6 +1,29 @@
 <div id="header">
 
    <?php $user = new User(); ?>
+   
+	<script type="text/javascript">
+		function getHint(value) {
+			var doc = document.getElementById("content");			
+			var xmlhttp;
+			if (window.XMLHttpRequest) 
+				xmlhttp = new XMLHttpRequest();
+			else if (window.ActiveXObject) 
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			else {
+				 alert("Your browser does not support XMLHTTP!"); 
+				 return;
+			}
+	
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4)
+					if (xmlhttp.responseText.length > 0) 
+						doc.innerHTML = xmlhttp.responseText;
+			}
+			xmlhttp.open("GET","hint.php?hint="+value+"&return_url="+window.location,true);
+			xmlhttp.send(null);
+		}
+	</script>
 
 	<div id="logo">
 		<img src="img/logo.png" width="250px">
@@ -9,7 +32,7 @@
 
 	<div id="search">
 		<form>
-			<input id="search_input" type="text" placeholder="<?php echo $lang['SEARCH']?>..."> 
+			<input id="search_input" type="text" placeholder="<?php echo $lang['SEARCH']?>..." onkeyup="getHint(this.value);"> 
 			<input class="submit" id="search_btn" type="submit" value="<?php echo $lang['SEARCH']?>">
 		</form>
 	</div>

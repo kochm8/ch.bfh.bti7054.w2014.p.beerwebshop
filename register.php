@@ -137,6 +137,9 @@ function validate(){
 	validator.validate("username");
 	validator.validate("password"); 
 	validator.validate("passwordconfirm"); 
+
+	validator.validateNumeric("citynr");
+	validator.validateNumeric("streetnr");
 	
 	validator.validatePhone("tel");
 	validator.validateEmail("email"); 
