@@ -55,6 +55,8 @@ $lang['ADVANCEPAYMENT'] = 'Advance payment';
 $lang['BILL'] = 'Bill';
 $lang['CREDITCARD'] = 'Credit card';
 $lang['GIFTBOX'] = 'Gift box';
+$lang['INVBILLADDRESS'] = 'Different shipping address';
+$lang['BILLINGADDRESS'] = 'Billing address';
 
 $GLOBALS["lang"] = $lang;
 ?>

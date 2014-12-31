@@ -55,6 +55,8 @@ $lang['ADVANCEPAYMENT'] = 'Vorauszahlung';
 $lang['BILL'] = 'Rechnung';
 $lang['CREDITCARD'] = 'Kreditkarte';
 $lang['GIFTBOX'] = 'Geschenk';
+$lang['INVBILLADDRESS'] = 'Abweichende Lieferadresse';
+$lang['BILLINGADDRESS'] = 'Rechnungsadresse';
 
 $GLOBALS["lang"] = $lang;
 ?>
