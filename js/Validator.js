@@ -3,7 +3,7 @@ function Validator(frm) {
 
 	this.form = document.forms[frm];
 	this.result = true;
-
+	
 	/*
 	 * Checks if field is empty
 	 */
@@ -30,7 +30,7 @@ function Validator(frm) {
 
 		if ((atpos< 1 || dotpos<atpos+2 || dotpos+2>=str.length) && str != "") {			     
 			createElement(field, "Not a valid e-mail address");
-			this.result = false;
+			this.result = false;	
 		}
 	};
 
@@ -43,7 +43,7 @@ function Validator(frm) {
 
 		if (this.form[field1].value != this.form[field2].value) {
 			createElement(field2, "Not equal");
-			this.result = false;
+			this.result = false;	
 		}
 	};
 
@@ -83,13 +83,14 @@ function Validator(frm) {
 	}
 
 	function createElement(field, text){
-		var para = document.createElement("div");
-		para.id = "validator_"+field;
+		var div = document.createElement("div");
+		div.id = "validator_"+field;
 		var node = document.createTextNode(text);
-		para.appendChild(node);
-		para.style.color = "red";
+		div.appendChild(node);
+		div.style.color = "red";
+		div.style.fontSize = "10px";
 		var element = document.getElementById(field);
-		element.appendChild(para);
+		element.appendChild(div);
 	}
 	
 

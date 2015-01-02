@@ -29,11 +29,11 @@ if (Input::get('username') != '') {
 
 <form name="register" method="post">
 
-	<table>
+	<table border="1">
 	  <tr id="salutation">
 	    <td><?php echo $lang['SALUTATION'] . '*:' ?> </td>
 	    <td>
-		    <select name="salutation" id="salutation" class="register_input">
+		    <select name="salutation" id="salutation" class="register_select">
 			  <option value="mrs"><?php echo $lang['MRS'] ?></option>
 			  <option value="mr"><?php echo $lang['MR'] ?></option>
 			</select>
@@ -52,12 +52,16 @@ if (Input::get('username') != '') {
 	  
 	  <tr id="street">
 	    <td><?php echo $lang['STREETNR'] . '*:' ?> </td>
-	    <td><input type="text" name="street" value="" id="street" class="register_input" /><input type="text" name="streetnr" value="" id="streetnr" class="register_input" /></td> 
+	    <td><input type="text" name="street" value="" id="street" class="register_input" /></td>
+	    <td><input type="text" name="streetnr" value="" class="register_input_small" /></td>
+	    <td id="streetnr"></td>
 	  </tr>
-	  
+	  	
 	  <tr id="city">
 	    <td><?php echo $lang['POSTALCITY'] . '*:' ?> </td>
-	    <td><input type="text" name="city" value="" id="city" class="register_input" /><input type="text" name="citynr" value="" id="citynr" class="register_input" /></td> 
+	    <td><input type="text" name="city" value="" id="city" class="register_input" />
+	    <td><input type="text" name="citynr" value="" class="register_input_small" /></td>
+	    <td id="citynr"></td> 
 	  </tr>
 	
 	  <tr id="birthdate">
@@ -88,7 +92,7 @@ if (Input::get('username') != '') {
 	  <tr id="language">
 	    <td><?php echo $lang['LANGUAGE'] . '*:' ?> </td>
 	    <td>
-		    <select name="language" id="language" class="register_input">
+		    <select name="language" id="language" class="register_select">
 			  <option value="de"><?php echo $lang['DE'] ?></option>
 			  <option value="en"><?php echo $lang['EN'] ?></option>
 			</select>
@@ -145,7 +149,7 @@ function validate(){
 	validator.validateEmail("email"); 
 	validator.isEqual("email", "emailconfirm"); 
 	validator.isEqual("password", "passwordconfirm");
-	
+
 	return validator.getResult();
 }
 

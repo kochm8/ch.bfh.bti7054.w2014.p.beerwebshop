@@ -52,8 +52,8 @@ class Language {
 	function getLanguageLinks() {
 		$url = $_SERVER ['PHP_SELF'];
 		
-		if (isset ( $_GET ['id'] )) {
-			$url = $url . "?id=" . $_GET ['id'] . "&lan=";
+		if (Input::get('categoryid') != '') {
+			$url = $url . "?categoryid=" . Input::get('categoryid') . "&lan=";
 		} else {
 			$url = $url . "?lan=";
 		}
@@ -71,8 +71,8 @@ class Language {
  * import the language file
  */
 	function importLangFile() {
-		if (isset ( $_GET ['lan'] )) {
-			$currLang = $_GET ['lan'];
+		if (Input::get('lan') != '') {
+			$currLang = Input::get('lan');
 			
 			$_SESSION ['lang'] = $currLang;
 		}
