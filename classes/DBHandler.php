@@ -18,7 +18,10 @@ class DBHandler extends mysqli {
 		}
 		//parent::select_db($db_name);
 	}
-
+	
+	public function getCategoryById($id){
+		return $this->query("SELECT * FROM category WHERE category_ID = '$id'");
+	}
 	
 	/*
 	 * get product by ID

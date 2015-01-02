@@ -11,11 +11,8 @@ include_once("init_page.php");
 	<title>BeerHeaven</title>
 	<link rel="stylesheet" type="text/css" href="css/global.css" />
 	<link rel="stylesheet" type="text/css" href="css/cart.css" />
-	<link rel="shortcut icon" href="img/favicon.ico">
-	
-	<script type="text/javascript">
-	var hint;
-	</script>
+	<link rel="stylesheet" type="text/css" href="css/leftcolumn.css" />
+	<link rel="shortcut icon" href="img/favicon.ico" />
 </head>
 
 <body>
@@ -66,7 +63,8 @@ include_once("init_page.php");
 						}
 					}
 					echo '</ol>';
-					echo '<strong>Total: CHF ' . str_pad(str_pad($totalPrice, 3, "."), 5, "0") . '</strong><br /><br />';
+					//echo str_pad(str_pad($totalPrice, 3, "."), 5, "0")
+					echo '<strong>Total: CHF ' . number_format($totalPrice, 2, '.', '') . '</strong><br /><br />';
 					echo '<a href="' . $_SERVER['PHP_SELF'] . '?todo=checkout&step=1' . '">'.$lang['CHECKOUT'].'</a>';
 					echo '<br />';	
 					echo '<a href="cart_update.php?type=clear&return_url=' . $current_url . '">'.$lang['CLEARCART'].'</a>';

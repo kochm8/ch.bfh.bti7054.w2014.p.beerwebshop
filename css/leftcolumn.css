@@ -1,0 +1,23 @@
+#leftcolumn ul {
+    margin: 0; 
+    padding: 0;
+    width:185px;
+    list-style-type: none;
+}
+
+#leftcolumn ul li a {
+    text-decoration: none;
+    color: black; 
+    padding: 10.5px 11px;
+    background-color: #ddd;
+    display:block;
+}
+ 
+#leftcolumn ul li a:visited {
+    color: black;
+}
+ 
+#leftcolumn ul li a:hover, #leftcolumn ul li #current {
+    color: white;
+    background-color: #207cca;
+}

@@ -70,7 +70,7 @@ if (isset ( $_GET ["step"] )) {
 	} elseif ($_GET["step"] == 2){
 	
 		echo ' <h1>Step 2/3</h1>';
-		
+
 		echo ' <form name="checkout" method="post" action="index.php?todo=checkout&step=3.php">';
 		
 		echo ' 	<table>';
@@ -131,9 +131,10 @@ if (isset ( $_GET ["step"] )) {
 		
 		echo '</form>';
 	
-	} elseif ($_GET["step"] == 2){
+	} elseif ($_GET["step"] == 3){
 	
 		echo ' <h1>Step 3/3</h1>';
+
 	
 	}
 

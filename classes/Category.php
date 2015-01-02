@@ -13,12 +13,15 @@ class Category {
 		$res = $_db->getAllCategories ();
 		
 		$url = $_SERVER ['PHP_SELF'];
+		
 		//loop through categories and create url to category
+		echo '<ul>';
 		while ( $categories = $res->fetch_object () ) {
 			$url = $url . "?categoryid=" . $categories->category_ID;
-			echo "<a href=\"$url\">" . $categories->category_name . "</a>";
+			echo "<li><a href=\"$url\">" . $categories->category_name . "</a></li>";
 			echo "<br />";
 		}
+		echo '</ul>';
 	}
 }
 
