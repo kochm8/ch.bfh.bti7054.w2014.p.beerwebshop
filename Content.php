@@ -8,19 +8,16 @@
 			
 		$_db = DBHandler::getInstance ();
 		
-		//Content Title
-		$res = $_db->getCategoryById($category_ID);
-		while ( $category = $res->fetch_object() ) {
-			echo "<h1>" . $category->category_name . "</h1>";
-		}
-		
 		//Content Beers
 		$res = $_db->getProductsByCategoryId($category_ID);
 		$beers = array();
+		
 		while ( $beer = $res->fetch_object () ) {
 			$beers[] = $beer;
 		}
+		
 		$content = new Content_table($beers, $lang);
+		$content->setTitle($_db->getCategoryById($category_ID)->fetch_object()->category_name);
 		$content->printTable($current_url);
 			
 		

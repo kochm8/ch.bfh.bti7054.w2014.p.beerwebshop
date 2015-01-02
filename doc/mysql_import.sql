@@ -39,7 +39,13 @@ CREATE TABLE IF NOT EXISTS category(
 );
 
 INSERT INTO category (category_ID, category_name) VALUES
-(1, 'Belgian Strong Beer');
+(1, 'Belgian Strong Beer'),
+(2, 'Abbey Beer'),
+(3, 'India Pale Ale'),
+(4, 'Low-Alcohol Beer'),
+(5, 'Norwegian Beer'),
+(6, 'UK Beer'),
+(7, 'Christmas Beer');
 
 
 CREATE TABLE IF NOT EXISTS beer (
@@ -57,7 +63,19 @@ CREATE TABLE IF NOT EXISTS beer (
 );
 		
 INSERT INTO beer (beer_ID, beer_name, beer_desc, beer_country, beer_size, beer_alcohol, beer_price, beer_image, FK_categoryID) VALUES
-(1, 'Beer1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged', 'Switzerland', 50, 4.6, 2.50, 'B1.jpg', 1),
-(2, 'Beer2', 'ege in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum', 'Belgium', 33, 5.2, 2.50, 'B2.jpg', 1),
-(3, 'Beer3', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form', 'Germany', 50, 6.6, 2.50, 'B3.jpg', 1),
-(4, 'Beer4', 'that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many d', 'Germany', 50, 8.0, 2.50, 'B4.jpg', 1);
+(1, 'Leffe', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged', 'Switzerland', 50, 4.6, 9.00, 'B1.jpg', 1),
+(2, 'Kwak', 'ege in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum', 'Belgium', 33, 5.2, 6.00, 'B2.jpg', 1),
+(3, 'Chimay', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form', 'Germany', 50, 6.6, 2.50, 'B3.jpg', 2),
+(4, 'Gouden Carolus', 'that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many d', 'Germany', 50, 8.0, 2.50, 'B4.jpg', 1),
+(5, 'Abbaye de Forest', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged', 'Switzerland', 50, 4.6, 2.50, 'B1.jpg', 2),
+(6, 'Abbaye de la Thure', 'ege in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum', 'Belgium', 33, 5.2, 6.00, 'B2.jpg', 2),
+(7, 'Hop Verdomme IPA', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form', 'Germany', 50, 6.6, 7.50, 'B3.jpg', 3),
+(8, 'Jupiler Blue', 'that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many d', 'Germany', 50, 8.0, 2.50, 'B4.jpg', 4),
+(9, 'Beer1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged', 'Switzerland', 50, 4.6, 6.30, 'B1.jpg', 5),
+(10, 'Beer2', 'ege in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum', 'Belgium', 33, 5.2, 2.50, 'B2.jpg', 6),
+(11, 'Beer3', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form', 'Germany', 50, 6.6, 8.00, 'B3.jpg', 6),
+(12, 'Beer4', 'that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many d', 'Germany', 50, 8.0, 2.50, 'B4.jpg', 6),
+(13, 'Affligem Patersvat', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged', 'Switzerland', 50, 4.6, 2.50, 'B1.jpg', 7),
+(14, 'Delirium Christmas', 'ege in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum', 'Belgium', 33, 5.2, 2.50, 'B2.jpg', 7),
+(15, 'Sante Bee', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form', 'Germany', 50, 6.6, 2.50, 'B3.jpg', 7),
+(17, 'Grimbergen Winter', 'that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many d', 'Germany', 50, 8.0, 2.50, 'B4.jpg', 7);

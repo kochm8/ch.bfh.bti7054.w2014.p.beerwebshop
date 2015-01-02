@@ -25,8 +25,6 @@ include_once("init_page.php");
 				echo "<h2>".$lang['CATEGORIES']."</h2>";
 			
 				$url = $_SERVER ['PHP_SELF'];
-				echo "<a href=\"$url\">" . $lang['NEWBEERS'] . "</a>";
-				echo "<br />";
 				Category::getCategoryLinks();
 			?>
 		</div>

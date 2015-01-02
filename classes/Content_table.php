@@ -4,13 +4,20 @@ class Content_table{
 	
 	private $array = array();
 	private $lang = array();
+	private $title;
 	
 	public function __construct($beers, $lang){
 		$this->array = $beers;
 		$this->lang = $lang;	
 	}
 	
+	public function setTitle($title){
+		$this->title = $title;
+	}
+	
 	public function printTable($return_url){
+		
+		echo "<h2>" . $this->title . "</h2>";
 		
 		for($i=0; $i < sizeOf($this->array); $i++){
 			

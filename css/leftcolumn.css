@@ -1,15 +1,33 @@
+#leftcolumn {
+    background: none repeat scroll 0 0 #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 10px;
+    margin-right: 20px;
+}
+
 #leftcolumn ul {
     margin: 0; 
     padding: 0;
-    width:185px;
+    width: 200px;
     list-style-type: none;
+}
+
+
+#leftcolumn h2 {
+    background: none repeat scroll 0 0 #e2e2e2;
+    color: #707070;
+    font-size: 14px;
+    margin: -10px -10px 5px;
+    padding: 4px;
 }
 
 #leftcolumn ul li a {
     text-decoration: none;
     color: black; 
     padding: 10.5px 11px;
-    background-color: #ddd;
+    background-color: #f0f0f0;
     display:block;
 }
  

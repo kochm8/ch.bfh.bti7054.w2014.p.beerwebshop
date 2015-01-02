@@ -40,6 +40,7 @@ if($hint != ''){
 	
 	if(sizeof($hints) > 0){
 		$content = new Content_table($hints, $lang);
+		$content->setTitle("Search results");
 		$content->printTable($return_url);
 	}
 }
