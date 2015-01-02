@@ -1,6 +1,4 @@
 <?php
-$value = 'irgendetwas von irgendwo';
-setcookie("TestCookie", $value);
 include_once("init_page.php");
 ?>	
 
@@ -13,6 +11,7 @@ include_once("init_page.php");
 	<link rel="stylesheet" type="text/css" href="css/cart.css" />
 	<link rel="stylesheet" type="text/css" href="css/leftcolumn.css" />
 	<link rel="shortcut icon" href="img/favicon.ico" />
+	
 </head>
 
 <body>
@@ -79,5 +78,8 @@ include_once("init_page.php");
 		</div>
 
 	</div>
+	
+
+	
 </body>
 </html>

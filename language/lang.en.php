@@ -6,6 +6,7 @@ $lang['SEARCH'] = 'Search';
 $lang['LANGUAGE'] = 'Language';
 $lang['NEXT'] = 'Next';
 $lang['BACK'] = 'Back';
+$lang['SEARCHRESULT'] = 'Search results';
 
 // Beer info
 $lang['BEER'] = 'Beer';

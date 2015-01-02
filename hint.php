@@ -8,7 +8,7 @@ $res = $_db->getAllProducts();
 $hint = strtolower(Input::get("hint"));
 $return_url = base64_encode(Input::get("return_url"));
 
-//setcookie ( "Search", $hint );
+setcookie ( "Search", $hint );
 
 $hints = array();
 
@@ -21,15 +21,21 @@ if($hint != ''){
 		$beer_name = strtolower($beer->beer_name);
 		$beer_ID = strtolower($beer->beer_ID);
 		
-		if (strpos($beer_country,$hint)===0 ){
+		/*
+		echo $beer_country .":". stripos($beer_country,$hint) . " / ";
+		echo $beer_name .":".  stripos($beer_name,$hint) . " / ";
+		echo $beer_ID .":".  stripos($beer_ID,$hint) . " / ";
+		echo "<hr>";*/
+		
+		if (stripos($beer_country,$hint)>-1 ){
 			$found = true;
 		}
 		
-		if (strpos($beer_name,$hint)===0 ){
+		if (stripos($beer_name,$hint)>-1 ){
 			$found = true;
 		}
 		
-		if (strpos($beer_ID,$hint)===0 ){
+		if (stripos($beer_ID,$hint)>-1 ){
 			$found = true;
 		}
 		
@@ -38,11 +44,12 @@ if($hint != ''){
 		}
 	}
 	
-	if(sizeof($hints) > 0){
-		$content = new Content_table($hints, $lang);
-		$content->setTitle("Search results");
-		$content->printTable($return_url);
-	}
+	$content = new Content_table($hints, $lang);
+	$content->setTitle($lang['SEARCHRESULT']);
+	$content->printTable($return_url);
+	
+}else{
+	echo " ";
 }
 
 

@@ -5,10 +5,10 @@
 	<script type="text/javascript">
 
 		function getHint(value) {
-			
+
 			var doc = document.getElementById("content");			
 			var xmlhttp;
-			
+
 			if (window.XMLHttpRequest) 
 				xmlhttp = new XMLHttpRequest();
 			else if (window.ActiveXObject) 
@@ -39,6 +39,27 @@
 			<!--<input class="submit" id="search_btn" type="submit" value="<?php echo $lang['SEARCH']?>">  -->
 		</form>
 	</div>
+	
+			
+	<script type="text/javascript">
+	
+		var getCookie = function(name){
+	
+			  var str = RegExp(""+name+"[^;]+").exec(document.cookie);		  
+			  return unescape(!!str ? str.toString().replace(/^[^=]+./,"") : "");
+		 };
+	
+	
+		var deleteCookie = function(name) {
+		    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+		};
+		
+		var cookievalue = getCookie('Search');
+		deleteCookie('Search');
+		var element = document.getElementById("search_input").value = cookievalue;
+		getHint(cookievalue);
+		
+	</script>
 
 	<div class="login">
 	
