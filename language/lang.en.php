@@ -60,6 +60,12 @@ $lang['INVBILLADDRESS'] = 'Different shipping address';
 $lang['BILLINGADDRESS'] = 'Billing address';
 $lang['STEP'] = 'Step';
 $lang['ORDER'] = 'Send order';
+$lang['POSITION'] = 'Position';
+$lang['PRODUCT'] = 'Product';
+$lang['PRICEPP'] = 'Price per piece CHF';
+$lang['SHIPPINGADDRESS'] = 'Shipping address';
+$lang['NOTLOGGEDIN'] = 'User not logged in!';
+$lang['OTHERS'] = 'Others';
 
 $GLOBALS["lang"] = $lang;
 ?>

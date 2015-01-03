@@ -1,11 +1,16 @@
 <?php
 	if(!$user->isLoggedIn()) {
-		echo "User not logged in!";
+		echo $lang['NOTLOGGEDIN'];
 		unset($_GET["step"]);
 	}
 ?>
 
 <script type="text/javascript">
+
+	var js = document.createElement("script");
+	js.type = "text/javascript";
+	js.src = "js/Validator.js";
+	document.body.appendChild(js);
 
 	function toggleinvoiceaddress(){ 
 
@@ -28,9 +33,35 @@
 		alert("dini mer besteut bi beerheaven");
 	}
 
+
+	function validate(){
+		if((document.getElementById("invaddress").style.display == 'none') || (document.getElementById("invaddress").style.display == '')){
+			goToSep(3);
+			return true;
+		}else{
+			var validator = new Validator("checkout"); 
+			validator.validate("firstname"); 
+			validator.validate("lastname"); 
+			validator.validate("street"); 
+			validator.validate("streetnr"); 
+			validator.validate("city"); 
+			validator.validate("citynr"); 
+		
+			validator.validateNumeric("citynr");
+			validator.validateNumeric("streetnr");
+	
+			if(validator.getResult()){
+				goToSep(3);
+			}
+
+			return validator.getResult();
+		}
+	}
+
 </script>
 
 <?php 
+
 if (isset ( $_GET ["step"] )) {
 	
 	if ($_GET["step"] == 1){
@@ -43,8 +74,8 @@ if (isset ( $_GET ["step"] )) {
 		echo ' 	  <tr id="shippingmethod">';
 		echo ' 	  	<td>' . $lang['SHIPPINGMETHOD'] . '</td>';
 		echo ' 		<td>';
-		echo ' 			<input type="radio" name="shippingmethod" value="collection" checked>' . $lang['COLLECTION'] . '</br>';
-		echo ' 			<input type="radio" name="shippingmethod" value="shipping">' . $lang['SHIPPING'];
+		echo ' 			<input type="radio" name="shippingmethod" value="'. $lang['COLLECTION'] .'" checked>' . $lang['COLLECTION'] . '</br>';
+		echo ' 			<input type="radio" name="shippingmethod" value="'. $lang['SHIPPING'] .'">' . $lang['SHIPPING'];
 		echo ' 		</td>';
 		echo '   </tr>';
 		echo ' 	</table>';
@@ -53,11 +84,11 @@ if (isset ( $_GET ["step"] )) {
 		echo ' 	  <tr id="paymentmethod">';
 		echo ' 	  	<td>' . $lang['PAYMENTMETHOD'] . '</td>';
 		echo ' 		<td>';
-		echo ' 			<input type="radio" name="paymentmethod" value="advancepayment" checked>' . $lang['ADVANCEPAYMENT'] . '</br>';
-		echo ' 			<input type="radio" name="paymentmethod" value="bill">' . $lang['BILL'] . '</br>';
-		echo ' 			<input type="radio" name="paymentmethod" value="paypal">PayPal' . '</br>';
-		echo ' 			<input type="radio" name="paymentmethod" value="postfinance">PostFinance' . '</br>';
-		echo ' 			<input type="radio" name="paymentmethod" value="creditcard">' . $lang['CREDITCARD'];
+		echo ' 			<input type="radio" name="paymentmethod" value="' . $lang['ADVANCEPAYMENT'] . '" checked>' . $lang['ADVANCEPAYMENT'] . '</br>';
+		echo ' 			<input type="radio" name="paymentmethod" value="' . $lang['BILL'] . '">' . $lang['BILL'] . '</br>';
+		echo ' 			<input type="radio" name="paymentmethod" value="Paypal">PayPal</br>';
+		echo ' 			<input type="radio" name="paymentmethod" value="Postfinance">PostFinance</br>';
+		echo ' 			<input type="radio" name="paymentmethod" value="'. $lang['CREDITCARD'] . '">' . $lang['CREDITCARD'];
 		echo ' 		</td>';
 		echo ' 	  </tr>';
 		echo ' 	</table>';
@@ -82,7 +113,7 @@ if (isset ( $_GET ["step"] )) {
 		echo '</form>';
 	
 	} elseif ($_GET["step"] == 2){
-	
+
 		echo ' <h1>' . $lang['STEP'] . ' 2/3</h1>';
 
 		echo ' <form id="checkout" method="post" action="">';
@@ -113,24 +144,37 @@ if (isset ( $_GET ["step"] )) {
 		echo '				  </select>';
 		echo '		 		</td> ';
 		echo '	  		  </tr>';  
-		echo '	  		  <tr id="firstname">';
-		echo '			    <td>' . $lang["FIRSTNAME"] . '*: </td>';
-		echo '			    <td><input type="text" name="firstname" value="" id="firstname" class="register_input" /></td>'; 
-		echo '			  </tr>';			  
-		echo '			  <tr id="lastname">';
-		echo '			    <td>' . $lang["LASTNAME"] . '*: </td>';
-		echo '			    <td><input type="text" name="lastname" value="" id="lastname" class="register_input" /></td>'; 
-		echo '			  </tr>';			  
-		echo '			  <tr id="street">';
-		echo '			    <td>' . $lang["STREETNR"] . '*: </td>';
-		echo '			    <td><input type="text" name="street" value="" id="street" class="register_input" /><input type="text" name="streetnr" value="" id="streetnr" class="register_input_small" /></td>'; 
-		echo '			  </tr>	';		  
-		echo '			  <tr id="city">';
-		echo '			    <td>' . $lang["POSTALCITY"] . '*: </td>';
-		echo '			    <td><input type="text" name="city" value="" id="city" class="register_input" /><input type="text" name="citynr" value="" id="citynr" class="register_input_small" /></td>';
+		echo '			  <tr>';
+		echo '			    <td>'. $lang['FIRSTNAME'] . '*: </td>';
+		echo '			    <td><input type="text" name="firstname" value="" class="register_input" /></td> ';
+		echo '			    <td id="firstname"></td>';
+		echo '			  </tr>';
+		echo '			  ';
+		echo '			  <tr>';
+		echo '				    <td>'. $lang['LASTNAME'] . '*:</td>';
+		echo '			    <td><input type="text" name="lastname" value="" class="register_input" /></td> ';
+		echo '			    <td  id="lastname"></td>';
+		echo '			  </tr>';
+		echo '			  ';
+		echo '			  <tr>';
+		echo '			    <td>' . $lang['STREETNR'] . '*:</td>';
+		echo '			    <td><input type="text" name="street" value="" class="register_input" /></td>';
+		echo '			    <td width="90px"><input type="text" name="streetnr" value="" class="register_input_small" /></td>';
+		echo '			    <td><div id="streetnr"></div><div  id="street"></div></td>';
+		echo '			  </tr>';
+		echo '			  	';
+		echo '			  <tr>';
+		echo '			    <td>'. $lang['POSTALCITY'] . '*:</td>';
+		echo '			    <td><input type="text" name="city" value="" class="register_input" />';
+		echo '			    <td><input type="text" name="citynr" value="" class="register_input_small" /></td>';
+		echo '			    <td><div id="city"></div><div  id="citynr"></div></td>';
 		echo '			  </tr>';
 		echo ' 	</table>';
 		echo ' </div>';
+		
+		echo ' <input type="hidden" name="giftbox" value="' . Input::get('giftbox') . '">';
+		echo ' <input type="hidden" name="paymentmethod" value="' . Input::get('paymentmethod') . '">';
+		echo ' <input type="hidden" name="shippingmethod" value="' . Input::get('shippingmethod') . '">';
 		
 		echo ' 	<table>';
 		echo ' 	  <tr id="buttons">';
@@ -138,7 +182,7 @@ if (isset ( $_GET ["step"] )) {
 		echo '			<input type="submit" value="' . $lang['BACK'] . '" onclick="goToSep(1);">';
 		echo ' 		</td>';
 		echo ' 		<td>';
-		echo '			<input type="submit" value="' . $lang['NEXT'] . '" onclick="goToSep(3);">';
+		echo '			<input type="submit" value="' . $lang['NEXT'] . '" onclick="return validate();">';
 		echo ' 		</td>';
 		echo ' 	  </tr>';
 		echo ' 	</table>';
@@ -146,23 +190,22 @@ if (isset ( $_GET ["step"] )) {
 		echo '</form>';
 	
 	} elseif ($_GET["step"] == 3){
-	
-		echo ' <h1>' . $lang['STEP'] . ' 3/3</h1>';
 
-		echo ' <form id="checkout" method="post" action="">';
-?>
+		echo '<h1>' . $lang['STEP'] . ' 3/3</h1>';
+
+		echo '<form id="checkout" method="post" action="">';
+
 		
-		<table>
-		  <tr>
-		    <th class="cart_confirmation">Position</th>
-		    <th class="cart_confirmation">Aktikel</th>
-		    <th class="cart_confirmation">Anzahl</th>
-		    <th class="cart_confirmation">Preis pro Stück CHF</th>
-		    <th class="cart_confirmation">Preis CHF</th>
-		  </tr>
+		echo '<table>';
+		echo '<tr>';
+	    echo '<th class="cart_confirmation">'. $lang['POSITION'] .'</th>';
+	    echo '<th class="cart_confirmation">'. $lang['PRODUCT'] .'</th>';
+	    echo '<th class="cart_confirmation">'. $lang['QUANTITY'] .'</th>';
+	    echo '<th class="cart_confirmation">'. $lang['PRICEPP'] .'</th>';
+	    echo '<th class="cart_confirmation">'. $lang['PRICE'] .'</th>';
+	  	echo '</tr>';
 
-		  
-<?php 
+		 
 		  
 		  $cart = Cart::getCart();
 		  $_db = DBHandler::getInstance ();
@@ -211,7 +254,7 @@ if (isset ( $_GET ["step"] )) {
 		//Rechnungsadresse
 		echo '<br />';
 		echo '<br />';
-		echo '<strong>Rechnungsadresse:</strong>';
+		echo '<strong>' . $lang['BILLINGADDRESS'] .':</strong>';
 		echo '<br />';
 		  
 		echo $knd_name . '<br />';
@@ -225,27 +268,38 @@ if (isset ( $_GET ["step"] )) {
 	  	//Lieferadresse
 		echo '<br />';
 		echo '<br />';
-		echo '<strong>Lieferadresse:</strong>';
+		echo '<strong>'. $lang['SHIPPINGADDRESS'] . ':</strong>';
 		echo '<br />';
+		if(Input::get('firstname') != ''){
+			$knd_name = Input::get('firstname') . ' ' . Input::get('lastname');
+			$knd_address = Input::get('street') . ' ' . Input::get('streetnr');
+			$knd_city = Input::get('city') . ' ' . Input::get('citynr');
+		}
 		echo $knd_name . '<br />';
 		echo $knd_address . '<br />';
 		echo $knd_city . '<br />';
-
 		
 		//Zahlungsart
 		echo '<br />';
-		echo '<strong>Zahlungsoption:</strong>';
+		echo '<strong>' . $lang['PAYMENTMETHOD'] . ':</strong>';
 		echo '<br />';
+		echo Input::get('paymentmethod');
 		echo '<br />';
 		
 		//Versandart
 		echo '<br />';
-		echo '<strong>Versandart:</strong>';
+		echo '<strong>' . $lang['SHIPPINGMETHOD'] . ':</strong>';
+		echo '<br />';
+		echo Input::get('shippingmethod');
 		echo '<br />';
 		echo '<br />';
 		
 		//Sonstiges
-		echo '<strong>Geschenk</strong>';
+		echo '<strong>' . $lang['OTHERS'] . ':</strong>';
+		echo '<br />';
+		if(Input::get('giftbox') != ''){
+			echo $lang['GIFTBOX'];
+		}
 		echo '<br />';
 		echo '<br />';
 		

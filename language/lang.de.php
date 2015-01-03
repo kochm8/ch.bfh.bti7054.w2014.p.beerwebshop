@@ -60,6 +60,12 @@ $lang['INVBILLADDRESS'] = 'Abweichende Lieferadresse';
 $lang['BILLINGADDRESS'] = 'Rechnungsadresse';
 $lang['STEP'] = 'Schritt';
 $lang['ORDER'] = 'Bestellung senden';
+$lang['POSITION'] = 'Position';
+$lang['PRODUCT'] = 'Produkt';
+$lang['PRICEPP'] = 'Preis pro Stück CHF';
+$lang['SHIPPINGADDRESS'] = 'Lieferaddresse';
+$lang['NOTLOGGEDIN'] = 'Benutzer nicht eingeloggt!';
+$lang['OTHERS'] = 'Sonstiges';
 
 $GLOBALS["lang"] = $lang;
 ?>
