@@ -232,12 +232,21 @@ if (isset ( $_GET ["step"] )) {
 		echo $knd_city . '<br />';
 
 		
-		//Zahlungsoptionen
+		//Zahlungsart
 		echo '<br />';
-		echo '<strong>Zahlungsoption</strong>';
+		echo '<strong>Zahlungsoption:</strong>';
 		echo '<br />';
-		echo 'Vorauskasse <br />';
-		echo 'Geschenk <br />';
+		echo '<br />';
+		
+		//Versandart
+		echo '<br />';
+		echo '<strong>Versandart:</strong>';
+		echo '<br />';
+		echo '<br />';
+		
+		//Sonstiges
+		echo '<strong>Geschenk</strong>';
+		echo '<br />';
 		echo '<br />';
 		
 		//Bestätigung
