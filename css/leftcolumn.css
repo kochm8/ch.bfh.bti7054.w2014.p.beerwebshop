@@ -23,6 +23,10 @@
     padding: 4px;
 }
 
+#leftcolumn li{
+	border-bottom: 1px solid #ddd;
+}
+
 #leftcolumn ul li a {
     text-decoration: none;
     color: black; 

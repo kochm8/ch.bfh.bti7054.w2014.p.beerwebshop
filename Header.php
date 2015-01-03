@@ -1,6 +1,6 @@
 <div id="header">
 
-   <?php $user = new User(); ?>
+   <?php $user = new User();  ?>
    
 	<script type="text/javascript">
 
@@ -64,13 +64,14 @@
 	<div class="login">
 	
 <!-- User is logged in -->
-		<?php if($user->isLoggedIn()) {
-		echo "<h2>". $lang['MYACCOUNT'] ."</h2><br />";
-		echo $lang['WELCOME'] ."&nbsp;". $user->data()['firstname'] . "<br />";
-		//echo "Account: ". $user->data()['username'] ."<br />";
-		echo "<br />";
-		echo '<a href="logout.php">'. $lang['LOGOUT'] ."</a>";
-		}?>
+		<?php 
+		if($user->isLoggedIn()) {
+			echo "<h2>". $lang['MYACCOUNT'] ."</h2><br />";
+			echo $lang['WELCOME'] ."&nbsp;". $user->data()['firstname'] . "<br />";
+			echo "<br />";
+			echo '<a href="logout.php">'. $lang['LOGOUT'] ."</a>";
+		}
+		?>
 
 <!-- User isn't logged in -->
 		<?php if(!$user->isLoggedIn()) { ?>
