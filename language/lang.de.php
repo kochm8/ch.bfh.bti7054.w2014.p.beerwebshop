@@ -58,6 +58,7 @@ $lang['CREDITCARD'] = 'Kreditkarte';
 $lang['GIFTBOX'] = 'Geschenk';
 $lang['INVBILLADDRESS'] = 'Abweichende Lieferadresse';
 $lang['BILLINGADDRESS'] = 'Rechnungsadresse';
+$lang['STEP'] = 'Schritt';
 
 $GLOBALS["lang"] = $lang;
 ?>

@@ -58,6 +58,7 @@ $lang['CREDITCARD'] = 'Credit card';
 $lang['GIFTBOX'] = 'Gift box';
 $lang['INVBILLADDRESS'] = 'Different shipping address';
 $lang['BILLINGADDRESS'] = 'Billing address';
+$lang['STEP'] = 'Step';
 
 $GLOBALS["lang"] = $lang;
 ?>

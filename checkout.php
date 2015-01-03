@@ -2,7 +2,7 @@
 
 if(!$user->isLoggedIn()) {
 	echo "User not logged in!";
-	$_GET ["step"] = "";
+	unset($_GET["step"]);
 }
 
 echo ' <script>';
@@ -21,9 +21,9 @@ if (isset ( $_GET ["step"] )) {
 	
 	if ($_GET["step"] == 1){
 	
-		echo ' <h1>Step 1/3</h1>';
+		echo ' <h1>' . $lang['STEP']. ' 1/3</h1>';
 		
-		echo ' <form name="checkout" method="post" action="index.php?todo=checkout&step=2.php">';
+		echo ' <form name="checkout" method="post" action="index.php?todo=checkout&step=2">';
 		
 		echo ' 	<table>';
 		echo ' 	  <tr id="shippingmethod">';
@@ -69,9 +69,9 @@ if (isset ( $_GET ["step"] )) {
 	
 	} elseif ($_GET["step"] == 2){
 	
-		echo ' <h1>Step 2/3</h1>';
+		echo ' <h1>' . $lang['STEP'] . ' 2/3</h1>';
 
-		echo ' <form name="checkout" method="post" action="index.php?todo=checkout&step=3.php">';
+		echo ' <form name="checkout" method="post" action="index.php?todo=checkout&step=3">';
 		
 		echo ' 	<table>';
 		echo ' 	  <tr id="invbilladdress">';
@@ -133,7 +133,7 @@ if (isset ( $_GET ["step"] )) {
 	
 	} elseif ($_GET["step"] == 3){
 	
-		echo ' <h1>Step 3/3</h1>';
+		echo ' <h1>' . $lang['STEP'] . ' 3/3</h1>';
 
 	
 	}

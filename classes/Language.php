@@ -54,6 +54,15 @@ class Language {
 		
 		if (Input::get('categoryid') != '') {
 			$url = $url . "?categoryid=" . Input::get('categoryid') . "&lan=";
+			
+		}elseif (Input::get('todo') != ''){
+			
+			if(Input::get('step') != ''){
+				$url = $url . "?todo=" . Input::get('todo') . "&step=" . Input::get('step') . "&lan=";
+			}else{
+				$url = $url . "?todo=" . Input::get('todo') . "&lan=";
+			}
+			
 		} else {
 			$url = $url . "?lan=";
 		}
