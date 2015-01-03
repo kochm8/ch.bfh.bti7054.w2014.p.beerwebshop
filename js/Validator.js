@@ -31,6 +31,10 @@ function Validator(frm) {
 		if ((atpos< 1 || dotpos<atpos+2 || dotpos+2>=str.length) && str != "") {			     
 			createElement(field, "Not a valid e-mail address");
 			this.result = false;	
+			
+		}else if(str == ""){
+			createElement(field, "Field is empty");
+			this.result = false;	
 		}
 	};
 
