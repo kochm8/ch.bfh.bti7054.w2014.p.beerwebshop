@@ -4,10 +4,11 @@ if(!$user->isLoggedIn()) {
 	echo "User not logged in!";
 	unset($_GET["step"]);
 }
-
+?>
+<!--
 echo ' <script>';
 echo ' function toggleinvoiceaddress()';
-echo ' {';
+echo ' { alert("yes");';
 echo ' 	if(document.getElementById("cbxInvbilladdress").checked)';
 echo '  	alert("lol1");';
 echo ' 		document.getElementById("invaddress").style.display = true;';
@@ -16,7 +17,19 @@ echo '  	alert("lol2");';
 echo ' 		document.getElementById("invaddress").style.display = false;';
 echo ' }';
 echo ' </script>';
+  -->
+<script type="text/javascript">
+	function toggleinvoiceaddress(){ 
 
+		if(document.getElementById("cbxInvbilladdress").checked){
+	 		document.getElementById("invaddress").style.display = 'block';
+		}else{
+	 		document.getElementById("invaddress").style.display = 'none';
+		}
+	}
+</script>
+
+<?php 
 if (isset ( $_GET ["step"] )) {
 	
 	if ($_GET["step"] == 1){
@@ -77,18 +90,18 @@ if (isset ( $_GET ["step"] )) {
 		echo ' 	  <tr id="invbilladdress">';
 		echo ' 	  	<td>' . $lang['INVBILLADDRESS'] . '</td>';
 		echo ' 		<td>';
-		echo ' 			<input type="checkbox" id="cbxInvbilladdress" name="cbxInvbilladdress" value="cbxInvbilladdress" onclick="toggleinvoiceaddress()" unchecked>';
+		echo ' 			<input type="checkbox" id="cbxInvbilladdress" name="cbxInvbilladdress" value="cbxInvbilladdress" onclick="toggleinvoiceaddress();" unchecked>';
 		echo ' 		</td>';
 		echo ' 	  </tr>';
 		echo ' 	  <tr id="billingaddress">';
 		echo ' 	  	<td>' . $lang['BILLINGADDRESS'] . '</td>';
 		echo ' 		<td>';
-		echo ' 			Rechnungsadresse';
+		echo ' 		';
 		echo ' 		</td>';
 		echo ' 	  </tr>';
 		echo ' 	</table>';
 		
-		echo '  <div id="invaddress">';
+		echo '  <div id="invaddress" class="hidden">';
 		echo ' 	<table>';
 		echo '	  		<tr id="salutation">';
 		echo '				<td>' . $lang["SALUTATION"] . '*: </td>';
@@ -109,11 +122,11 @@ if (isset ( $_GET ["step"] )) {
 		echo '			  </tr>';			  
 		echo '			  <tr id="street">';
 		echo '			    <td>' . $lang["STREETNR"] . '*: </td>';
-		echo '			    <td><input type="text" name="street" value="" id="street" class="register_input" /><input type="text" name="streetnr" value="" id="streetnr" class="register_input" /></td>'; 
+		echo '			    <td><input type="text" name="street" value="" id="street" class="register_input" /><input type="text" name="streetnr" value="" id="streetnr" class="register_input_small" /></td>'; 
 		echo '			  </tr>	';		  
 		echo '			  <tr id="city">';
 		echo '			    <td>' . $lang["POSTALCITY"] . '*: </td>';
-		echo '			    <td><input type="text" name="city" value="" id="city" class="register_input" /><input type="text" name="citynr" value="" id="citynr" class="register_input" /></td>';
+		echo '			    <td><input type="text" name="city" value="" id="city" class="register_input" /><input type="text" name="citynr" value="" id="citynr" class="register_input_small" /></td>';
 		echo '			  </tr>';
 		echo ' 	</table>';
 		echo ' </div>';

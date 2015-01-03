@@ -34,6 +34,10 @@ input[type=submit] {
 	color: #fafafa;
 }
 
+.hidden {
+    display: none;
+}
+
 #search_btn{
 	left: -8px;
 }
