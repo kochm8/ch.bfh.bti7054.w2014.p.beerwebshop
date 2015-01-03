@@ -29,7 +29,7 @@ if (Input::get('username') != '') {
 
 <form name="register" method="post">
 
-	<table border="1">
+	<table>
 	  <tr id="salutation">
 	    <td><?php echo $lang['SALUTATION'] . '*:' ?> </td>
 	    <td>
