@@ -1,24 +1,12 @@
 <?php
-
-if(!$user->isLoggedIn()) {
-	echo "User not logged in!";
-	unset($_GET["step"]);
-}
+	if(!$user->isLoggedIn()) {
+		echo "User not logged in!";
+		unset($_GET["step"]);
+	}
 ?>
-<!--
-echo ' <script>';
-echo ' function toggleinvoiceaddress()';
-echo ' { alert("yes");';
-echo ' 	if(document.getElementById("cbxInvbilladdress").checked)';
-echo '  	alert("lol1");';
-echo ' 		document.getElementById("invaddress").style.display = true;';
-echo ' 	else';
-echo '  	alert("lol2");';
-echo ' 		document.getElementById("invaddress").style.display = false;';
-echo ' }';
-echo ' </script>';
-  -->
+
 <script type="text/javascript">
+
 	function toggleinvoiceaddress(){ 
 
 		if(document.getElementById("cbxInvbilladdress").checked){
@@ -27,6 +15,19 @@ echo ' </script>';
 	 		document.getElementById("invaddress").style.display = 'none';
 		}
 	}
+
+
+	function goToSep(step){
+		var form = document.getElementById('checkout');
+		form.action = "index.php?todo=checkout&step="+step;
+		form.submit();		
+	}
+
+
+	function finish(){
+		alert("dini mer besteut bi beerheaven");
+	}
+
 </script>
 
 <?php 
@@ -36,7 +37,7 @@ if (isset ( $_GET ["step"] )) {
 	
 		echo ' <h1>' . $lang['STEP']. ' 1/3</h1>';
 		
-		echo ' <form name="checkout" method="post" action="index.php?todo=checkout&step=2">';
+		echo ' <form name="checkout" id="checkout" method="post" action="index.php?todo=checkout&step=2">';
 		
 		echo ' 	<table>';
 		echo ' 	  <tr id="shippingmethod">';
@@ -84,7 +85,7 @@ if (isset ( $_GET ["step"] )) {
 	
 		echo ' <h1>' . $lang['STEP'] . ' 2/3</h1>';
 
-		echo ' <form name="checkout" method="post" action="index.php?todo=checkout&step=3">';
+		echo ' <form id="checkout" method="post" action="">';
 		
 		echo ' 	<table>';
 		echo ' 	  <tr id="invbilladdress">';
@@ -106,7 +107,7 @@ if (isset ( $_GET ["step"] )) {
 		echo '	  		<tr id="salutation">';
 		echo '				<td>' . $lang["SALUTATION"] . '*: </td>';
 		echo '	    		<td>';
-		echo '				  <select name="salutation" id="salutation" class="register_input">';
+		echo '				  <select name="salutation" id="salutation" class="register_select">';
 		echo '			  		<option value="mrs">' . $lang["MRS"] . '</option>';
 		echo '			  		<option value="mr">' . $lang["MR"] . '</option>';
 		echo '				  </select>';
@@ -134,10 +135,10 @@ if (isset ( $_GET ["step"] )) {
 		echo ' 	<table>';
 		echo ' 	  <tr id="buttons">';
 		echo ' 		<td>';
-		echo '			<input type="submit" value="' . $lang['BACK'] . '">';
+		echo '			<input type="submit" value="' . $lang['BACK'] . '" onclick="goToSep(1);">';
 		echo ' 		</td>';
 		echo ' 		<td>';
-		echo '			<input type="submit" value="' . $lang['NEXT'] . '">';
+		echo '			<input type="submit" value="' . $lang['NEXT'] . '" onclick="goToSep(3);">';
 		echo ' 		</td>';
 		echo ' 	  </tr>';
 		echo ' 	</table>';
@@ -148,7 +149,50 @@ if (isset ( $_GET ["step"] )) {
 	
 		echo ' <h1>' . $lang['STEP'] . ' 3/3</h1>';
 
-	
+		echo ' <form id="checkout" method="post" action="">';
+?>
+		
+		<table>
+		  <tr>
+		    <th>Position</th>
+		    <th>Aktikel</th>
+		    <th>Anzahl</th>
+		    <th>Preis pro Stück CHF</th>
+		    <th>Preis CHF</th>
+		  </tr>
+		  <tr>
+		  <td>1</td>
+		    <td>dini mer</td>
+		    <td>123</td>
+		    <td>1.-</td>
+		    <td>99.-</td>
+		  </tr>
+		</table>
+		
+		<br />
+		<h3>Total:</h3>
+		<br />
+		Rechnungsadresse:
+		<br />
+		Lieferadresse:
+		<br />
+		Zahlungsoption:
+		<br />
+		
+		
+<?php 
+		echo ' 	<table>';
+		echo ' 	  <tr id="buttons">';
+		echo ' 		<td>';
+		echo '			<input type="submit" value="' . $lang['BACK'] . '" onclick="goToSep(2);">';
+		echo ' 		</td>';
+		echo ' 		<td>';
+		echo '			<input type="submit" value="' . $lang['ORDER'] . '" onclick="finish();">';
+		echo ' 		</td>';
+		echo ' 	  </tr>';
+		echo ' 	</table>';
+		
+		echo '</form>';
 	}
 
 }

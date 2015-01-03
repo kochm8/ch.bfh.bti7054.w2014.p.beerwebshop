@@ -59,6 +59,7 @@ $lang['GIFTBOX'] = 'Gift box';
 $lang['INVBILLADDRESS'] = 'Different shipping address';
 $lang['BILLINGADDRESS'] = 'Billing address';
 $lang['STEP'] = 'Step';
+$lang['ORDER'] = 'Send order';
 
 $GLOBALS["lang"] = $lang;
 ?>

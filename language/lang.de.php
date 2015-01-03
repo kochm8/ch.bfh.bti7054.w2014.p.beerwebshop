@@ -59,6 +59,7 @@ $lang['GIFTBOX'] = 'Geschenk';
 $lang['INVBILLADDRESS'] = 'Abweichende Lieferadresse';
 $lang['BILLINGADDRESS'] = 'Rechnungsadresse';
 $lang['STEP'] = 'Schritt';
+$lang['ORDER'] = 'Bestellung senden';
 
 $GLOBALS["lang"] = $lang;
 ?>
