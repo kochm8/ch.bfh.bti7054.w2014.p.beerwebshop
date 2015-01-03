@@ -168,3 +168,8 @@ input[type=submit] {
 	height: 50px;
 	width: 50px;
 }
+
+.cart_confirmation{
+	border-bottom: groove black 1px;
+	text-align: left;
+}

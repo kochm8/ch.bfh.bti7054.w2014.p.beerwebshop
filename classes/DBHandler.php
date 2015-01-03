@@ -42,14 +42,14 @@ class DBHandler extends mysqli {
 	/*
 	 * get all products
 	 */
-	public  function  getAllProducts(){
+	public function  getAllProducts(){
 		return $this->query("SELECT * FROM beer");
 	}
 	
 	/*
 	 * get all categories
 	 */
-	public  function  getAllCategories(){
+	public function  getAllCategories(){
 		return $this->query("SELECT * FROM category");
 	}
 
@@ -57,11 +57,18 @@ class DBHandler extends mysqli {
 	/*
 	 * create login
 	 */
-	public  function createUser($salutation, $firstname, $lastname, $street, $streetnr, $city, $citynr, $birthdate, $email, $tel, $mobile, $language, $username, $password, $salt){
+	public function createUser($salutation, $firstname, $lastname, $street, $streetnr, $city, $citynr, $birthdate, $email, $tel, $mobile, $language, $username, $password, $salt){
 		
 		return $this->query("insert into user (salutation, firstname, lastname, street_name, street_number, city_name, city_number, birthdate, email, tel, mobile, language, username, password, salt)
 										values('$salutation', '$firstname', '$lastname', '$street', '$streetnr', '$city', '$citynr', '$birthdate', '$email', '$tel', '$mobile', '$language', '$username', '$password', '$salt');");
 		
+	}
+	
+	/*
+	 * get user address
+	 */
+	public function getAddressByUsername($username){
+		return $this->query("SELECT firstname, lastname, street_name, street_number, city_name, city_number, email, tel, mobile FROM user WHERE username = '" . $username ."'");
 	}
 	
 	

@@ -154,33 +154,93 @@ if (isset ( $_GET ["step"] )) {
 		
 		<table>
 		  <tr>
-		    <th>Position</th>
-		    <th>Aktikel</th>
-		    <th>Anzahl</th>
-		    <th>Preis pro Stück CHF</th>
-		    <th>Preis CHF</th>
+		    <th class="cart_confirmation">Position</th>
+		    <th class="cart_confirmation">Aktikel</th>
+		    <th class="cart_confirmation">Anzahl</th>
+		    <th class="cart_confirmation">Preis pro Stück CHF</th>
+		    <th class="cart_confirmation">Preis CHF</th>
 		  </tr>
-		  <tr>
-		  <td>1</td>
-		    <td>dini mer</td>
-		    <td>123</td>
-		    <td>1.-</td>
-		    <td>99.-</td>
-		  </tr>
-		</table>
-		
-		<br />
-		<h3>Total:</h3>
-		<br />
-		Rechnungsadresse:
-		<br />
-		Lieferadresse:
-		<br />
-		Zahlungsoption:
-		<br />
-		
-		
+
+		  
 <?php 
+		  
+		  $cart = Cart::getCart();
+		  $_db = DBHandler::getInstance ();
+		  
+		  $totalPrice = 0;
+		  $i = 0;
+
+		  foreach ( $cart as $key => $value ) {
+		  	
+		  	$price = 0;		  
+		  	$i = $i + 1;
+		  	$res = $_db->getProductById ( $value['id'] );
+		  	
+		  	while ( $db_cart = $res->fetch_object () ) {
+		  		echo '<tr>';
+		  		echo '<td class="cart_confirmation">' . $i . '</td>';
+		  		echo '<td class="cart_confirmation">' . $db_cart->beer_name . '</td>';
+		  		echo '<td class="cart_confirmation">'. $value['quan'] .'</td>';
+		  		echo '<td class="cart_confirmation">'. $db_cart->beer_price .'</td>';
+		  		
+		  		$price = $price + ($db_cart->beer_price * $value['quan']);
+		  		echo '<td class="cart_confirmation">'. number_format($price, 2, '.', '') .'</td>';
+		  		echo '</tr>';
+		  			
+
+		  	}
+		  	$totalPrice = $totalPrice + $price;
+		  }
+		  
+		  echo '</table>';
+		  echo '<br />';
+		  echo '<strong>Total: <u> CHF ' . number_format($totalPrice, 2, '.', '') . '</u></strong><br /><br />';
+		  
+		  
+		  $res = $_db->getAddressByUsername($user->data()['username']);
+		  
+		  while ( $address = $res->fetch_object () ) {
+		  	$knd_name =  $address->firstname . ' ' . $address->lastname;
+		  	$knd_address = $address->street_name . ' ' . $address->street_number;
+		  	$knd_city = $address->city_number . ' ' . $address->city_name;
+		  	$knd_email = $address->email ;
+		  	$knd_tel = 'Tel: '. $address->tel;
+		  	$knd_mobile = 'Mobile: '.$address->mobile;
+		  }
+		  
+		//Rechnungsadresse
+		echo '<br />';
+		echo '<br />';
+		echo '<strong>Rechnungsadresse:</strong>';
+		echo '<br />';
+		  
+		echo $knd_name . '<br />';
+		echo $knd_address . '<br />';
+		echo $knd_city . '<br />';
+	  	echo '<br />';
+	  	echo $knd_email . '<br />';
+	  	echo $knd_tel . '<br />';
+	  	echo $knd_mobile . '<br />';
+		 
+	  	//Lieferadresse
+		echo '<br />';
+		echo '<br />';
+		echo '<strong>Lieferadresse:</strong>';
+		echo '<br />';
+		echo $knd_name . '<br />';
+		echo $knd_address . '<br />';
+		echo $knd_city . '<br />';
+
+		
+		//Zahlungsoptionen
+		echo '<br />';
+		echo '<strong>Zahlungsoption</strong>';
+		echo '<br />';
+		echo 'Vorauskasse <br />';
+		echo 'Geschenk <br />';
+		echo '<br />';
+		
+		//Bestätigung
 		echo ' 	<table>';
 		echo ' 	  <tr id="buttons">';
 		echo ' 		<td>';
