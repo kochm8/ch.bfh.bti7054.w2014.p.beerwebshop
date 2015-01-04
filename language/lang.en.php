@@ -66,6 +66,7 @@ $lang['PRICEPP'] = 'Price per piece CHF';
 $lang['SHIPPINGADDRESS'] = 'Shipping address';
 $lang['NOTLOGGEDIN'] = 'User not logged in!';
 $lang['OTHERS'] = 'Others';
+$lang['CONFIRMATION'] = 'Order confirmation';
 
 $GLOBALS["lang"] = $lang;
 ?>

@@ -193,6 +193,9 @@ if (isset ( $_GET ["step"] )) {
 
 		echo '<h1>' . $lang['STEP'] . ' 3/3</h1>';
 
+		echo '<h2>' . $lang['CONFIRMATION'] . '</h2>';
+		echo '<br />';
+		
 		echo '<form id="checkout" method="post" action="">';
 
 		
