@@ -31,6 +31,12 @@
 
 	function finish(){
 		alert("dini mer besteut bi beerheaven");
+
+		var input = document.getElementById("pay");
+		if(input.value == '3'){
+		
+			alert("paypal");
+		}
 	}
 
 
@@ -74,8 +80,8 @@ if (isset ( $_GET ["step"] )) {
 		echo ' 	  <tr id="shippingmethod">';
 		echo ' 	  	<td>' . $lang['SHIPPINGMETHOD'] . '</td>';
 		echo ' 		<td>';
-		echo ' 			<input type="radio" name="shippingmethod" value="'. $lang['COLLECTION'] .'" checked>' . $lang['COLLECTION'] . '</br>';
-		echo ' 			<input type="radio" name="shippingmethod" value="'. $lang['SHIPPING'] .'">' . $lang['SHIPPING'];
+		echo ' 			<input type="radio" name="shippingmethod" value="1" checked>' . $lang['COLLECTION'] . '</br>';
+		echo ' 			<input type="radio" name="shippingmethod" value="2">' . $lang['SHIPPING'];
 		echo ' 		</td>';
 		echo '   </tr>';
 		echo ' 	</table>';
@@ -84,11 +90,11 @@ if (isset ( $_GET ["step"] )) {
 		echo ' 	  <tr id="paymentmethod">';
 		echo ' 	  	<td>' . $lang['PAYMENTMETHOD'] . '</td>';
 		echo ' 		<td>';
-		echo ' 			<input type="radio" name="paymentmethod" value="' . $lang['ADVANCEPAYMENT'] . '" checked>' . $lang['ADVANCEPAYMENT'] . '</br>';
-		echo ' 			<input type="radio" name="paymentmethod" value="' . $lang['BILL'] . '">' . $lang['BILL'] . '</br>';
-		echo ' 			<input type="radio" name="paymentmethod" value="Paypal">PayPal</br>';
-		echo ' 			<input type="radio" name="paymentmethod" value="Postfinance">PostFinance</br>';
-		echo ' 			<input type="radio" name="paymentmethod" value="'. $lang['CREDITCARD'] . '">' . $lang['CREDITCARD'];
+		echo ' 			<input type="radio" name="paymentmethod" value="1" checked>' . $lang['ADVANCEPAYMENT'] . '</br>';
+		echo ' 			<input type="radio" name="paymentmethod" value="2">' . $lang['BILL'] . '</br>';
+		echo ' 			<input type="radio" name="paymentmethod" value="3">PayPal</br>';
+		echo ' 			<input type="radio" name="paymentmethod" value="4">PostFinance</br>';
+		echo ' 			<input type="radio" name="paymentmethod" value="5">' . $lang['CREDITCARD'];
 		echo ' 		</td>';
 		echo ' 	  </tr>';
 		echo ' 	</table>';
@@ -196,7 +202,7 @@ if (isset ( $_GET ["step"] )) {
 		echo '<h2>' . $lang['CONFIRMATION'] . '</h2>';
 		echo '<br />';
 		
-		echo '<form id="checkout" method="post" action="">';
+		echo '<form id="checkout" method="post" action="index.php">';
 
 		
 		echo '<table>';
@@ -208,6 +214,9 @@ if (isset ( $_GET ["step"] )) {
 	    echo '<th class="cart_confirmation">'. $lang['PRICE'] .'</th>';
 	  	echo '</tr>';
 
+	  	echo ' <input type="hidden" name="giftbox" value="' . Input::get('giftbox') . '">';
+	  	echo ' <input type="hidden" name="paymentmethod" id="pay" value="' . Input::get('paymentmethod') . '">';
+	  	echo ' <input type="hidden" name="shippingmethod" value="' . Input::get('shippingmethod') . '">';
 		 
 		  
 		  $cart = Cart::getCart();
@@ -286,14 +295,28 @@ if (isset ( $_GET ["step"] )) {
 		echo '<br />';
 		echo '<strong>' . $lang['PAYMENTMETHOD'] . ':</strong>';
 		echo '<br />';
-		echo Input::get('paymentmethod');
+		if(Input::get('paymentmethod') == 1){
+			echo $lang['ADVANCEPAYMENT'];
+		}elseif(Input::get('paymentmethod') == 2){
+			echo $lang['BILL'];
+		}elseif(Input::get('paymentmethod') == 3){
+			echo 'PayPal';
+		}elseif(Input::get('paymentmethod') == 4){
+			echo 'PostFinance';
+		}elseif(Input::get('paymentmethod') == 5){
+			echo $lang['CREDITCARD'];
+		}
 		echo '<br />';
 		
 		//Versandart
 		echo '<br />';
 		echo '<strong>' . $lang['SHIPPINGMETHOD'] . ':</strong>';
 		echo '<br />';
-		echo Input::get('shippingmethod');
+		if(Input::get('shippingmethod') == 1){
+			echo $lang['COLLECTION'];
+		}elseif(Input::get('shippingmethod') == 2){
+			echo $lang['SHIPPING'];
+		}
 		echo '<br />';
 		echo '<br />';
 		
@@ -313,7 +336,7 @@ if (isset ( $_GET ["step"] )) {
 		echo '			<input type="submit" value="' . $lang['BACK'] . '" onclick="goToSep(2);">';
 		echo ' 		</td>';
 		echo ' 		<td>';
-		echo '			<input type="submit" value="' . $lang['ORDER'] . '" onclick="finish();">';
+		echo '			<input type="submit" name="finish" value="' . $lang['ORDER'] . '" >';
 		echo ' 		</td>';
 		echo ' 	  </tr>';
 		echo ' 	</table>';
@@ -322,7 +345,6 @@ if (isset ( $_GET ["step"] )) {
 	}
 
 }
-
 ?>
 	
 	

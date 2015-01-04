@@ -67,6 +67,7 @@ $lang['SHIPPINGADDRESS'] = 'Lieferaddresse';
 $lang['NOTLOGGEDIN'] = 'Benutzer nicht eingeloggt!';
 $lang['OTHERS'] = 'Sonstiges';
 $lang['CONFIRMATION'] = 'Auftragsbestätigung';
+$lang['FINISH'] = 'Vielen dank für Ihre Bestellung!';
 
 $GLOBALS["lang"] = $lang;
 ?>

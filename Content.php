@@ -1,6 +1,17 @@
 <div id="content">
 	
 	<?php
+
+	if(Input::get('finish')){
+		if(Input::get('paymentmethod')== '3'){
+			include_once 'paypal.php';
+			Cart::clear();
+		}else{
+			echo $lang['FINISH'];
+			Cart::clear();
+		}
+	}
+	
 	
 	if (isset ( $_GET ["categoryid"] )) {
 

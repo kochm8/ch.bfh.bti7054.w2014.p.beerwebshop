@@ -67,6 +67,7 @@ $lang['SHIPPINGADDRESS'] = 'Shipping address';
 $lang['NOTLOGGEDIN'] = 'User not logged in!';
 $lang['OTHERS'] = 'Others';
 $lang['CONFIRMATION'] = 'Order confirmation';
+$lang['FINISH'] = 'Many thanks for your order!';
 
 $GLOBALS["lang"] = $lang;
 ?>
