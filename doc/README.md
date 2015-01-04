@@ -7,6 +7,11 @@ Database:
 3) Execute ..\doc\mysql_import.sql with phpmyadmin
 
 
-Eclipse:
+Import Project in Eclipse:
 1) Import->Project from Git->Clone URI
-2) URI = https://github.com/kochm8/ch.bfh.bti7054.w2014.p.beerwebshop
+	URI: https://github.com/kochm8/ch.bfh.bti7054.w2014.p.beerwebshop.git
+	Host: github.com
+	Path: /kochm8/ch.bfh.bti7054.w2014.p.beerwebshop.git
+
+2) Destination directory:  ..\xmapp\htdocs\..
+3) finish and run http://localhost/ch.bfh.bti7054.w2014.p.beerwebshop/index.php
