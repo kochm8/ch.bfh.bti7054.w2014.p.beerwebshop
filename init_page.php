@@ -1,5 +1,7 @@
 <?php
-
+/*
+ *  initialize a php file
+ */
 	session_start();
 	
 	if($_SERVER['HTTP_HOST'] == 'localhost'){

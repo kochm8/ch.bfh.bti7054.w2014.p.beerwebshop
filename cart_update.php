@@ -1,4 +1,7 @@
 <?php
+/*
+ * Updates the shopping cart
+ */
 session_start ();
 include_once("init_page.php");
 

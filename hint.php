@@ -1,4 +1,7 @@
 <?php
+/*
+ * Shows some search results
+ */
 
 include_once("init_page.php");
 

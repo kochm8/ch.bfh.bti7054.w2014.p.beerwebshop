@@ -11,14 +11,16 @@ include_once("init_page.php");
 	<link rel="stylesheet" type="text/css" href="css/cart.css" />
 	<link rel="stylesheet" type="text/css" href="css/leftcolumn.css" />
 	<link rel="shortcut icon" href="img/favicon.ico" />
-	
 </head>
 
 <body>
 	<div id="wrapper">
 
+<!-- Header Part wih: Logo, Search, Login  -->
 		<?php include("Header.php"); ?>
 
+		
+<!-- Leftcolumn: Beer Categorys -->
 		<div id="leftcolumn">
 			<?php
 				echo "<h2>".$lang['CATEGORIES']."</h2>";
@@ -28,8 +30,12 @@ include_once("init_page.php");
 			?>
 		</div>
 
+		
+<!-- Content -->
 		<?php include("Content.php");  ?>
 
+		
+<!-- Rightcolumn: Shopping Cart -->
 		<div id="rightcolumn">
 		
 			<div class="shopping-cart">			
@@ -74,6 +80,7 @@ include_once("init_page.php");
 
 		</div>
 
+<!-- Footer -->
 		<div id="footer">
 		</div>
 

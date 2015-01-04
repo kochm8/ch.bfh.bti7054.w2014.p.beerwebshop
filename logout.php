@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * User Logout
+ */
+
 require_once("init_page.php");
 
 $user = new User();

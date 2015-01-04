@@ -7,24 +7,24 @@ if (Input::get('username') != '') {
 	$salt = Hash::salt(32);
 	
 	try {
-	$user->create(Input::get('salutation'),
-					Input::get('firstname'),
-					Input::get('lastname'),
-					Input::get('street'),
-					Input::get('streetnr'),
-					Input::get('city'),
-					Input::get('citynr'),
-					Input::get('birthdate'),
-					Input::get('email'),
-					Input::get('tel'),
-					Input::get('mobile'),
-					Input::get('language'),
-					Input::get('username'),
-					Hash::make(Input::get('password'), $salt),
-					$salt);
-	
-	$user->login(Input::get('username'), Input::get('password'));
-	header ( 'Location:' . $_SERVER ['PHP_SELF'] );
+		$user->create(Input::get('salutation'),
+						Input::get('firstname'),
+						Input::get('lastname'),
+						Input::get('street'),
+						Input::get('streetnr'),
+						Input::get('city'),
+						Input::get('citynr'),
+						Input::get('birthdate'),
+						Input::get('email'),
+						Input::get('tel'),
+						Input::get('mobile'),
+						Input::get('language'),
+						Input::get('username'),
+						Hash::make(Input::get('password'), $salt),
+						$salt);
+		
+		$user->login(Input::get('username'), Input::get('password'));
+		header ( 'Location:' . $_SERVER ['PHP_SELF'] );
 
 	}catch(Exception $e) {
 		echo '<div class="error">'. $lang['USEREXISTS'] .'</div><br />';

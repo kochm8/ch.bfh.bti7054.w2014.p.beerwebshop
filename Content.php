@@ -2,6 +2,7 @@
 	
 	<?php
 
+	//checks if the user finished an order
 	if(Input::get('finish')){
 		if(Input::get('paymentmethod')== '3'){
 			include_once 'paypal.php';
@@ -13,9 +14,9 @@
 	}
 	
 	
-	if (isset ( $_GET ["categoryid"] )) {
-
-		$category_ID = $_GET ["categoryid"];
+	//shows all beers by category
+	if(Input::get("categoryid")){
+		$category_ID = Input::get("categoryid");
 			
 		$_db = DBHandler::getInstance ();
 		
@@ -32,14 +33,14 @@
 		$content->printTable($current_url);
 			
 		
-	} elseif (isset ( $_GET ["todo"] )) {
+	} elseif (Input::get("todo")) {
 		
-		if($_GET ["todo"] == "register"){
-			
+		//show register form
+		if(Input::get("todo") == "register"){
 			include("register.php");
 			
 		} else {
-			
+		//show checkout page
 			include("checkout.php");
 			
 		}

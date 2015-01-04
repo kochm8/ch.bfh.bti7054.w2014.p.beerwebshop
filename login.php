@@ -8,6 +8,7 @@
 		<input id="check" type="hidden" value=""/>
 	</form>
 <?php
+/*
 include_once ("init_page.php");
 
 $user = new User ();
@@ -28,7 +29,7 @@ if(!$user->isLoggedIn()){
 			
 echo ' form.submit();';
 echo ' </script>';
-	
+*/
 //header ( 'Location:' . base64_decode( Input::get('return_url')) );
 ?>
 
@@ -37,6 +38,10 @@ echo ' </script>';
  -->
  
  <?php
+ 
+ /*
+  * User Login
+  */
 include_once ("init_page.php");
 
 $user = new User ();

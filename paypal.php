@@ -1,5 +1,8 @@
-
 <?php
+
+/*
+ * Call the PayPal Sandbox API
+ */
 $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr'; // Test Paypal API URL
 $paypal_id='mi_koch90-facilitator@hotmail.com'; // Business email ID
 

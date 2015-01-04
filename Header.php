@@ -4,6 +4,9 @@
    
 	<script type="text/javascript">
 
+	/*
+	* search aid with DHTML uses hint.php
+	*/
 		function getHint(value) {
 
 			var doc = document.getElementById("content");			
@@ -27,12 +30,14 @@
 			xmlhttp.send(null);
 		}
 	</script>
-
+	
+<!-- Logo -->
 	<div id="logo">
 		<img src="img/logo.png" width="250px">
 	</div>
 
 
+<!-- Search -->
 	<div id="search">
 		<form>
 			<input id="search_input" type="text" placeholder="<?php echo $lang['SEARCH']?>..." onkeyup="getHint(this.value);"> 
@@ -42,14 +47,19 @@
 	
 			
 	<script type="text/javascript">
-	
+
+	/*
+	* Get a cookie
+	*/
 		var getCookie = function(name){
 	
 			  var str = RegExp(""+name+"[^;]+").exec(document.cookie);		  
 			  return unescape(!!str ? str.toString().replace(/^[^=]+./,"") : "");
 		 };
 	
-	
+	/*
+	* delete a cookie
+	*/
 		var deleteCookie = function(name) {
 		    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 		};

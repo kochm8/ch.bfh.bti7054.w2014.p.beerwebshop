@@ -1,4 +1,7 @@
 <?php
+/*
+ * Shopping Cart checkout
+ */
 	if(!$user->isLoggedIn()) {
 		echo $lang['NOTLOGGEDIN'];
 		unset($_GET["step"]);
