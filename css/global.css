@@ -173,3 +173,7 @@ input[type=submit] {
 	border-bottom: groove black 1px;
 	text-align: left;
 }
+
+.error{
+	color: red;
+}

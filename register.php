@@ -5,6 +5,8 @@
 if (Input::get('username') != '') {
 	$user = new User();
 	$salt = Hash::salt(32);
+	
+	try {
 	$user->create(Input::get('salutation'),
 					Input::get('firstname'),
 					Input::get('lastname'),
@@ -20,8 +22,13 @@ if (Input::get('username') != '') {
 					Input::get('username'),
 					Hash::make(Input::get('password'), $salt),
 					$salt);
+	
 	$user->login(Input::get('username'), Input::get('password'));
 	header ( 'Location:' . $_SERVER ['PHP_SELF'] );
+
+	}catch(Exception $e) {
+		echo '<div class="error">'. $lang['USEREXISTS'] .'</div><br />';
+	}
 }
 ?>
 

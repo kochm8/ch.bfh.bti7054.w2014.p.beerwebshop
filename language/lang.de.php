@@ -68,6 +68,7 @@ $lang['NOTLOGGEDIN'] = 'Benutzer nicht eingeloggt!';
 $lang['OTHERS'] = 'Sonstiges';
 $lang['CONFIRMATION'] = 'Auftragsbestätigung';
 $lang['FINISH'] = 'Vielen dank für Ihre Bestellung!';
+$lang['USEREXISTS'] = 'Fehlgeschlagen: User existiert bereits.';
 
 $GLOBALS["lang"] = $lang;
 ?>

@@ -68,6 +68,7 @@ $lang['NOTLOGGEDIN'] = 'User not logged in!';
 $lang['OTHERS'] = 'Others';
 $lang['CONFIRMATION'] = 'Order confirmation';
 $lang['FINISH'] = 'Many thanks for your order!';
+$lang['USEREXISTS'] = 'Creation failed: User already exists.';
 
 $GLOBALS["lang"] = $lang;
 ?>
