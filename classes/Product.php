@@ -7,6 +7,9 @@ class Product {
 		$this->_db = DBHandler::getInstance();
 	}
 
+	/*
+	 * get all produkt links
+	 */
 	public static function getProductLinks() {
 		//get products from database
 		$_db = DBHandler::getInstance ();

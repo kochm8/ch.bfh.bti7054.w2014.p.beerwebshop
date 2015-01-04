@@ -21,5 +21,4 @@ if (isset ( $_GET ["type"] ) && $_GET ["type"] == 'clear') {
 }
 
 header ( 'Location:' . $return_url );
-s
 ?>

@@ -28,6 +28,9 @@ class User {
 		}
 	}
 
+	/*
+	 * create a user
+	 */
 	public function create($salutation, $firstname, $lastname, $street, $streetnr, $city, $citynr, $birthdate, $email, $tel, $mobile, $language, $username, $password, $salt) {
 		
 		if(!$this->_db->createUser($salutation, $firstname, $lastname, $street, $streetnr, $city, $citynr, $birthdate, $email, $tel, $mobile, $language, $username, $password, $salt)){
@@ -36,6 +39,9 @@ class User {
 	}
 
 
+	/*
+	 * login user
+	 */
 	public function login($username, $password) {
 		
 		$data = $this->_db->getUserByUsername($username);
@@ -49,18 +55,25 @@ class User {
 
 	}
 
-	
+	/*
+	 * logout a user
+	 */
 	public function logout() {
 		Session::delete($this->_sessionName);
 	}
 
 	
+	/*
+	 * get some userdata
+	 */
 	public function data(){
 		return $this->_data;
 		echo $this->_data;
 	}
 
-	
+	/*
+	 * checks if a user is logged in
+	 */
 	public function isLoggedIn() {
 		return $this->isLoggedIn;
 	}

@@ -1,6 +1,9 @@
 <?php
 class Input {
 	
+	/*
+	 * checks if form inputs exists
+	 */
 	public static function exists($type = 'post') {
 		switch($type) {
 			case 'post':
@@ -15,6 +18,9 @@ class Input {
 		}
 	}
 	
+	/*
+	 * return some form input values
+	 */
 	public static function get($item) {
 		if (isset ( $_POST [$item] )) {
 			return $_POST [$item];

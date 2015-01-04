@@ -11,10 +11,16 @@ class Content_table{
 		$this->lang = $lang;	
 	}
 	
+	/*
+	 * Set table content title
+	 */
 	public function setTitle($title){
 		$this->title = $title;
 	}
 	
+	/*
+	 * print the table content
+	 */
 	public function printTable($return_url){
 		
 		echo "<h2>" . $this->title . "</h2>";

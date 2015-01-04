@@ -7,6 +7,9 @@ class Category {
 		$this->_db = DBHandler::getInstance();
 	}
 
+	/*
+	 * Get all category links
+	 */
 	public static function getCategoryLinks() {
 		//get categories from database
 		$_db = DBHandler::getInstance ();
