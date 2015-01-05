@@ -24,7 +24,7 @@ echo '<input type="hidden" name="business" value="mi_koch90-facilitator@hotmail.
   		echo '<input type="hidden" name="item_number_'.$i.'" value="'.$i.'">';
 		echo '<input type="hidden" name="item_name_'.$i.'" value="' . $db_cart->beer_name . '">';
 		echo '<input type="hidden" name="amount_'.$i.'" value="'. $db_cart->beer_price .'">';
-		echo '<input type="hidden" name="item_quantity_'.$i.'" value="'. $value['quan'] .'">';	
+		echo '<input type="hidden" name="quantity_'.$i.'" value="'. $value['quan'] .'">';	
   	}
   }
 
