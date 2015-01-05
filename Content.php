@@ -59,6 +59,8 @@
 		$content->setTitle($_db->getCategoryById("1")->fetch_object()->category_name);
 		$content->printTable($current_url);*/
 		
+		
+		
 		$BASE_URL = "http://query.yahooapis.com/v1/public/yql";
 		
 		$yql_query = 'select wind from weather.forecast where woeid in (select woeid from geo.places(1) where text="chicago, il")';
@@ -70,12 +72,37 @@
 		$json = curl_exec($session);
 		
 		// Convert JSON to PHP object
-		$phpObj =  json_decode($json);
-		var_dump($phpObj);
+// 		$phpObj =  json_decode($json);
+// 		var_dump($phpObj);
 		
-		$phpArray = get_object_vars($phpObj);
-
+// 		print_r($phpObj, true);
 		
+// 		$phpArray = get_object_vars($phpObj);
+		
+		$jsonIterator = new RecursiveIteratorIterator(
+		new RecursiveArrayIterator(json_decode($json, TRUE)),
+		RecursiveIteratorIterator::SELF_FIRST);
+		
+		foreach ($jsonIterator as $key => $val) {
+			if(is_array($val)) {
+				echo "$key:\n";
+			} else {
+				echo "$key => $val\n";
+			}
+		}
+		
+		
+				
+// 		$client = new SoapClient("http://www.webservicex.net/globalweather.asmx?wsdl");
+// 		$params = new stdClass;
+// 		$params->CityName= 'Auckland';
+// 		$params->CountryName= 'New Zealand';
+// 		$result = $client->GetWeather($params);
+// 		// Check for errors...
+// // 		$weatherXML = $result->GetWeatherResponse;
+		
+// 		$phpArray = get_object_vars($result);
+// 		print_r($phpArray, true);
 		
 	}
 	
