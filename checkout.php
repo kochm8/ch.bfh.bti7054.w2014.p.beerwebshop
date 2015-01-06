@@ -179,6 +179,7 @@ if (isset ( $_GET ["step"] )) {
 		
 		echo '<strong>' . $lang['BILLINGADDRESS'] .':</strong>';
 		echo '<br />';
+		echo $user->data()['salutation'] . '<br />';
 		echo $user->data()['knd_name'] . '<br />';
 		echo $user->data()['knd_address'] . '<br />';
 		echo $user->data()['knd_city'] . '<br />';
@@ -218,7 +219,7 @@ if (isset ( $_GET ["step"] )) {
 		echo '<table>';
 		echo '<tr>';
 	    echo '<th class="cart_confirmation">'. $lang['POSITION'] .'</th>';
-	    echo '<th class="cart_confirmation">'. $lang['PRODUCT'] .'</th>';
+	    echo '<th style="width:160px;" class="cart_confirmation">'. $lang['PRODUCT'] .'</th>';
 	    echo '<th class="cart_confirmation">'. $lang['QUANTITY'] .'</th>';
 	    echo '<th class="cart_confirmation">'. $lang['PRICEPP'] .'</th>';
 	    echo '<th class="cart_confirmation">'. $lang['PRICE'] .'</th>';
@@ -267,6 +268,7 @@ if (isset ( $_GET ["step"] )) {
 		echo '<br />';		  
 		echo '<strong>' . $lang['BILLINGADDRESS'] .':</strong>';
 		echo '<br />';
+		echo $user->data()['salutation'] . '<br />';
 		echo $user->data()['knd_name'] . '<br />';
 		echo $user->data()['knd_address'] . '<br />';
 		echo $user->data()['knd_city'] . '<br />';
@@ -281,10 +283,12 @@ if (isset ( $_GET ["step"] )) {
 		echo '<strong>'. $lang['SHIPPINGADDRESS'] . ':</strong>';
 		echo '<br />';
 		if(Input::get('firstname') != ''){
-			echo Input::get('firstname') . ' ' . Input::get('lastname');
-			echo Input::get('street') . ' ' . Input::get('streetnr');
-			echo Input::get('city') . ' ' . Input::get('citynr');
+			echo Input::get('salutation') . '<br />';
+			echo Input::get('firstname') . ' ' . Input::get('lastname') . '<br />';
+			echo Input::get('street') . ' ' . Input::get('streetnr') . '<br />';
+			echo Input::get('city') . ' ' . Input::get('citynr') . '<br />';
 		}else{
+			echo $user->data()['salutation'] . '<br />';
 			echo $user->data()['knd_name'] . '<br />';
 			echo $user->data()['knd_address'] . '<br />';
 			echo $user->data()['knd_city'] . '<br />';
