@@ -9,6 +9,7 @@
 			Cart::clear();
 		}else{
 			echo $lang['FINISH'];
+			echo '<br />';
 			Cart::clear();
 		}
 	}

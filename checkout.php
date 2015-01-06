@@ -134,12 +134,6 @@ if (isset ( $_GET ["step"] )) {
 		echo ' 			<input type="checkbox" id="cbxInvbilladdress" name="cbxInvbilladdress" value="cbxInvbilladdress" onclick="toggleinvoiceaddress();" unchecked>';
 		echo ' 		</td>';
 		echo ' 	  </tr>';
-		echo ' 	  <tr id="billingaddress">';
-		echo ' 	  	<td>' . $lang['BILLINGADDRESS'] . '</td>';
-		echo ' 		<td>';
-		echo ' 		';
-		echo ' 		</td>';
-		echo ' 	  </tr>';
 		echo ' 	</table>';
 		
 		echo '  <div id="invaddress" class="hidden">';
@@ -180,6 +174,19 @@ if (isset ( $_GET ["step"] )) {
 		echo '			  </tr>';
 		echo ' 	</table>';
 		echo ' </div>';
+		
+		echo '<br />';
+		
+		echo '<strong>' . $lang['BILLINGADDRESS'] .':</strong>';
+		echo '<br />';
+		echo $user->data()['knd_name'] . '<br />';
+		echo $user->data()['knd_address'] . '<br />';
+		echo $user->data()['knd_city'] . '<br />';
+		echo '<br />';
+		echo $user->data()['knd_email'] . '<br />';
+		echo 'Tel: '. $user->data()['knd_tel'] . '<br />';
+		echo 'Mobil: '.$user->data()['knd_mobile'] . '<br />';
+		echo '<br />';
 		
 		echo ' <input type="hidden" name="giftbox" value="' . Input::get('giftbox') . '">';
 		echo ' <input type="hidden" name="paymentmethod" value="' . Input::get('paymentmethod') . '">';
@@ -228,6 +235,7 @@ if (isset ( $_GET ["step"] )) {
 		  $totalPrice = 0;
 		  $i = 0;
 
+		  //Warenkorb
 		  foreach ( $cart as $key => $value ) {
 		  	
 		  	$price = 0;		  
@@ -254,47 +262,35 @@ if (isset ( $_GET ["step"] )) {
 		  echo '<br />';
 		  echo '<strong>Total: <u> CHF ' . number_format($totalPrice, 2, '.', '') . '</u></strong><br /><br />';
 		  
-		  
-		  $res = $_db->getAddressByUsername($user->data()['username']);
-		  
-		  while ( $address = $res->fetch_object () ) {
-		  	$knd_name =  $address->firstname . ' ' . $address->lastname;
-		  	$knd_address = $address->street_name . ' ' . $address->street_number;
-		  	$knd_city = $address->city_number . ' ' . $address->city_name;
-		  	$knd_email = $address->email ;
-		  	$knd_tel = 'Tel: '. $address->tel;
-		  	$knd_mobile = 'Mobile: '.$address->mobile;
-		  }
-		  
-		//Rechnungsadresse
+		//Billing address
 		echo '<br />';
-		echo '<br />';
+		echo '<br />';		  
 		echo '<strong>' . $lang['BILLINGADDRESS'] .':</strong>';
 		echo '<br />';
-		  
-		echo $knd_name . '<br />';
-		echo $knd_address . '<br />';
-		echo $knd_city . '<br />';
-	  	echo '<br />';
-	  	echo $knd_email . '<br />';
-	  	echo $knd_tel . '<br />';
-	  	echo $knd_mobile . '<br />';
+		echo $user->data()['knd_name'] . '<br />';
+		echo $user->data()['knd_address'] . '<br />';
+		echo $user->data()['knd_city'] . '<br />';
+		echo '<br />';
+		echo $user->data()['knd_email'] . '<br />';
+		echo 'Tel: '. $user->data()['knd_tel'] . '<br />';
+		echo 'Mobil: '.$user->data()['knd_mobile'] . '<br />';
 		 
-	  	//Lieferadresse
+	  	//Shipping address
 		echo '<br />';
 		echo '<br />';
 		echo '<strong>'. $lang['SHIPPINGADDRESS'] . ':</strong>';
 		echo '<br />';
 		if(Input::get('firstname') != ''){
-			$knd_name = Input::get('firstname') . ' ' . Input::get('lastname');
-			$knd_address = Input::get('street') . ' ' . Input::get('streetnr');
-			$knd_city = Input::get('city') . ' ' . Input::get('citynr');
+			echo Input::get('firstname') . ' ' . Input::get('lastname');
+			echo Input::get('street') . ' ' . Input::get('streetnr');
+			echo Input::get('city') . ' ' . Input::get('citynr');
+		}else{
+			echo $user->data()['knd_name'] . '<br />';
+			echo $user->data()['knd_address'] . '<br />';
+			echo $user->data()['knd_city'] . '<br />';
 		}
-		echo $knd_name . '<br />';
-		echo $knd_address . '<br />';
-		echo $knd_city . '<br />';
 		
-		//Zahlungsart
+		//Payment method
 		echo '<br />';
 		echo '<strong>' . $lang['PAYMENTMETHOD'] . ':</strong>';
 		echo '<br />';
@@ -311,7 +307,7 @@ if (isset ( $_GET ["step"] )) {
 		}
 		echo '<br />';
 		
-		//Versandart
+		//Shipping method
 		echo '<br />';
 		echo '<strong>' . $lang['SHIPPINGMETHOD'] . ':</strong>';
 		echo '<br />';
@@ -332,7 +328,7 @@ if (isset ( $_GET ["step"] )) {
 		echo '<br />';
 		echo '<br />';
 		
-		//Bestätigung
+		//Confirmation
 		echo ' 	<table>';
 		echo ' 	  <tr id="buttons">';
 		echo ' 		<td>';
