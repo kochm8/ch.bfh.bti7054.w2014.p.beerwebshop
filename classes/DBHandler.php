@@ -38,7 +38,13 @@ class DBHandler extends mysqli {
 		return $this->query("SELECT * FROM beer WHERE FK_categoryID = '$id'");
 	}
 	
-	
+	/*
+	 * get new products
+	 */
+	public function getNewProducts(){
+		return $this->query("SELECT * FROM beer WHERE new = '1'");
+	}
+
 	/*
 	 * get all products
 	 */
