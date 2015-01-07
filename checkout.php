@@ -33,7 +33,7 @@
 
 
 	function finish(){
-		alert("dini mer besteut bi beerheaven");
+		alert("test");
 
 		var input = document.getElementById("pay");
 		if(input.value == '3'){
@@ -75,7 +75,7 @@ if (isset ( $_GET ["step"] )) {
 	
 	if ($_GET["step"] == 1){
 	
-		echo ' <h1>' . $lang['STEP']. ' 1/3</h1>';
+		echo ' <h1>' . $lang['CHECKOUT'] . ' ' . $lang['STEP'] . ' 1/3</h1>';
 		
 		echo ' <form name="checkout" id="checkout" method="post" action="index.php?todo=checkout&step=2">';
 		
@@ -127,6 +127,18 @@ if (isset ( $_GET ["step"] )) {
 
 		echo ' <form id="checkout" method="post" action="">';
 		
+		echo '<strong>' . $lang['BILLINGADDRESS'] .':</strong>';
+		echo '<br />';
+		echo $user->data()['salutation'] . '<br />';
+		echo $user->data()['knd_name'] . '<br />';
+		echo $user->data()['knd_address'] . '<br />';
+		echo $user->data()['knd_city'] . '<br />';
+		echo '<br />';
+		echo $user->data()['knd_email'] . '<br />';
+		echo 'Tel: '. $user->data()['knd_tel'] . '<br />';
+		echo 'Mobil: '.$user->data()['knd_mobile'] . '<br />';
+		echo '<br />';
+		
 		echo ' 	<table>';
 		echo ' 	  <tr id="invbilladdress">';
 		echo ' 	  	<td>' . $lang['INVBILLADDRESS'] . '</td>';
@@ -177,18 +189,6 @@ if (isset ( $_GET ["step"] )) {
 		
 		echo '<br />';
 		
-		echo '<strong>' . $lang['BILLINGADDRESS'] .':</strong>';
-		echo '<br />';
-		echo $user->data()['salutation'] . '<br />';
-		echo $user->data()['knd_name'] . '<br />';
-		echo $user->data()['knd_address'] . '<br />';
-		echo $user->data()['knd_city'] . '<br />';
-		echo '<br />';
-		echo $user->data()['knd_email'] . '<br />';
-		echo 'Tel: '. $user->data()['knd_tel'] . '<br />';
-		echo 'Mobil: '.$user->data()['knd_mobile'] . '<br />';
-		echo '<br />';
-		
 		echo ' <input type="hidden" name="giftbox" value="' . Input::get('giftbox') . '">';
 		echo ' <input type="hidden" name="paymentmethod" value="' . Input::get('paymentmethod') . '">';
 		echo ' <input type="hidden" name="shippingmethod" value="' . Input::get('shippingmethod') . '">';
@@ -213,7 +213,7 @@ if (isset ( $_GET ["step"] )) {
 		echo '<h2>' . $lang['CONFIRMATION'] . '</h2>';
 		echo '<br />';
 		
-		echo '<form id="checkout" method="post" action="index.php">';
+		echo '<form id="checkout" method="post" action="">';
 
 		
 		echo '<table>';
@@ -339,12 +339,17 @@ if (isset ( $_GET ["step"] )) {
 		echo '			<input type="submit" value="' . $lang['BACK'] . '" onclick="goToSep(2);">';
 		echo ' 		</td>';
 		echo ' 		<td>';
-		echo '			<input type="submit" name="finish" value="' . $lang['ORDER'] . '" >';
+		echo '			<input type="submit" name="finish" value="' . $lang['ORDER'] . '" onClick="goToSep(4)" >';
 		echo ' 		</td>';
 		echo ' 	  </tr>';
 		echo ' 	</table>';
 		
 		echo '</form>';
+		
+	} elseif ($_GET["step"] == 4){
+		
+		echo ' <h1>' . $lang['ORDERCOMPLETED'] . '</h1>';
+		
 	}
 
 }

@@ -47,7 +47,7 @@ $lang['SHOPPING_CART'] = 'Warenkorb';
 $lang['QUANTITY'] = 'Menge';
 $lang['PRICE'] = 'Preis';
 $lang['CLEARCART'] = 'Warenkorb leeren';
-$lang['CHECKOUT'] = 'zur Kasse';
+$lang['CHECKOUT'] = 'Zur Kasse';
 $lang['EMPTYCART'] = 'Warenkorb ist leer';
 $lang['SHIPPINGMETHOD'] = 'Versandart';
 $lang['PAYMENTMETHOD'] = 'Zahlungsart';
@@ -70,6 +70,7 @@ $lang['OTHERS'] = 'Sonstiges';
 $lang['CONFIRMATION'] = 'Auftragsbestätigung';
 $lang['FINISH'] = 'Vielen dank für Ihre Bestellung!';
 $lang['USEREXISTS'] = 'Fehlgeschlagen: User existiert bereits.';
+$lang['ORDERCOMPLETED'] = 'Bestellung abgeschlossen';
 
 $GLOBALS["lang"] = $lang;
 ?>
