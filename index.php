@@ -99,7 +99,7 @@ include_once("init_page.php");
 					new RecursiveArrayIterator(json_decode($json, TRUE)),
 					RecursiveIteratorIterator::SELF_FIRST);
 					
-					echo '<h2>' . $lang['WEATHER'] . '</h2>';
+					echo '<h2>' . $lang['WEATHER'] . ' Bern</h2>';
 					
 					foreach ($jsonIterator as $key => $val) {
 						switch ($key) {

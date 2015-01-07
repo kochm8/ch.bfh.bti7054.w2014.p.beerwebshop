@@ -93,6 +93,7 @@ class DBHandler extends mysqli {
 	public function saveOrder($userID, $date, $price_total, $isGiftbox, $status){
 			return $this->query("INSERT INTO beerheavenOrder (FK_userID, date, price_total, is_giftbox, status)
 										VALUES ('$salutation', '$date', '$price_total', '$isGiftbox', '$status');");
+			echo mysql_insert_id();
 	}
 	
 	

@@ -42,7 +42,7 @@ $lang['PASSWORDCONFIRM'] = 'Passwort Bestätigung';
 $lang['WELCOME'] = 'Willkommen';
 
 // Shopping cart / Check out
-$lang['ADDTOCART'] = 'in den Warenkorb';
+$lang['ADDTOCART'] = 'In den Warenkorb';
 $lang['SHOPPING_CART'] = 'Warenkorb';
 $lang['QUANTITY'] = 'Menge';
 $lang['PRICE'] = 'Preis';

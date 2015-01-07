@@ -25,7 +25,7 @@
 	}
 
 
-	function goToSep(step){
+	function goToStep(step){
 		var form = document.getElementById('checkout');
 		form.action = "index.php?todo=checkout&step="+step;
 		form.submit();		
@@ -45,7 +45,7 @@
 
 	function validate(){
 		if((document.getElementById("invaddress").style.display == 'none') || (document.getElementById("invaddress").style.display == '')){
-			goToSep(3);
+			goToStep(3);
 			return true;
 		}else{
 			var validator = new Validator("checkout"); 
@@ -60,7 +60,7 @@
 			validator.validateNumeric("streetnr");
 	
 			if(validator.getResult()){
-				goToSep(3);
+				goToStep(3);
 			}
 
 			return validator.getResult();
@@ -196,7 +196,7 @@ if (isset ( $_GET ["step"] )) {
 		echo ' 	<table>';
 		echo ' 	  <tr id="buttons">';
 		echo ' 		<td>';
-		echo '			<input type="submit" value="' . $lang['BACK'] . '" onclick="goToSep(1);">';
+		echo '			<input type="submit" value="' . $lang['BACK'] . '" onclick="goToStep(1);">';
 		echo ' 		</td>';
 		echo ' 		<td>';
 		echo '			<input type="submit" value="' . $lang['NEXT'] . '" onclick="return validate();">';
@@ -336,10 +336,10 @@ if (isset ( $_GET ["step"] )) {
 		echo ' 	<table>';
 		echo ' 	  <tr id="buttons">';
 		echo ' 		<td>';
-		echo '			<input type="submit" value="' . $lang['BACK'] . '" onclick="goToSep(2);">';
+		echo '			<input type="submit" value="' . $lang['BACK'] . '" onclick="goToStep(2);">';
 		echo ' 		</td>';
 		echo ' 		<td>';
-		echo '			<input type="submit" name="finish" value="' . $lang['ORDER'] . '" onClick="goToSep(4)" >';
+		echo '			<input type="submit" name="finish" value="' . $lang['ORDER'] . '" onClick="goToStep(4)" >';
 		echo ' 		</td>';
 		echo ' 	  </tr>';
 		echo ' 	</table>';
@@ -347,6 +347,11 @@ if (isset ( $_GET ["step"] )) {
 		echo '</form>';
 		
 	} elseif ($_GET["step"] == 4){
+		
+		
+// 		$_db = DBHandler::getInstance ();
+// 		$res = $_db->saveOrder($userID, $date, $price_total, 0, 1);
+		
 		
 		echo ' <h1>' . $lang['ORDERCOMPLETED'] . '</h1>';
 		
