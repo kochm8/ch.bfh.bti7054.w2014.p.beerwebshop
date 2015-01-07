@@ -8,6 +8,9 @@ $lang['NEXT'] = 'Weiter';
 $lang['BACK'] = 'Zurück';
 $lang['SEARCHRESULT'] = 'Suchresultate';
 $lang['WEATHER'] = 'Wetter';
+$lang['DATE'] = 'Datum';
+$lang['TOTAL'] = 'Preis Total';
+$lang['ORDERID'] = 'Bestellung Id';
 
 // Beer info
 $lang['BEER'] = 'Bier';
@@ -16,7 +19,7 @@ $lang['COUNTRY'] = 'Land';
 $lang['CONTENT'] = 'Inhalt';
 $lang['CATEGORIES'] = 'Kategorien';
 
-//Register / Login / Logout
+// Login / Logout
 $lang['LOGIN'] = 'Einloggen';
 $lang['USERNAME'] = 'Benutzername';
 $lang['PASSWORD'] = 'Passwort';
@@ -24,6 +27,9 @@ $lang['NAME'] = 'Name';
 $lang['REGISTER'] = 'Registrieren';
 $lang['MYACCOUNT'] = 'Mein Account';
 $lang['LOGOUT'] = 'Ausloggen';
+$lang['MYORDERS'] = 'Meine Bestellungen';
+
+// Registration
 $lang['SALUTATION'] = 'Anrede';
 $lang['MRS'] = 'Frau';
 $lang['MR'] = 'Herr';

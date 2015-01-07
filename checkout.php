@@ -359,8 +359,8 @@ if (isset ( $_GET ["step"] )) {
 		$res = $_db->saveOrder($user->data()['user_ID'], $date, $totalPrice, 0, 1);
 		$res = $_db->getOrderID($user->data()['user_ID'], $date, $totalPrice, 0, 1);
 		
-		while ( $orders = $res->fetch_object () ) {
-			$orderID = $orders->order_ID;
+		while ( $db_order = $res->fetch_object () ) {
+			$orderID = $db_order->order_ID;
 		}
 		
 		foreach ( $cart as $key => $value ) {

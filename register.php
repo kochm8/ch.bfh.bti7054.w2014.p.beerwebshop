@@ -41,8 +41,8 @@ if (Input::get('username') != '') {
 	    <td><?php echo $lang['SALUTATION'] . '*:' ?> </td>
 	    <td>
 		    <select name="salutation" class="register_select">
-			  <option value="mrs"><?php echo $lang['MRS'] ?></option>
-			  <option value="mr"><?php echo $lang['MR'] ?></option>
+			  <option value="Mrs"><?php echo $lang['MRS'] ?></option>
+			  <option value="Mr"><?php echo $lang['MR'] ?></option>
 			</select>
 	    </td> 
 	    <td id="salutation"> </td>

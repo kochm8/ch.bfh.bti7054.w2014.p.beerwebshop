@@ -40,6 +40,10 @@
 		if(Input::get("todo") == "register"){
 			include("register.php");
 			
+		} elseif(Input::get("todo") == "myorders") {
+		//show my orders
+			include("myorders.php");
+			
 		} else {
 		//show checkout page
 			include("checkout.php");

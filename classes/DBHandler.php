@@ -88,6 +88,22 @@ class DBHandler extends mysqli {
 	
 	
 	/*
+	 *  get orders by user ID
+	 */
+	public function getOrdersByUserID($userID){
+		return $this->query("SELECT * FROM beerheavenOrder WHERE FK_userID = '$userID';");
+	}
+	
+	
+	/*
+	 *  get beers by order ID
+	 */
+	public function getBeersByOrderID($orderID){
+		return $this->query("SELECT * FROM rel_order_beer LEFT JOIN beer ON rel_order_beer.FK_beerID = beer.beer_ID WHERE FK_orderID = '$orderID';");
+	}
+	
+	
+	/*
 	 *  save Order
 	 */
 	public function saveOrder($userID, $date, $totalPrice, $isGiftbox, $status){
@@ -100,7 +116,7 @@ class DBHandler extends mysqli {
 	 *  get Order
 	 */
 	public function getOrderID($userID, $date, $totalPrice, $isGiftbox, $status){
-		return $this->query("SELECT order_ID from beerheavenOrder WHERE FK_userID = '$userID'
+		 return $res = $this->query("SELECT order_ID from beerheavenOrder WHERE FK_userID = '$userID'
 																	AND date = '$date'
 																	AND price_total = '$totalPrice'
 																	AND is_giftbox = '$isGiftbox'
@@ -112,7 +128,6 @@ class DBHandler extends mysqli {
 	 *  save single products
 	 */
 	public function saveProductOrder($orderID, $beerID, $quantity){
-		echo $orderID . $beerID . $quantity;
 		$this->query("INSERT INTO rel_order_beer (FK_orderID, FK_beerID, quantity)
 										VALUES ('$orderID', '$beerID', '$quantity');");
 		return mysql_insert_id();
