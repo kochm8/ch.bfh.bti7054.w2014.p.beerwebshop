@@ -3,17 +3,17 @@
 /*
  * Call the PayPal Sandbox API
  */
-$paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr'; // Test Paypal API URL
+$paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr'; // Test Paypal API URL //https://www.paypal.com/cgi-bin/webscr
 $paypal_id='mi_koch90-facilitator@hotmail.com'; // Business email ID
 
 $cart = Cart::getCart();
 $_db = DBHandler::getInstance ();
 $i = 0;
 
-echo '<form id="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">';
+echo '<form id="paypal" action="' . $paypal_url .'" method="post">';
 echo '<input type="hidden" name="cmd" value="_cart">';
 echo '<input type="hidden" name="upload" value="1">';
-echo '<input type="hidden" name="business" value="mi_koch90-facilitator@hotmail.com">';
+echo '<input type="hidden" name="business" value="' . $paypal_id . '">';
 
   foreach ( $cart as $key => $value ) {
 
