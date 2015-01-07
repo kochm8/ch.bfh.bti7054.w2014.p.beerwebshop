@@ -88,12 +88,34 @@ class DBHandler extends mysqli {
 	
 	
 	/*
-	 *  get user by username
+	 *  save Order
 	 */
 	public function saveOrder($userID, $date, $totalPrice, $isGiftbox, $status){
 			return $this->query("INSERT INTO beerheavenOrder (FK_userID, date, price_total, is_giftbox, status)
-										VALUES ('$salutation', '$date', '$price_total', '$isGiftbox', '$status');");
-			echo mysql_insert_id();
+											VALUES ('$userID', '$date', '$totalPrice', '$isGiftbox', '$status');");
+	}
+	
+	
+	/*
+	 *  get Order
+	 */
+	public function getOrderID($userID, $date, $totalPrice, $isGiftbox, $status){
+		return $this->query("SELECT order_ID from beerheavenOrder WHERE FK_userID = '$userID'
+																	AND date = '$date'
+																	AND price_total = '$totalPrice'
+																	AND is_giftbox = '$isGiftbox'
+																	AND status = '$status' ;");
+	}
+	
+	
+	/*
+	 *  save single products
+	 */
+	public function saveProductOrder($orderID, $beerID, $quantity){
+		echo $orderID . $beerID . $quantity;
+		$this->query("INSERT INTO rel_order_beer (FK_orderID, FK_beerID, quantity)
+										VALUES ('$orderID', '$beerID', '$quantity');");
+		return mysql_insert_id();
 	}
 	
 	

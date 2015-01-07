@@ -6,11 +6,11 @@
 	if(Input::get('finish')){
 		if(Input::get('paymentmethod')== '3'){
 			include_once 'paypal.php';
-			Cart::clear();
+// 			Cart::clear();
 		}else{
-			echo $lang['FINISH'];
-			echo '<br />';
-			Cart::clear();
+// 			echo $lang['FINISH'];
+// 			echo '<br />';
+// 			Cart::clear();
 		}
 	}
 	

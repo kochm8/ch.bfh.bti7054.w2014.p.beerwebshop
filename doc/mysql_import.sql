@@ -99,6 +99,7 @@ CREATE TABLE IF NOT EXISTS rel_order_beer (
 	  rel_order_beer_ID INT(10) NOT NULL AUTO_INCREMENT,
 	  FK_orderID  INT(10) NOT NULL,
 	  FK_beerID INT(10) NOT NULL,
+	  quantity INT(10) NOT NULL,
 	  PRIMARY KEY (rel_order_beer_ID),
           FOREIGN KEY (FK_orderID) REFERENCES beerheavenOrder(order_ID),
           FOREIGN KEY (FK_beerID) REFERENCES beer(beer_ID)

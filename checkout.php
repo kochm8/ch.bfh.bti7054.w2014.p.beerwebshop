@@ -30,18 +30,7 @@
 		form.action = "index.php?todo=checkout&step="+step;
 		form.submit();		
 	}
-
-
-	function finish(){
-		alert("test");
-
-		var input = document.getElementById("pay");
-		if(input.value == '3'){
-		
-			alert("paypal");
-		}
-	}
-
+	
 
 	function validate(){
 		if((document.getElementById("invaddress").style.display == 'none') || (document.getElementById("invaddress").style.display == '')){
@@ -348,38 +337,41 @@ if (isset ( $_GET ["step"] )) {
 		
 	} elseif ($_GET["step"] == 4){
 		
-// 		foreach ( $cart as $key => $value ) {
+		$cart = Cart::getCart();
+		$_db = DBHandler::getInstance ();
+		
+		$totalPrice = 0;
+		$i = 0;
+		
+		foreach ( $cart as $key => $value ) {
+		
+			$price = 0;
+			$i = $i + 1;
+			$res = $_db->getProductById ( $value['id'] );
+
+			while ( $db_cart = $res->fetch_object () ) {
+				$price = $price + ($db_cart->beer_price * $value['quan']);
+			}
+			$totalPrice = $totalPrice + $price;
+		}
+		
+		$date = date('Y-m-d');
+		$res = $_db->saveOrder($user->data()['user_ID'], $date, $totalPrice, 0, 1);
+		$res = $_db->getOrderID($user->data()['user_ID'], $date, $totalPrice, 0, 1);
+		
+		while ( $orders = $res->fetch_object () ) {
+			$orderID = $orders->order_ID;
+		}
+		
+		foreach ( $cart as $key => $value ) {
 			 
-// 			$price = 0;
-// 			$i = $i + 1;
-// 			$res = $_db->getProductById ( $value['id'] );
-			 
-// 			while ( $db_cart = $res->fetch_object () ) {
-// 				echo '<tr>';
-// 				echo '<td class="cart_confirmation">' . $i . '</td>';
-// 				echo '<td class="cart_confirmation">' . $db_cart->beer_name . '</td>';
-// 				echo '<td class="cart_confirmation">'. $value['quan'] .'</td>';
-// 				echo '<td class="cart_confirmation">'. $db_cart->beer_price .'</td>';
-		
-// 				$price = $price + ($db_cart->beer_price * $value['quan']);
-// 				echo '<td class="cart_confirmation">'. number_format($price, 2, '.', '') .'</td>';
-// 				echo '</tr>';
-				 
-		
-// 			}
-// 			$totalPrice = $totalPrice + $price;
-// 		}
-		
-		// 		$_db = DBHandler::getInstance ();
-		// 		$res = $_db->saveOrder(1, getdate(), $totalPrice, 0, 1);
-		
-		
-		
-		
-		
-		
-		
+			$res = $_db->saveProductOrder($orderID, $value['id'], $value['quan']);
+
+		}
+
 		echo ' <h1>' . $lang['ORDERCOMPLETED'] . '</h1>';
+		echo $lang['FINISH'];
+		Cart::clear();
 		
 	}
 

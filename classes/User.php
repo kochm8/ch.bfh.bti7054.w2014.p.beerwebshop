@@ -20,7 +20,11 @@ class User {
 				$user = Session::get($this->_sessionName);
 				$this->isLoggedIn = true;
 				$data = $this->_db->getUserByUsername($user);
-				$this->_data = array('username' => $data['username'],'firstname' =>  $data['firstname'],'lastname' =>  $data['lastname'], 'salutation' =>  $data['salutation'],
+				$this->_data = array('user_ID' => $data['user_ID'],
+						'username' => $data['username'],
+						'firstname' =>  $data['firstname'],
+						'lastname' =>  $data['lastname'],
+						'salutation' =>  $data['salutation'],
 						'knd_address' => $data['street_name'] . ' ' . $data['street_number'],
 						'knd_name' =>  $data['firstname'] . ' ' . $data['lastname'],
 						'knd_address' => $data['street_name'] . ' ' . $data['street_number'],
