@@ -7,6 +7,7 @@ $lang['LANGUAGE'] = 'Language';
 $lang['NEXT'] = 'Next';
 $lang['BACK'] = 'Back';
 $lang['SEARCHRESULT'] = 'Search results';
+$lang['WEATHER'] = 'Weather';
 
 // Beer info
 $lang['BEER'] = 'Beer';
