@@ -11,6 +11,7 @@ $lang['WEATHER'] = 'Weather';
 $lang['DATE'] = 'Date';
 $lang['TOTAL'] = 'Total Price';
 $lang['ORDERID'] = 'Order Id';
+$lang['ORDERED'] = 'Order received';
 
 // Beer info
 $lang['BEER'] = 'Beer';

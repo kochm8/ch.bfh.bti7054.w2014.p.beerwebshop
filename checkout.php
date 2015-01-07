@@ -356,8 +356,8 @@ if (isset ( $_GET ["step"] )) {
 		}
 		
 		$date = date('Y-m-d');
-		$res = $_db->saveOrder($user->data()['user_ID'], $date, $totalPrice, 0, 1);
-		$res = $_db->getOrderID($user->data()['user_ID'], $date, $totalPrice, 0, 1);
+		$res = $_db->saveOrder($user->data()['user_ID'], $date, $totalPrice, 0, $lang['ORDERED']);
+		$res = $_db->getOrderID($user->data()['user_ID'], $date, $totalPrice, 0, $lang['ORDERED']);
 		
 		while ( $db_order = $res->fetch_object () ) {
 			$orderID = $db_order->order_ID;

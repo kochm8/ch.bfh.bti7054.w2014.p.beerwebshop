@@ -6,5 +6,4 @@
 
 optionau:
 refactoring / schöne code (viu spass)
-
 meh bispiu bier u biuder

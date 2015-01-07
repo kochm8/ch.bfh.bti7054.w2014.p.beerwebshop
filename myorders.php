@@ -12,6 +12,7 @@
 	echo '    <th>' . $lang['ORDERID'] . '</td>';
 	echo '    <th>' . $lang['PRODUCT'] . '</td>';
 	echo '    <th>' . $lang['TOTAL'] . '</td>';
+	echo '    <th>Status</td>';
 // 	echo '    <th>' . $lang['GIFTBOX'] . '</td>';
 	echo '  </tr>';
 	
@@ -34,6 +35,7 @@
 		echo '    </td>';
 		
 		echo '    <td>' . $db_orders->price_total . '</td>';
+		echo '    <td>' . $db_orders->status . '</td>';
 // 		echo '    <td>' . $db_orders->is_giftbox . '</td>';
 		echo '  </tr>';
 		

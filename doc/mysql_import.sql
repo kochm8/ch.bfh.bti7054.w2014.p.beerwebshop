@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS beerheavenOrder (
 	  date DATE NOT NULL,
 	  price_total DECIMAL(10,2) NOT NULL,
 	  is_giftbox TINYINT(1) NOT NULL,
-	  status INT(10) NOT NULL,
+	  status VARCHAR(50) NOT NULL,
 	  PRIMARY KEY (order_ID),
           FOREIGN KEY (FK_userID) REFERENCES user(user_ID)
 );
