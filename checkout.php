@@ -348,9 +348,35 @@ if (isset ( $_GET ["step"] )) {
 		
 	} elseif ($_GET["step"] == 4){
 		
+// 		foreach ( $cart as $key => $value ) {
+			 
+// 			$price = 0;
+// 			$i = $i + 1;
+// 			$res = $_db->getProductById ( $value['id'] );
+			 
+// 			while ( $db_cart = $res->fetch_object () ) {
+// 				echo '<tr>';
+// 				echo '<td class="cart_confirmation">' . $i . '</td>';
+// 				echo '<td class="cart_confirmation">' . $db_cart->beer_name . '</td>';
+// 				echo '<td class="cart_confirmation">'. $value['quan'] .'</td>';
+// 				echo '<td class="cart_confirmation">'. $db_cart->beer_price .'</td>';
 		
-// 		$_db = DBHandler::getInstance ();
-// 		$res = $_db->saveOrder($userID, $date, $price_total, 0, 1);
+// 				$price = $price + ($db_cart->beer_price * $value['quan']);
+// 				echo '<td class="cart_confirmation">'. number_format($price, 2, '.', '') .'</td>';
+// 				echo '</tr>';
+				 
+		
+// 			}
+// 			$totalPrice = $totalPrice + $price;
+// 		}
+		
+		// 		$_db = DBHandler::getInstance ();
+		// 		$res = $_db->saveOrder(1, getdate(), $totalPrice, 0, 1);
+		
+		
+		
+		
+		
 		
 		
 		echo ' <h1>' . $lang['ORDERCOMPLETED'] . '</h1>';
