@@ -17,6 +17,8 @@ class Category {
 		
 		//loop through categories and create url to category
 		echo '<ul>';
+		$url = $_SERVER ['PHP_SELF'];
+		echo "<li><a href=\"$url\">New Beers</a></li>";
 		while ( $categories = $res->fetch_object () ) {
 			$url = $_SERVER ['PHP_SELF'];
 			$url = $url . "?categoryid=" . $categories->category_ID;
