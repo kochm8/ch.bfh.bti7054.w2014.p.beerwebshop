@@ -20,7 +20,15 @@ class User {
 				$user = Session::get($this->_sessionName);
 				$this->isLoggedIn = true;
 				$data = $this->_db->getUserByUsername($user);
-				$this->_data = array('username' => $data['username'],'firstname' =>  $data['firstname'],'lastname' =>  $data['lastname']);
+				$this->_data = array('username' => $data['username'],'firstname' =>  $data['firstname'],'lastname' =>  $data['lastname'], 'salutation' =>  $data['salutation'],
+						'knd_address' => $data['street_name'] . ' ' . $data['street_number'],
+						'knd_name' =>  $data['firstname'] . ' ' . $data['lastname'],
+						'knd_address' => $data['street_name'] . ' ' . $data['street_number'],
+						'knd_city' => $data['city_number'] . ' ' . $data['city_name'],
+						'knd_email' => $data['email'],
+						'knd_tel' => $data['tel'],
+						'knd_mobile' => $data['mobile']
+						);
 			}
 			
 		} else {
@@ -68,7 +76,6 @@ class User {
 	 */
 	public function data(){
 		return $this->_data;
-		echo $this->_data;
 	}
 
 	/*
@@ -77,5 +84,6 @@ class User {
 	public function isLoggedIn() {
 		return $this->isLoggedIn;
 	}
+	
 }
 ?>
