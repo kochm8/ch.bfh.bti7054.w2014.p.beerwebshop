@@ -42,7 +42,7 @@ class DBHandler extends mysqli {
 	 * get new products
 	 */
 	public function getNewProducts(){
-		return $this->query("SELECT * FROM beer WHERE new = '1'");
+		return $this->query("SELECT * FROM beer WHERE is_new = '1'");
 	}
 
 	/*
@@ -84,6 +84,15 @@ class DBHandler extends mysqli {
 	public function getUserByUsername($username){
 		$result = $this->query("SELECT * FROM user where username = '$username';");
 		return $this->fetchSingleRow($result);
+	}
+	
+	
+	/*
+	 *  get user by username
+	 */
+	public function saveOrder($userID, $date, $price_total, $isGiftbox, $status){
+			return $this->query("INSERT INTO beerheavenOrder (FK_userID, date, price_total, is_giftbox, status)
+										VALUES ('$salutation', '$date', '$price_total', '$isGiftbox', '$status');");
 	}
 	
 	

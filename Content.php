@@ -50,7 +50,7 @@
 		
 		$_db = DBHandler::getInstance ();
 		
-		//Content Beers
+		//New Beers
 		$res = $_db->getNewProducts();
 		$beers = array();
 		
