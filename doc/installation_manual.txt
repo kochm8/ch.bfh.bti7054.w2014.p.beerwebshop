@@ -4,7 +4,7 @@ Installation manual
 Database:
 1) download and install XAMPP
 2) start apache and mysql 
-3) Execute ..\doc\mysql_import.sql on phpmyadmin
+3) Execute ..\doc\mysql_import.sql in phpmyadmin
 
 
 Import Project in Eclipse:

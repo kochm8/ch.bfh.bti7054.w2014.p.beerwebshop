@@ -79,8 +79,9 @@
 			echo "<h2>". $lang['MYACCOUNT'] ."</h2><br />";
 			echo $lang['WELCOME'] ."&nbsp;". $user->data()['firstname'] . "<br />";
 			echo "<br />";
-			echo '<a href="logout.php">'. $lang['LOGOUT'] ."</a>";
 			echo '<a href="index.php?todo=myorders">'. $lang['MYORDERS'] ."</a>";
+			echo "<br />";
+			echo '<a href="logout.php">'. $lang['LOGOUT'] ."</a>";
 		}
 		?>
 

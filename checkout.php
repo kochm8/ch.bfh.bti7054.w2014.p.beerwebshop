@@ -124,8 +124,12 @@ if (isset ( $_GET ["step"] )) {
 		echo $user->data()['knd_city'] . '<br />';
 		echo '<br />';
 		echo $user->data()['knd_email'] . '<br />';
-		echo 'Tel: '. $user->data()['knd_tel'] . '<br />';
-		echo 'Mobil: '.$user->data()['knd_mobile'] . '<br />';
+		if($user->data()['knd_mobile'] != ''){
+			echo 'Mobil: '.$user->data()['knd_mobile'] . '<br />';
+		}
+		if($user->data()['knd_tel'] != ''){
+			echo 'Tel: '.$user->data()['knd_tel'] . '<br />';
+		}
 		echo '<br />';
 		
 		echo ' 	<table>';
@@ -205,13 +209,13 @@ if (isset ( $_GET ["step"] )) {
 		echo '<form id="checkout" method="post" action="">';
 
 		
-		echo '<table>';
-		echo '<tr>';
-	    echo '<th class="cart_confirmation">'. $lang['POSITION'] .'</th>';
-	    echo '<th style="width:160px;" class="cart_confirmation">'. $lang['PRODUCT'] .'</th>';
-	    echo '<th class="cart_confirmation">'. $lang['QUANTITY'] .'</th>';
-	    echo '<th class="cart_confirmation">'. $lang['PRICEPP'] .'</th>';
-	    echo '<th class="cart_confirmation">'. $lang['PRICE'] .'</th>';
+		echo '<table style="border-collapse: collapse;">';
+		echo '<tr style="background-color: #ddd;">';
+	    echo '<th style="width:80px;" class="table_td">'. $lang['POSITION'] .'</th>';
+	    echo '<th style="width:200px;" class="table_td">'. $lang['PRODUCT'] .'</th>';
+	    echo '<th style="width:100px;" class="table_td">'. $lang['QUANTITY'] .'</th>';
+	    echo '<th style="width:180px;" class="table_td">'. $lang['PRICEPP'] .'</th>';
+	    echo '<th style="width:100px;" class="table_td">'. $lang['PRICE'] .' CHF</th>';
 	  	echo '</tr>';
 
 	  	echo ' <input type="hidden" name="giftbox" value="' . Input::get('giftbox') . '">';
@@ -234,13 +238,13 @@ if (isset ( $_GET ["step"] )) {
 		  	
 		  	while ( $db_cart = $res->fetch_object () ) {
 		  		echo '<tr>';
-		  		echo '<td class="cart_confirmation">' . $i . '</td>';
-		  		echo '<td class="cart_confirmation">' . $db_cart->beer_name . '</td>';
-		  		echo '<td class="cart_confirmation">'. $value['quan'] .'</td>';
-		  		echo '<td class="cart_confirmation">'. $db_cart->beer_price .'</td>';
+		  		echo '<td class="table_td">' . $i . '</td>';
+		  		echo '<td class="table_td">' . $db_cart->beer_name . '</td>';
+		  		echo '<td class="table_td">'. $value['quan'] .'</td>';
+		  		echo '<td class="table_td">'. $db_cart->beer_price .'</td>';
 		  		
 		  		$price = $price + ($db_cart->beer_price * $value['quan']);
-		  		echo '<td class="cart_confirmation">'. number_format($price, 2, '.', '') .'</td>';
+		  		echo '<td class="table_td">'. number_format($price, 2, '.', '') .'</td>';
 		  		echo '</tr>';
 		  			
 
@@ -263,8 +267,12 @@ if (isset ( $_GET ["step"] )) {
 		echo $user->data()['knd_city'] . '<br />';
 		echo '<br />';
 		echo $user->data()['knd_email'] . '<br />';
-		echo 'Tel: '. $user->data()['knd_tel'] . '<br />';
-		echo 'Mobil: '.$user->data()['knd_mobile'] . '<br />';
+			if($user->data()['knd_mobile'] != ''){
+			echo 'Mobil: '.$user->data()['knd_mobile'] . '<br />';
+		}
+		if($user->data()['knd_tel'] != ''){
+			echo 'Tel: '.$user->data()['knd_tel'] . '<br />';
+		}
 		 
 	  	//Shipping address
 		echo '<br />';

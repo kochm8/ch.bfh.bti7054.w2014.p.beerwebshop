@@ -173,10 +173,10 @@ input[type=submit] {
 	width: 50px;
 }
 
-.cart_confirmation{
+.table_td{
 	border-bottom: groove black 1px;
 	text-align: left;
-	width:100px;
+	height: 30px;
 }
 
 .error{

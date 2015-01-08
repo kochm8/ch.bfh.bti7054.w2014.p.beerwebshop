@@ -11,7 +11,7 @@ $res = $_db->getAllProducts();
 $hint = strtolower(Input::get("hint"));
 $return_url = base64_encode(Input::get("return_url"));
 
-setcookie ( "Search", $hint );
+//setcookie ( "Search", $hint );
 
 $hints = array();
 

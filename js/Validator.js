@@ -27,8 +27,10 @@ function Validator(frm) {
 		var str = this.form[field].value;
 		var atpos = str.indexOf("@");
 		var dotpos = str.lastIndexOf(".");
+		var regex = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/;
 
-		if ((atpos< 1 || dotpos<atpos+2 || dotpos+2>=str.length) && str != "") {			     
+		//if ((atpos< 1 || dotpos<atpos+2 || dotpos+2>=str.length) && str != "") {			  
+		if (!str.match(regex) && str != ""){
 			createElement(field, "Not a valid e-mail address");
 			this.result = false;	
 			

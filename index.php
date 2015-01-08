@@ -76,8 +76,7 @@ include_once("init_page.php");
 				}
 				?>
 
-			</div>
-			
+			</div>			
 			<div class="weather">			
 				<?php
 							
