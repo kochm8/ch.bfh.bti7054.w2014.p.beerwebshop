@@ -80,8 +80,8 @@ INSERT INTO beer (beer_ID, beer_name, beer_desc, beer_country, beer_size, beer_a
 (13, 'Affligem Patersvat', 'Affligem Patersvat is a blond abbey beer of exceptionnal quality. This beer is brewed once a year and is one of the very rare blond Christmas beers. The name Patersvat means  and it is brewed once a year at the end of summer, using fresh Affligem hop. It has an alcohol content of 6.8%', 'Belgium', 50, 6.8, 1.80, 'Affligem_Patersvat.jpg', 0, 7),
 (14, 'Delirium Christmas', 'Delirium Christmas is a strong dark beer with a thin white head. It has a complex aroma of caramel and spices. Its taste is rather strong with hints of herbs and the aftertaste is one of alcohol and spices.', 'Switzerland', 33, 5.2, 2.50, 'delirium.jpg', 1, 7),
 (15, 'Sante Bee', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form', 'Germany', 50, 6.6, 3.50, 'Sante_Bee.jpg', 0, 7),
-(17, 'Grimbergen Winter', 'that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many d', 'Germany', 50, 8.0, 2.50, 'B4.jpg', 0, 7);
-
+(17, 'Grimbergen Winter', 'that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many d', 'Germany', 50, 8.0, 2.50, 'B4.jpg', 0, 7),
+(18, 'Koeks Best', 'Koeks Best is a top fermentation beer with a golden blond color. It is Koeks most famous beer and probably even Belgium’s best known abbey beer. It has a full, sweet and fruity taste and a full and spicy aftertaste.', 'Belgium', 50, 4.6, 2.00, 'B1.jpg', 0, 1);
 
 CREATE TABLE IF NOT EXISTS beerheavenOrder (
 	  order_ID INT(10) NOT NULL AUTO_INCREMENT,
