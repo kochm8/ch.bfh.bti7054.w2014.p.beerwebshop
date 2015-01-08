@@ -66,8 +66,8 @@
 		
 		var cookievalue = getCookie('Search');
 		deleteCookie('Search');
-		var element = document.getElementById("search_input").value = cookievalue;
-		getHint(cookievalue);
+		document.getElementById("search_input").value = cookievalue;
+		//getHint(cookievalue);
 		
 	</script>
 
