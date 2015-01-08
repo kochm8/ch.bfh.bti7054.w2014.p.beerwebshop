@@ -90,10 +90,6 @@ include_once("init_page.php");
 					curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
 					$json = curl_exec($session);
 					
-					// Convert JSON to PHP object
-			// 		$phpObj =  json_decode($json);
-			// 		var_dump($phpObj);
-					
 					$jsonIterator = new RecursiveIteratorIterator(
 					new RecursiveArrayIterator(json_decode($json, TRUE)),
 					RecursiveIteratorIterator::SELF_FIRST);
