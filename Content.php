@@ -1,19 +1,6 @@
 <div id="content">
 	
-	<?php
-
-	//checks if the user finished an order
-	if(Input::get('finish')){
-		if(Input::get('paymentmethod')== '3'){
-			include_once 'paypal.php';
-// 			Cart::clear();
-		}else{
-// 			echo $lang['FINISH'];
-// 			echo '<br />';
-// 			Cart::clear();
-		}
-	}
-	
+	<?php	
 	
 	//shows all beers by category
 	if(Input::get("categoryid")){

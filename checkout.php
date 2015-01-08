@@ -376,6 +376,11 @@ if (isset ( $_GET ["step"] )) {
 			$res = $_db->saveProductOrder($orderID, $value['id'], $value['quan']);
 
 		}
+		
+		//Go to PayPal
+		if(Input::get('paymentmethod')== '3'){
+			include_once 'paypal.php';
+		}
 
 		echo ' <h1>' . $lang['ORDERCOMPLETED'] . '</h1>';
 		echo $lang['FINISH'];
