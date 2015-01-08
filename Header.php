@@ -76,7 +76,8 @@
 <!-- User is logged in -->
 		<?php 
 		if($user->isLoggedIn()) {
-			echo "<h2>". $lang['MYACCOUNT'] ."</h2><br />";
+			echo "<h2>". $lang['MYACCOUNT'] ."</h2>";
+			echo "<br />";
 			echo $lang['WELCOME'] ."&nbsp;". $user->data()['firstname'] . "<br />";
 			echo "<br />";
 			echo '<a href="index.php?todo=myorders">'. $lang['MYORDERS'] ."</a>";
