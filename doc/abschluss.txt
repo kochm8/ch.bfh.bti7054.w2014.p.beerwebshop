@@ -1,7 +1,0 @@
-1. Präsentation
-2. Screencap
-3. Web Service nur 1x ufrüefe
-
-optionau:
-refactoring / schöne code (viu spass)
-meh bispiu bier u biuder
